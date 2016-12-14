@@ -422,7 +422,7 @@ input,
 select,
 textarea {
 	color: #333;
-	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+	font-family: "Microsoft YaHei", "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	font-weight: 400;
@@ -673,7 +673,7 @@ html[lang^="zh-"] button,
 html[lang^="zh-"] input,
 html[lang^="zh-"] select,
 html[lang^="zh-"] textarea {
-	font-family: "PingFang TC", "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif;
+	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", "Helvetica", Arial, sans-serif;
 }
 
 html[lang^="zh-"] h1,
@@ -2841,6 +2841,132 @@ h2.widget-title {
 .header-widget .cmd-calendar-contain,
 .footer-widget .cmd-calendar-contain {
     width: calc( 100% - 864px);
+}
+
+/* CMD: Recommend Article widget */
+
+.cmd-recommend-content {
+	position: relative;
+	padding-bottom: 60px;
+    padding-top: 50px;
+    text-align: left;
+    width: 100%;
+}
+
+.cmd-recommend-content figure {
+	position: absolute;
+	bottom: 0;
+    left: 0;
+	right: 0;
+    top: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.cmd-recommend-content figure:after {
+	position: absolute;
+	content: ' ';
+	background: linear-gradient(rgba(0,0,0,.3) 30%,rgba(0,0,0,.8));
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.cmd-recommend-content figure img {
+	display: block;
+    height: calc(100% + 2px);
+    margin-top: -1px;
+    object-fit: cover;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.cmd-recommend-content section {
+	position: relative;
+	max-width: 1000px;
+    margin: 0 auto;
+	padding: 0;
+    color: #fff;
+    width: 100%;
+    z-index: 2;
+    font-size: 100%;
+	-moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+	font-family: Roboto,sans-serif;
+}
+
+.cmd-recommend-content section a,
+.cmd-recommend-content section a:hover,
+.cmd-recommend-content section a:focus {
+	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", "Helvetica", Arial, sans-serif;
+	color: #fff;
+	-webkit-box-shadow: none;
+			box-shadow: none;
+	-webkit-transition: none;
+			transition: none;
+	-ms-touch-action: manipulation;
+    	touch-action: manipulation;
+}
+
+.cmd-recommend-content .cmd-recommend-meta {
+	border-bottom: 1px dotted #fff;
+    display: block;
+    padding-bottom: 25px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.cmd-recommend-content .cmd-recommend-meta time {
+	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", "Helvetica", Arial, sans-serif;
+	font-weight: 500;
+	float: left;
+}
+
+.cmd-recommend-content .cmd-recommend-meta time:after {
+	content: '—';
+    margin-left: 6px;
+    margin-right: 8px;
+}
+
+.cmd-recommend-content .cmd-recommend-meta > a {
+	font-weight: 400;
+	margin-right: 8px;
+}
+
+.cmd-recommend-content a.cmd-recommend-link {
+	display: block;
+}
+
+.cmd-recommend-content h1.cmd-recommend-title {
+	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", "Helvetica", Arial, sans-serif;
+	letter-spacing: -1px;
+    margin-bottom: 28px;
+    margin-top: 33px;
+	font-weight: 300 !important;
+	font-size: 3.5rem;
+	font-size: 70px;
+}
+
+.cmd-recommend-content span.cmd-recommend-summary {
+	font-size: 1rem;
+	font-size: 20px;
+    float: none;
+    font-weight: 300;
+    letter-spacing: -.12px;
+    line-height: 1.25em;
+}
+
+.cmd-recommend-content span.cmd-recommend-read-more{
+	font-size: .85rem;
+	font-size: 17px;
+    float: none;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.7em;
 }
 
 /*--------------------------------------------------------------
