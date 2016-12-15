@@ -42,10 +42,99 @@
 
 	<?php
 	// If a regular post or page, and not the front page, show the featured image.
-	if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! conanMD_is_frontpage() ) ) ) :
-		echo '<div class="single-featured-image-header">';
-		the_post_thumbnail( 'ConanMD-featured-image' );
-		echo '</div><!-- .single-featured-image-header -->';
+	if ( is_single() || ( is_page() && ! conanMD_is_frontpage() ) ) :
+		if ( is_single() && has_post_thumbnail() ) :
+			// post with featured image
+
+			echo '<section class="single-info single-info-with-image">
+				<div class="single-header">
+					<div class="single-featured-image-wrapper">';
+			
+			echo '<div class="single-featured-image">' . get_the_post_thumbnail() . '</div>';
+						
+			echo '</div></div>';
+				
+			echo '<div class="single-info-wrapper">
+					<div class="single-info-content">
+						<div class="single-info-header">
+							<div class="single-info-meta">';
+
+			$categories = get_the_category();
+			if ( ! empty( $categories ) ) {
+				foreach( $categories as $category ) {
+					echo '<a class="single-info-category" href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category tag">' . esc_html( $category->name ) . '</a>';
+				}
+			}
+
+			echo '<time  class="single-info-date" datetime="' . get_the_date(c) . '">' . get_the_date() . '</time>';
+			echo '</div>
+				  <div class="single-info-title">';
+
+			echo '<h1>' . get_the_title() . '</h1>';
+
+			echo '</div></div><div class="single-info-more"><div><div class="single-info-byline">';
+
+			echo '<figure>' . get_avatar( get_the_author_meta( 'user_email', $post->post_author ), 60 ) . '</figure>';
+
+			echo '<aside><span class="single-info-author">';
+
+			echo the_author_meta( 'user_nicename' , $post->post_author );
+
+			echo '</span><span class="single-info-description">';
+			
+			echo the_author_meta( 'description' , $post->post_author );
+
+			echo '</span></aside></div></div></div></div>
+				</div>
+			</section>';
+
+		elseif ( is_single() ):
+			// post without featured image
+			echo '<section class="single-info">
+				<div class="single-info-wrapper">
+					<div class="single-info-content">
+						<div class="single-info-header">
+							<div class="single-info-meta">';
+
+			$categories = get_the_category();
+			if ( ! empty( $categories ) ) {
+				foreach( $categories as $category ) {
+					echo '<a class="single-info-category" href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category tag">' . esc_html( $category->name ) . '</a>';
+				}
+			}
+
+			echo '<time  class="single-info-date" datetime="' . get_the_date(c) . '">' . get_the_date() . '</time>';
+			echo '</div>
+				  <div class="single-info-title">';
+
+			echo '<h1>' . get_the_title() . '</h1>';
+
+			echo '</div></div><div class="single-info-more"><div><div class="single-info-byline">';
+			
+			echo '<figure>' . get_avatar( get_the_author_meta( 'user_email', $post->post_author ), 60 ) . '</figure>';
+
+			echo '<aside><span class="single-info-author">';
+
+			echo the_author_meta( 'user_nicename' , $post->post_author );
+
+			echo '</span><span class="single-info-description">';
+			
+			echo the_author_meta( 'description' , $post->post_author );
+
+			echo '</span></aside></div></div></div></div>
+				</div>
+			</section>';
+
+		elseif ( is_page() && has_post_thumbnail() ):
+			// page with featured image
+			echo '<div class="single-featured-image-header">';
+			the_post_thumbnail( 'ConanMD-featured-image' );
+			echo '</div><!-- .single-featured-image-header -->';
+
+		else :
+			// page without featured image
+			
+		endif;
 	endif;
 	?>
 

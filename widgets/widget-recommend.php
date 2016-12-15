@@ -45,7 +45,7 @@ class conanMD_Recommend_Widget extends WP_Widget {
 				<figure>';
 
 			if ( has_post_thumbnail($article) ) {
-				$output .= '<div class="cmd-recommend-background">'. get_the_post_thumbnail( $article, 'full' ) . '</div>';
+			$output .= '<div class="cmd-recommend-background">'. get_the_post_thumbnail( $article ) . '</div>';
 			}
 
 			$output .= "\n\t\t".'

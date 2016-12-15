@@ -1309,6 +1309,13 @@ a:hover .nav-title,
 	font-size: 16px;
 	font-size: 1rem;
 	position: relative;
+	background-color: #fff;
+}
+
+.site-navigation-fixed.navigation-top {
+	background-color: #fafafa;
+	-webkit-transition: background-color 0.2s;
+			transition: background-color 0.2s;
 }
 
 .navigation-top .wrap {
@@ -1864,6 +1871,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 
 .site-content-contain {
 	position: relative;
+	background-color: #fafafa;
 }
 
 .site-content .wrap {
@@ -2095,6 +2103,222 @@ body:not(.ConanMD-front-page) .entry-header {
 	margin: auto;
 }
 
+.single-featured-image-wrapper {
+	height: 100%;
+    padding-bottom: 34.75%;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.single-info {
+	max-width:  1440px;
+	margin: 0 auto;
+	color: #000;
+	background-color: #f7f7f7;
+}
+
+.single-header {
+	overflow: hidden;
+    width: 100%;
+}
+
+.single-info-wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.single-info-content {
+	width: 800px;
+	margin: 0 auto;
+    text-align: left;
+}
+
+.single-info-meta {
+	border-bottom: 1px dotted #000;
+    color: #000;
+    display: inline-block;
+    font-weight: 400;
+    letter-spacing: .25px;
+    padding-bottom: 14px;
+    padding-top: 48px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.single-info-category {
+    font-size: 100%;
+	font-size: 14px;
+    margin: 0;
+    vertical-align: baseline;
+}
+
+.single-info-category:not(:last-of-type):after {
+    content: '-';
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.single-info-date {
+	float: right;
+}
+
+.single-info-title {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.single-info-title h1 {
+	font-weight: 300 !important;
+    margin-bottom: 23px;
+    font-size: 70px;
+    line-height: 1em;
+}
+
+.single-info-more {
+	padding-bottom: 45px;
+}
+
+.single-info-more > div {
+	display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+	padding-right: calc(33%);
+}
+
+.single-info-byline {
+	-ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    vertical-align: top;
+}
+
+.single-info-byline figure {
+	display: inline-block;
+    min-width: 60px;
+    margin: 0;
+    margin-right: 16px;
+}
+
+.single-info-byline figure img {
+	border-radius: 50%;
+}
+
+.single-info-byline aside {
+	position: relative;
+	display: inline-block;
+    padding-bottom: 17px;
+    padding-right: 50px;
+    padding-top: 17px;
+    width: 100%;
+    font-size: .85rem;
+    font-weight: 300;
+    line-height: 1em;
+}
+
+.single-info-byline aside:after {
+	content: ' ';
+    display: block;
+    position: absolute;
+	border-top: 1px dotted #000;
+	border-bottom: 1px dotted #000;
+	top: 0;
+    bottom: 0;
+    right: 0;
+	width: 100%;
+}
+
+.single-info-author {
+	display: block;
+    line-height: 1.06em;
+    width: 100%;
+    font-size: 17px;
+}
+
+.single-info-description {
+	display: inline-block;
+    line-height: 1em;
+    margin-top: 5px;
+    font-size: .6rem;
+	font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+} 
+
+.single-info-with-image .single-info-wrapper {
+	position: relative;
+	margin-top: -17%;
+}
+
+.single-info-with-image .single-featured-image {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.single-info-with-image .single-featured-image img {
+	display: block;
+    height: calc(100%);
+    margin-top: -1px;
+    object-fit: cover;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.single-format-standard .single-info:not(.single-info-with-image),
+.single-format-standard .single-info-with-image .single-info-wrapper {
+	background-color: #76c279;
+}
+
+.single-format-aside .single-info:not(.single-info-with-image),
+.single-format-aside .single-info-with-image .single-info-wrapper {
+	background-color: #40a4f5;
+}
+
+.single-format-image .single-info:not(.single-info-with-image),
+.single-format-image .single-info-with-image .single-info-wrapper {
+	background-color: #f5564a;
+}
+
+.single-format-video .single-info:not(.single-info-with-image),
+.single-format-video .single-info-with-image .single-info-wrapper {
+	background-color: #ffaa2c;
+}
+
+.single-format-quote .single-info:not(.single-info-with-image),
+.single-format-quote .single-info-with-image .single-info-wrapper {
+	background-color: #754cbe;
+}
+
+.single-format-link .single-info:not(.single-info-with-image),
+.single-format-link .single-info-with-image .single-info-wrapper {
+	background-color: #a132b4;
+}
+
+.single-format-gallery .single-info:not(.single-info-with-image),
+.single-format-gallery .single-info-with-image .single-info-wrapper {
+	background-color: #ffcf3e;
+}
+
+.single-format-audio .single-info:not(.single-info-with-image),
+.single-format-audio .single-info-with-image .single-info-wrapper {
+	background-color: #ea2c6d;
+}
+
+.single-format-chat .single-info:not(.single-info-with-image),
+.single-format-chat .single-info-with-image .single-info-wrapper {
+	background-color: #eeeeee;
+}
+
 .page-links {
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -2276,7 +2500,7 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .page:not(.home) #content {
-	padding-bottom: 1.5em;
+	padding-bottom: 0;
 }
 
 /* 404 page */
@@ -2946,12 +3170,17 @@ h2.widget-title {
 .cmd-recommend-content .cmd-recommend-meta time:after {
 	content: '-';
     margin-left: 6px;
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 .cmd-recommend-content .cmd-recommend-meta > a {
 	font-weight: 400;
-	margin-right: 8px;
+}
+
+.cmd-recommend-content .cmd-recommend-meta a:not(:last-child):after {
+	content: '-';
+    margin-left: 6px;
+	margin-right: 6px;
 }
 
 .cmd-recommend-content a.cmd-recommend-link {
@@ -4122,7 +4351,7 @@ object {
 	}
 
 	.page:not(.home) #content {
-		padding-bottom: 3.25em;
+		padding-bottom: 0;
 	}
 
 	/* 404 page */
