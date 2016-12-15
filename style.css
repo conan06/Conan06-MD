@@ -2847,10 +2847,13 @@ h2.widget-title {
 
 .cmd-recommend-content {
 	position: relative;
+	min-height: 500px;
 	padding-bottom: 60px;
     padding-top: 50px;
     text-align: left;
     width: 100%;
+	display: -ms-flexbox;
+    display: flex;
 }
 
 .cmd-recommend-content figure {
@@ -2896,7 +2899,15 @@ h2.widget-title {
 	-moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-	font-family: Roboto,sans-serif;
+	display: block;
+	-ms-flex-item-align: end;
+    align-self: flex-end;
+}
+
+.cmd-recommend-content section：after{
+	clear: both;
+    content: '';
+    display: table;
 }
 
 .cmd-recommend-content section a,

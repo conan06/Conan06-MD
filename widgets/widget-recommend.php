@@ -39,6 +39,7 @@ class conanMD_Recommend_Widget extends WP_Widget {
 			echo '<div id="cmd-recommend-wrap" class="cmd-recommend-wrap">';
 			//TODO
 			$article = get_post($post_id);
+			$excerpt = ! empty( $instance['text'] ) ? $instance['text'] : $article->post_excerpt;
 			$output = "\n\t\t".'
 			<div class="cmd-recommend-content">
 				<figure>';
@@ -64,7 +65,7 @@ class conanMD_Recommend_Widget extends WP_Widget {
 					</div>
 					<a href="' . get_permalink( $article ) . '" class="cmd-recommend-link">
 						<h1 class="cmd-recommend-title">' . $article->post_title . '</h1>
-						<span class="cmd-recommend-summary">' . $article->post_excerpt . '</span>
+						<span class="cmd-recommend-summary">' . $excerpt . '</span>
 						<span class="cmd-recommend-read-more">' . sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ConanMD' ), $article->post_title ) . '</span>
 					</a>';
 			$output .= "\n\t\t".'
@@ -87,6 +88,11 @@ class conanMD_Recommend_Widget extends WP_Widget {
 		
 		$instance = $old_instance;
 		$instance['post'] = strip_tags( $new_instance['post'] );
+		if ( current_user_can( 'unfiltered_html' ) ) {
+			$instance['text'] = $new_instance['text'];
+		} else {
+			$instance['text'] = wp_kses_post( $new_instance['text'] );
+		}
 
 		return $instance;
 	}
@@ -98,11 +104,17 @@ class conanMD_Recommend_Widget extends WP_Widget {
 	function form( $instance ) {
 		
 		$post = sanitize_text_field( $instance['post'] );
+		$text = sanitize_text_field( $instance['text'] );
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('post'); ?>"><?php _e('Article ID:', 'ConanMD' ) ?></label>
+			<label for="<?php echo $this->get_field_id('post'); ?>"><?php _e('Article ID:', 'ConanMD' ); ?></label>
 			<input class="widefat" type="text" id="<?php echo $this->get_field_id('post'); ?>" name="<?php echo $this->get_field_name('post'); ?>" value="<?php echo esc_attr($post); ?>">
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e('Excerpt:', 'ConanMD' ); ?></label>
+			<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea>
 		</p>
 
 		<?php
