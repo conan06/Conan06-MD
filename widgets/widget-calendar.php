@@ -88,9 +88,43 @@ function get_mdl_calendar( $initial = true, $echo = true ) {
  
     /* translators: Calendar caption: 1: month name, 2: 4-digit year */
     $calendar_caption = _x('%1$s %2$s', 'calendar caption');
-	$calendar_figure = get_theme_file_uri( '/assets/images/calendar/1080/calendar-' . $thismonth. '.jpg' );
+	$calendar_figure = get_theme_file_uri( '/assets/images/calendar/calendar-' . $thismonth );
     
-    $calendar_output = '<figure data-parallax="scroll" data-image-src="' . $calendar_figure . '" data-z-index="1" data-speed="0.85"></figure>
+    $calendar_output = '<figure data-parallax="scroll" data-image-src="' . $calendar_figure . '-1080x1080.jpg" data-z-index="1" data-speed="0.85">
+    <!--figure>
+        <picture>
+            <source media="(max-width: 320px)" sizes="320px" 
+                srcset="' . $calendar_figure . '-320x320.jpg 320w">
+            <source media="(max-width: 540px)" sizes="540px" 
+                srcset="' . $calendar_figure . '-540x540.jpg 540w">
+            <source media="(max-width: 768px)" sizes="768px" 
+                srcset="' . $calendar_figure . '-768x768.jpg 768w">
+            <source media="(max-width: 1080px)" sizes="1080px" 
+                srcset="' . $calendar_figure . '-1080x1080.jpg 1080w">
+            <source media="(max-width: 1280px)" sizes="1280px" 
+                srcset="' . $calendar_figure . '-1280x1280.jpg 1280w">
+            <source media="(max-width: 1920px)" sizes="1920px" 
+                srcset="' . $calendar_figure . '-1920x1920.jpg 1920w">
+            <source media="(max-width: 2560px)" sizes="2560px" 
+                srcset="' . $calendar_figure . '-2560x2560.jpg 2560w">
+            <img src="' . $calendar_figure . '-1080x1080.jpg" 
+                alt="Year in Search - Supermoon" 
+                sizes="(max-width: 320px) 320px, 
+                    (max-width: 540px) 540px, 
+                    (max-width: 768px) 768px, 
+                    (max-width: 1080px) 1080px, 
+                    (max-width: 1280px) 1280px, 
+                    (max-width: 1920px) 1920px, 
+                    (max-width: 2560px) 2560px" 
+                srcset="' . $calendar_figure . '-320x320.jpg 320w, 
+                        ' . $calendar_figure . '-540x540.jpg 540w, 
+                        ' . $calendar_figure . '-768x768.jpg 768w, 
+                        ' . $calendar_figure . '-1080x1080.jpg 1080w, 
+                        ' . $calendar_figure . '-1280x1280.jpg 1280w, 
+                        ' . $calendar_figure . '-1920x1920.jpg 1920w, 
+                        ' . $calendar_figure . '-2560x2560.jpg 2560w">
+        </picture-->
+    </figure>
 	<div class="cmd-calendar-contain">
 	<nav class="mdl-cell mdl-cell--12-col">';
 	if ( $previous ) {
