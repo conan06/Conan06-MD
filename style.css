@@ -1306,9 +1306,6 @@ a:hover .nav-title,
 --------------------------------------------------------------*/
 
 .navigation-top {
-	background: #fff;
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
 	font-size: 16px;
 	font-size: 1rem;
 	position: relative;
@@ -1317,6 +1314,7 @@ a:hover .nav-title,
 .navigation-top .wrap {
 	max-width: 1000px;
 	padding: 0;
+	background: #fff;
 }
 
 .navigation-top a {
@@ -1512,7 +1510,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background-color: #fafafa;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -1525,14 +1523,20 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 700px;
-	padding-left: 2em;
-	padding-right: 2em;
 }
 
 .wrap:after {
 	clear: both;
 	content: "";
 	display: block;
+}
+
+.site-content .wrap  {
+	background-color: #f7f7f7;
+}
+
+.home .site-content .wrap  {
+	background-color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1859,11 +1863,10 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 --------------------------------------------------------------*/
 
 .site-content-contain {
-	background-color: #fafafa;
 	position: relative;
 }
 
-.site-content {
+.site-content .wrap {
 	padding: 2.5em 0 0;
 }
 
@@ -2085,7 +2088,6 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .single-featured-image-header {
 	background-color: #fafafa;
-	border-bottom: 1px solid #eee;
 }
 
 .single-featured-image-header img {
@@ -2293,12 +2295,14 @@ body:not(.ConanMD-front-page) .entry-header {
 --------------------------------------------------------------*/
 
 .site-footer {
-	border-top: 1px solid #eee;
+	margin-top: 0;
 }
 
 .site-footer .wrap {
 	padding-bottom: 1.5em;
 	padding-top: 2em;
+	background-color: #f3f3f3;
+    color: #545454;
 }
 
 /* Footer widgets */
@@ -2762,11 +2766,13 @@ h2.widget-title {
 }
 
 .cmd-widget-calendar figure {
-	height: 175px; 
+	margin: 0;
+	height: 150px; 
 	width: 100%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
 	background-size: cover;
+	overflow: hidden;
 }
 
 .cmd-widget-calendar nav,
@@ -2938,7 +2944,7 @@ h2.widget-title {
 }
 
 .cmd-recommend-content .cmd-recommend-meta time:after {
-	content: '—';
+	content: '-';
     margin-left: 6px;
     margin-right: 8px;
 }
@@ -3522,19 +3528,22 @@ object {
 
 	.wrap {
 		max-width: 1440px;
-		padding-left: 3em;
-		padding-right: 3em;
+	}
+
+	.site-content-contain .wrap .wrap-content {
+		max-width: 1000px;
+		margin: 0 auto;
 	}
 
 	.has-sidebar:not(.error404) #primary {
 		float: left;
-		width: 68%;
+		width: 64%;
 	}
 
 	.has-sidebar #secondary {
 		float: right;
 		padding-top: 0;
-		width: 26%;
+		width: 30%;
 	}
 
 	.error404 #primary {
@@ -3950,7 +3959,7 @@ object {
 
 	/* Posts */
 
-	.site-content {
+	.site-content .wrap {
 		padding: 5.5em 0 0;
 	}
 
@@ -4178,7 +4187,6 @@ object {
 		font-size: 14px;
 		font-size: 0.875rem;
 		line-height: 1.6;
-		margin-top: 3em;
 	}
 
 	.site-footer .widget-column.footer-widget {
