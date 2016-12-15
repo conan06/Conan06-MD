@@ -115,11 +115,15 @@
 
 			echo '<aside><span class="single-info-author">';
 
-			echo the_author_meta( 'user_nicename' , $post->post_author );
+			echo get_the_author_meta( 'user_nicename' , $post->post_author );
 
 			echo '</span><span class="single-info-description">';
 			
-			echo the_author_meta( 'description' , $post->post_author );
+			if ( !empty( get_the_author_meta( 'description' , $post->post_author ) ) ) {
+				echo get_the_author_meta( 'description' , $post->post_author );
+			} else {
+				printf( __( '<a href="%s">Setting your description.</a>', 'ConanMD' ), get_dashboard_url() . 'profile.php#description' );
+			}
 
 			echo '</span></aside></div></div></div></div>
 				</div>

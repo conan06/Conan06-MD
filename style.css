@@ -2155,7 +2155,7 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .single-info-category:not(:last-of-type):after {
-    content: '-';
+    content: '&';
     margin-left: 6px;
     margin-right: 6px;
 }
@@ -2247,6 +2247,12 @@ body:not(.ConanMD-front-page) .entry-header {
     font-weight: 500;
     letter-spacing: 0;
 } 
+
+.single-info-description a {
+	position: absolute;
+	z-index: 2;
+	margin-top: -8px;
+}
 
 .single-info-with-image .single-info-wrapper {
 	position: relative;
@@ -3178,7 +3184,7 @@ h2.widget-title {
 }
 
 .cmd-recommend-content .cmd-recommend-meta a:not(:last-child):after {
-	content: '-';
+	content: '&';
     margin-left: 6px;
 	margin-right: 6px;
 }
