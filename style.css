@@ -672,8 +672,14 @@ html[lang^="zh-"] body,
 html[lang^="zh-"] button,
 html[lang^="zh-"] input,
 html[lang^="zh-"] select,
-html[lang^="zh-"] textarea {
-	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", "Helvetica", Arial, sans-serif;
+html[lang^="zh-"] textarea,
+html[lang^="zh-"] h1,
+html[lang^="zh-"] h2,
+html[lang^="zh-"] h3,
+html[lang^="zh-"] h4,
+html[lang^="zh-"] h5,
+html[lang^="zh-"] h6 {
+	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", Arial, sans-serif;
 }
 
 html[lang^="zh-"] h1,
@@ -1542,10 +1548,6 @@ body {
 	background-color: #f7f7f7;
 }
 
-.home .site-content .wrap  {
-	background-color: #fff;
-}
-
 /*--------------------------------------------------------------
 13.1 Header
 --------------------------------------------------------------*/
@@ -2091,7 +2093,12 @@ body:not(.ConanMD-front-page) .entry-header {
 .archive.page-one-column:not(.has-sidebar) #primary {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 740px;
+	max-width: 800px;
+}
+
+.single-post #content .wrap {
+	padding-bottom: 85px;
+    padding-top: 40px;
 }
 
 .single-featured-image-header {
@@ -2148,7 +2155,7 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .single-info-category {
-    font-size: 100%;
+    font-size: 85%;
 	font-size: 14px;
     margin: 0;
     vertical-align: baseline;
@@ -2162,6 +2169,8 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .single-info-date {
 	float: right;
+	font-size: 85%;
+	font-size: 14px;
 }
 
 .single-info-title {
@@ -2214,7 +2223,7 @@ body:not(.ConanMD-front-page) .entry-header {
     padding-right: 50px;
     padding-top: 17px;
     width: 100%;
-    font-size: .85rem;
+    font-size: 1.2rem;
     font-weight: 300;
     line-height: 1em;
 }
@@ -2235,15 +2244,13 @@ body:not(.ConanMD-front-page) .entry-header {
 	display: block;
     line-height: 1.06em;
     width: 100%;
-    font-size: 17px;
 }
 
 .single-info-description {
 	display: inline-block;
     line-height: 1em;
     margin-top: 5px;
-    font-size: .6rem;
-	font-size: 14px;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0;
 } 
@@ -2322,6 +2329,11 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .single-format-chat .single-info:not(.single-info-with-image),
 .single-format-chat .single-info-with-image .single-info-wrapper {
+	background-color: #eeeeee;
+}
+
+.single-format-status .single-info:not(.single-info-with-image),
+.single-format-status .single-info-with-image .single-info-wrapper {
 	background-color: #eeeeee;
 }
 
@@ -2446,7 +2458,6 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .post-navigation {
 	font-weight: 800;
-	margin: 3em 0;
 }
 
 .post-navigation .nav-links {
@@ -2732,7 +2743,7 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .widget {
-	padding-bottom: 3em;
+	padding-bottom: 2em;
 }
 
 .header-widget {
@@ -2740,13 +2751,27 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 h2.widget-title {
-	color: #222;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-weight: 800;
 	letter-spacing: 0.1818em;
 	margin-bottom: 1.5em;
+	padding-top: 0.75em;
 	text-transform: uppercase;
+}
+
+#secondary h2.widget-title {
+	text-align: center;
+	position: relative;
+}
+
+#secondary h2.widget-title:before {
+	content: '';
+    border-top: 2px solid #4285f4;
+    position: absolute;
+    width: 50px;
+    left: calc(50% - 25px);
+    top: 0;
 }
 
 .widget-title a {
@@ -2984,6 +3009,8 @@ h2.widget-title {
 .cmd-calendar-wrap {
 	background-color: #fff;
 	padding-bottom: 1em;
+	width: auto;
+	font-size: 100%;
 }
 
 .cmd-widget-calendar a,
@@ -3052,7 +3079,7 @@ h2.widget-title {
     color: #fff;
     display: inline-block;
     outline: none;
-	background-color: #438afe;
+	background-color: #4285f4;
 }
 
 .cmd-widget-calendar #today > span a:hover {
@@ -3111,6 +3138,9 @@ h2.widget-title {
     left: 0;
     right: 0;
     top: 0;
+}
+.cmd-recommend-background {
+	width: 100%;
 }
 
 .cmd-recommend-content figure img {
@@ -4410,10 +4440,10 @@ object {
 
 	/* Widgets */
 
-	h2.widget-title {
+	#secondary h2.widget-title {
 		font-size: 11px;
 		font-size: 0.6875rem;
-		margin-bottom: 2em;
+		margin-bottom: 1.5em;
 	}
 
 	/* Footer */
