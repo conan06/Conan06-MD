@@ -1,6 +1,6 @@
 <?php
 /**
- * Widget Recommend Article
+ * Widget Calendar
  * Version: 0.1
  * @package ConanMD
  * @author Conan06
@@ -90,7 +90,7 @@ function get_mdl_calendar( $initial = true, $echo = true ) {
     $calendar_caption = _x('%1$s %2$s', 'calendar caption');
 	$calendar_figure = get_theme_file_uri( '/assets/images/calendar/calendar-' . $thismonth );
     
-    $calendar_output = '<figure data-parallax="scroll" data-image-src="' . $calendar_figure . '-540x540.jpg" data-z-index="1" data-speed="0.85">
+    $calendar_output = '<figure data-parallax="scroll" data-image-src="' . $calendar_figure . '-540x540.jpg" data-z-index="2" data-speed="0.85">
     </figure>
 	<div class="cmd-calendar-contain">
 	<nav class="mdl-cell mdl-cell--12-col">';
@@ -239,7 +239,7 @@ class conanMD_Calendar_Widget extends WP_Widget {
 			'description' => __( 'A calendar of your site&#8217;s Posts.' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'conanMD_calendar_widget', 'MD' . __( 'Calendar' ), $widget_ops );
+		parent::__construct( 'conanMD_calendar_widget', 'MD ' . __( 'Calendar' ), $widget_ops );
 	}
 	
 	
@@ -250,12 +250,12 @@ class conanMD_Calendar_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-		echo $args['before_widget'];
-		if ( $title ) {
+        echo $args['before_widget'];
+        if ( $title ) {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 		if ( 0 === self::$instance ) {
-			echo '<div id="cmd-calendar-wrap" class="cmd-calendar-wrap">';
+			echo '<div id="cmd-calendar-wrap" class="mdl-card mdl-shadow--2dp cmd-calendar-wrap">';
 		} else {
 			echo '<div class="cmd-calendar-wrap">';
 		}

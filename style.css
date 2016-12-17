@@ -1319,7 +1319,9 @@ a:hover .nav-title,
 }
 
 .site-navigation-fixed.navigation-top {
-	background-color: #fafafa;
+	/*background-color: #fafafa;*/
+	/* shadow-4dp */
+	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 	-webkit-transition: background-color 0.2s;
 			transition: background-color 0.2s;
 }
@@ -2743,7 +2745,7 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .widget {
-	padding-bottom: 2em;
+	padding-bottom: 2.25em;
 }
 
 .header-widget {
@@ -2757,12 +2759,12 @@ h2.widget-title {
 	letter-spacing: 0.1818em;
 	margin-bottom: 1.5em;
 	padding-top: 0.75em;
-	text-transform: uppercase;
 }
 
 #secondary h2.widget-title {
 	text-align: center;
 	position: relative;
+	font-weight: 400;=
 }
 
 #secondary h2.widget-title:before {
@@ -3006,20 +3008,20 @@ h2.widget-title {
 
 /* CMD: Calendar widget */
 
+#secondary .widget a,
+#secondary .widget a:hover,
+#secondary .widget a:focus {
+	-webkit-box-shadow: none;
+			box-shadow: none;
+	-webkit-transition: none;
+			transition: none;
+}
+
 .cmd-calendar-wrap {
 	background-color: #fff;
 	padding-bottom: 1em;
 	width: auto;
 	font-size: 100%;
-}
-
-.cmd-widget-calendar a,
-.cmd-widget-calendar a:hover,
-.cmd-widget-calendar a:focus {
-	-webkit-box-shadow: none;
-			box-shadow: none;
-	-webkit-transition: none;
-			transition: none;
 }
 
 .cmd-widget-calendar figure {
@@ -3249,6 +3251,28 @@ h2.widget-title {
     font-family: inherit;
     font-weight: 700;
     line-height: 1.7em;
+}
+
+/* CMD: Tag Cloud widget */
+
+#secondary .cmd-widget-tag-cloud h2.widget-title:before {
+	border-top-color: #db4437;
+}
+
+.cmd-widget-tag-cloud-wrap {
+	padding: 16px;
+	width: inherit;
+    display: block;
+	min-height: auto;
+	line-height: 40px;
+}
+
+.cmd-widget-tag-cloud-wrap a {
+	margin-right: 6px;
+}
+
+.cmd-widget-tag-cloud-wrap a span {
+	text-transform: capitalize;
 }
 
 /*--------------------------------------------------------------

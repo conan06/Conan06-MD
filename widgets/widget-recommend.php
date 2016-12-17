@@ -20,7 +20,7 @@ class conanMD_Recommend_Widget extends WP_Widget {
 			'description' => __( 'Displays a recommended article.', 'ConanMD' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'conanMD_recommend_article_widget', 'MD' . __('Recommend Article', 'ConanMD' ), $widget_ops );
+		parent::__construct( 'conanMD_recommend_article_widget', 'MD ' . __('Recommend Article', 'ConanMD' ), $widget_ops );
 	}
 	
 	
