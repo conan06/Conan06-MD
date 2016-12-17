@@ -496,6 +496,8 @@ h6 {
 p {
 	margin: 0 0 1.5em;
 	padding: 0;
+	font-size: 16px;
+    line-height: 30px;
 }
 
 dfn,
@@ -689,6 +691,10 @@ html[lang^="zh-"] h4,
 html[lang^="zh-"] h5,
 html[lang^="zh-"] h6 {
 	font-weight: 700;
+}
+
+html[lang^="zh-"] .entry-content p {
+	text-indent: 2em;
 }
 
 /* Typography for Cyrillic Font */
@@ -1320,8 +1326,6 @@ a:hover .nav-title,
 
 .site-navigation-fixed.navigation-top {
 	/*background-color: #fafafa;*/
-	/* shadow-4dp */
-	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 	-webkit-transition: background-color 0.2s;
 			transition: background-color 0.2s;
 }
@@ -1537,7 +1541,6 @@ body {
 .wrap {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 700px;
 }
 
 .wrap:after {
@@ -1546,8 +1549,16 @@ body {
 	display: block;
 }
 
+.page-header {
+	padding-top: 2em;
+}
+
 .site-content .wrap  {
 	background-color: #f7f7f7;
+}
+
+.page .site-content .wrap {
+	padding-top: 5.5em;
 }
 
 /*--------------------------------------------------------------
@@ -1878,10 +1889,6 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	background-color: #fafafa;
 }
 
-.site-content .wrap {
-	padding: 2.5em 0 0;
-}
-
 /*--------------------------------------------------------------
 13.4 Posts
 --------------------------------------------------------------*/
@@ -2095,7 +2102,6 @@ body:not(.ConanMD-front-page) .entry-header {
 .archive.page-one-column:not(.has-sidebar) #primary {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 800px;
 }
 
 .single-post #content .wrap {
@@ -2114,6 +2120,7 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .single-featured-image-wrapper {
 	height: 100%;
+	min-height: 300px;
     padding-bottom: 34.75%;
     position: relative;
     top: 0;
@@ -2749,7 +2756,7 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .header-widget {
-    margin-top: -5.5em;
+	display: none;
 }
 
 h2.widget-title {
@@ -3112,7 +3119,6 @@ h2.widget-title {
 
 .cmd-recommend-content {
 	position: relative;
-	min-height: 500px;
 	padding-bottom: 60px;
     padding-top: 50px;
     text-align: left;
@@ -3228,7 +3234,7 @@ h2.widget-title {
 .cmd-recommend-content h1.cmd-recommend-title {
 	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", "Helvetica", Arial, sans-serif;
 	letter-spacing: -1px;
-    margin-bottom: 28px;
+    margin-bottom: 0;
     margin-top: 33px;
 	font-weight: 300 !important;
 	font-size: 3.5rem;
@@ -3242,9 +3248,10 @@ h2.widget-title {
     font-weight: 300;
     letter-spacing: -.12px;
     line-height: 1.25em;
+	display: none;
 }
 
-.cmd-recommend-content span.cmd-recommend-read-more{
+.cmd-recommend-content span.cmd-recommend-read-more {
 	font-size: .85rem;
 	font-size: 17px;
     float: none;
@@ -3827,6 +3834,10 @@ object {
 		margin: 0 auto;
 	}
 
+	.page-header {
+		padding-top: 2.5em;
+	}
+
 	.has-sidebar:not(.error404) #primary {
 		float: left;
 		width: 64%;
@@ -3840,6 +3851,24 @@ object {
 
 	.error404 #primary {
 		float: none;
+	}
+
+	/* Widget */
+	.header-widget {
+		display: block;
+		margin-bottom: -2.25em;
+	}
+
+	.cmd-recommend-content {
+		min-height: 500px;
+	}
+
+	.cmd-recommend-content h1.cmd-recommend-title {
+		padding-bottom: 28px;
+	}
+
+	.cmd-recommend-content span.cmd-recommend-summary {
+		display: block;
 	}
 
 	/* Site Branding */
@@ -4251,14 +4280,20 @@ object {
 
 	/* Posts */
 
-	.site-content .wrap {
-		padding: 5.5em 0 0;
-	}
-
 	.single-post .entry-title,
 	.page .entry-title {
 		font-size: 26px;
 		font-size: 1.625rem;
+	}
+
+	.single-post .entry-content {
+		margin: 0 auto;
+		text-align: left;
+		width: 800px;
+	}
+
+	.single-post .entry-content p {
+		max-width: 680px;
 	}
 
 	.comments-pagination,
@@ -4602,6 +4637,47 @@ object {
 	.admin-bar .site-navigation-fixed.navigation-top,
 	.admin-bar .site-navigation-hidden.navigation-top {
 		top: 46px;
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+
+	.cmd-recommend-content {
+		padding-left: 5vw;
+		padding-right: 5vw;
+	}
+
+	.site-content-contain .wrap .wrap-content {
+		max-width: inherit;
+		padding-left: 5vw;
+		padding-right: 5vw;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	
+	.single-info-with-image .single-info-wrapper {
+		margin-top: 0;
+	}
+
+	.single-info-content {
+		width: 100%;
+		padding-left: 5vw;
+    	padding-right: 5vw;
+	}
+
+	.single-info-title h1 {
+		font-size: calc(8vw);
+	}
+
+	.single-post .entry-content {
+		margin: 0 auto;
+		text-align: left;
+		width: inherit;
+	}
+
+	.single-post .entry-content p {
+		max-width: auto;
 	}
 }
 
