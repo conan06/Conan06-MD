@@ -3260,11 +3260,14 @@ h2.widget-title {
 }
 
 .cmd-widget-tag-cloud-wrap {
-	padding: 16px;
 	width: inherit;
     display: block;
 	min-height: auto;
 	line-height: 40px;
+}
+
+.mdl-card.cmd-widget-tag-cloud-wrap {
+	padding: 16px;
 }
 
 .cmd-widget-tag-cloud-wrap a {
