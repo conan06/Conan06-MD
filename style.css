@@ -3262,6 +3262,43 @@ h2.widget-title {
     line-height: 1.7em;
 }
 
+#secondary .cmd-recommend-content {
+	padding-bottom: 0;
+    padding-top: 0;
+	display: block;
+}
+
+#secondary .cmd-recommend-content figure {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	position: relative;
+}
+
+#secondary .cmd-recommend-content section {
+    background-color: #757575;
+    padding: 16px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+#secondary .cmd-recommend-content .cmd-recommend-meta {
+	padding-bottom: 10px;
+}
+
+#secondary .cmd-recommend-content h1.cmd-recommend-title {
+	font-size: 2rem;
+	padding-bottom: 18px;
+    margin-top: 21px;
+}
+
+#secondary .cmd-recommend-content span.cmd-recommend-summary {
+	font-size: 1rem;
+}
+
+#secondary .cmd-recommend-content span.cmd-recommend-read-more {
+	font-size: 0.85rem;
+}
+
 /* CMD: Tag Cloud widget */
 
 #secondary .cmd-widget-tag-cloud h2.widget-title:before {
@@ -3319,6 +3356,28 @@ h2.widget-title {
 
 #secondary .cmd-widget-links h2.widget-title:before {
 	border-top-color: #f4b400;
+}
+
+.cmd-links-wrap {
+	width: auto;
+	min-height: auto;
+}
+
+.cmd-links-wrap li:first-of-type {
+	border-top: 0;
+}
+
+.cmd-links-wrap li:last-of-type {
+	border-bottom: 0;
+}
+
+.cmd-links-item {
+	padding: 12px 16px!important;
+	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", Arial, sans-serif;
+}
+
+.cmd-links-wrap li a[rel="me"] + i {
+	color: #ff9800;
 }
 
 /*--------------------------------------------------------------
@@ -4681,6 +4740,11 @@ object {
 	.cmd-recommend-content {
 		padding-left: 5vw;
 		padding-right: 5vw;
+	}
+
+	#secondary .cmd-recommend-content {
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.site-content-contain .wrap .wrap-content {
