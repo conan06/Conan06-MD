@@ -3050,6 +3050,8 @@ h2.widget-title {
     display: flex;
 	height: 32px;
 	line-height: 32px;
+	margin-left: 8px;
+    margin-right: 8px;
 }
 
 .cmd-widget-calendar .cmd-widget-calendar-week > div,
@@ -3283,6 +3285,40 @@ h2.widget-title {
 
 .cmd-widget-tag-cloud-wrap a span {
 	text-transform: capitalize;
+}
+
+/* CMD: Nav Menu widget */
+
+#secondary .cmd-widget-nav-menu h2.widget-title:before {
+	border-top-color: #f4b400;
+}
+
+.cmd-nav-menu-wrap {
+	width: auto;
+	min-height: auto;
+}
+
+.cmd-nav-menu-wrap ul li {
+	padding: 10px 16px;
+}
+
+.cmd-nav-menu-wrap ul li:first-of-type {
+	border-top: 0;
+}
+
+.cmd-nav-menu-wrap ul li:last-of-type {
+	border-bottom: 0;
+}
+
+.cmd-nav-menu-wrap ul li  a {
+	display: block;
+}
+
+
+/* CMD: Links widget */
+
+#secondary .cmd-widget-links h2.widget-title:before {
+	border-top-color: #f4b400;
 }
 
 /*--------------------------------------------------------------

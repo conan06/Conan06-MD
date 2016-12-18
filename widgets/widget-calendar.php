@@ -257,7 +257,7 @@ class conanMD_Calendar_Widget extends WP_Widget {
 		if ( 0 === self::$instance ) {
 			echo '<div id="cmd-calendar-wrap" class="mdl-card mdl-shadow--2dp cmd-calendar-wrap">';
 		} else {
-			echo '<div class="cmd-calendar-wrap">';
+			echo '<div class="mdl-card mdl-shadow--2dp cmd-calendar-wrap">';
 		}
 		get_mdl_calendar();
 		echo '</div>';
