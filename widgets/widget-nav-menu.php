@@ -44,7 +44,7 @@ class conanMD_Nav_Menu_Widget extends WP_Widget {
 		$nav_menu_args = array(
 			'fallback_cb' => '',
 			'menu'        => $nav_menu,
-			'container_class' => 'mdl-card mdl-shadow--2dp cmd-nav-menu-wrap'
+			'container_class' => 'mdl-card mdl-shadow--2dp cmd-widget-nav-menu-wrap'
 		);
 
 		wp_nav_menu( apply_filters( 'widget_nav_menu_args', $nav_menu_args, $nav_menu, $args, $instance ) );
