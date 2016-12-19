@@ -3351,34 +3351,49 @@ h2.widget-title {
 	display: block;
 }
 
-
 /* CMD: Links widget */
 
 #secondary .cmd-widget-links h2.widget-title:before {
 	border-top-color: #f4b400;
 }
 
-.cmd-links-wrap {
+.cmd-widget-links-wrap {
 	width: auto;
 	min-height: auto;
 }
 
-.cmd-links-wrap li:first-of-type {
+.cmd-widget-links-wrap li:first-of-type {
 	border-top: 0;
 }
 
-.cmd-links-wrap li:last-of-type {
+.cmd-widget-links-wrap li:last-of-type {
 	border-bottom: 0;
 }
 
-.cmd-links-item {
+.cmd-widget-links-item {
 	padding: 12px 16px!important;
 	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", Arial, sans-serif;
 }
 
-.cmd-links-wrap li a[rel="me"] + i {
+.cmd-widget-links-item a img {
+	box-shadow: none;
+}
+
+.cmd-widget-links-wrap li a[rel="me"] + i {
 	color: #ff9800;
 }
+
+/* CMD: Profile widget */
+
+#secondary .cmd-widget-profile h2.widget-title:before {
+	border-top-color: #0f9d58;
+}
+
+.cmd-widget-profile-wrap {
+	width: auto;
+	min-height: auto;
+}
+
 
 /*--------------------------------------------------------------
 16.0 Media

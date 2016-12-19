@@ -36,9 +36,9 @@ function mdl_walk_bookmarks( $bookmarks, $args = '' ) {
         }
 
 		if ( $r['show_description'] && '' != $desc ) {
-			$r['before'] = '<li class="mdl-list__item cmd-links-item mdl-list__item mdl-list__item--two-line">';
+			$r['before'] = '<li class="mdl-list__item cmd-widget-links-item mdl-list__item mdl-list__item--two-line">';
 		} else {
-			$r['before'] = '<li class="mdl-list__item cmd-links-item mdl-list__item">';
+			$r['before'] = '<li class="mdl-list__item cmd-widget-links-item mdl-list__item">';
 		}
 
         $output .= $r['before'];
@@ -194,7 +194,7 @@ function mdl_list_bookmarks( $args = '' ) {
             $output .= $r['title_before'];
             $output .= $catname;
             $output .= $r['title_after'];
-            $output .= "\n\t<ul class='mdl-card mdl-shadow--4dp mdl-list cmd-links-wrap'>\n";
+            $output .= "\n\t<ul class='mdl-card mdl-shadow--4dp mdl-list cmd-widget-links-wrap'>\n";
             $output .= mdl_walk_bookmarks( $bookmarks, $r );
             $output .= "\n\t</ul>\n";
             $output .= $r['category_after'] . "\n";
@@ -213,7 +213,7 @@ function mdl_list_bookmarks( $args = '' ) {
                 $output .= $r['title_before'];
                 $output .= $r['title_li'];
                 $output .= $r['title_after'];
-                $output .= "\n\t<ul class='mdl-card mdl-shadow--4dp mdl-list cmd-links-wrap'>\n";
+                $output .= "\n\t<ul class='mdl-card mdl-shadow--4dp mdl-list cmd-widget-links-wrap'>\n";
                 $output .= _walk_bookmarks( $bookmarks, $r );
                 $output .= "\n\t</ul>\n";
                 $output .= $r['category_after'] . "\n";
