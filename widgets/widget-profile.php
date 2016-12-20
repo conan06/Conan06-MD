@@ -55,37 +55,37 @@ class conanMD_Profile_Widget extends WP_Widget {
                 <div class="cmd-widget-profile-social">';
 
         if ( $user_facebook ) {
-			echo '<a id="social-facebook" target="_blank" href="' . $user_facebook . '">';
+			echo '<a id="social-facebook" target="_blank" href="https://facebook.com/' . $user_facebook . '">';
             echo '<svg class="icon icon-facebook" aria-hidden="true" role="img"><use href="#icon-facebook" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use></svg>';
             echo '<div class="mdl-tooltip" for="social-facebook">Facebook</div></a>';
             $count++;
         }
         if ( $user_twitter ) {
-			echo '<a id="social-twitter" target="_blank" href="' . $user_twitter . '">';
+			echo '<a id="social-twitter" target="_blank" href="https://twitter.com/' . $user_twitter . '">';
             echo '<svg class="icon icon-twitter" aria-hidden="true" role="img"><use href="#icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use></svg>';
             echo '<div class="mdl-tooltip" for="social-twitter">Twitter</div></a>';
             $count++;
         }
         if ( $user_weibo ) {
-			echo '<a id="social-weibo" target="_blank" href="' . $user_weibo . '">';
+			echo '<a id="social-weibo" target="_blank" href="https://weibo.com/n/' . $user_weibo . '">';
             echo '<svg class="icon icon-weibo" aria-hidden="true" role="img"><use href="#icon-weibo" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-weibo"></use></svg>';
             echo '<div class="mdl-tooltip" for="social-weibo">Weibo</div></a>';
             $count++;
         }
         if ( $user_github ) {
-			echo '<a id="social-github" target="_blank" href="' . $user_github . '">';
+			echo '<a id="social-github" target="_blank" href="https://github.com/' . $user_github . '">';
             echo '<svg class="icon icon-github" aria-hidden="true" role="img"><use href="#icon-github" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-github"></use></svg>';
             echo '<div class="mdl-tooltip" for="social-github">Github</div></a>';
             $count++;
         }
         if ( $user_instagram ) {
-			echo '<a id="social-instagram" target="_blank" href="' . $user_instagram . '">';
+			echo '<a id="social-instagram" target="_blank" href="https://instagram.com/' . $user_instagram . '">';
             echo '<svg class="icon icon-instagram" aria-hidden="true" role="img"><use href="#icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use></svg>';
             echo '<div class="mdl-tooltip" for="social-instagram">Instagram</div></a>';
             $count++;
         }
         if ( $user_googleplus && $count<5 ) {
-			echo '<a id="social-gplus" target="_blank" href="' . $user_googleplus . '">';
+			echo '<a id="social-gplus" target="_blank" href="https://plus.google.com/+' . $user_googleplus . '">';
             echo '<svg class="icon icon-google-plus" aria-hidden="true" role="img"><use href="#icon-google-plus" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-google-plus"></use></svg>';
             echo '<div class="mdl-tooltip" for="social-gplus">Google+</div></a>';
         }
@@ -172,27 +172,27 @@ class conanMD_Profile_Widget extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id('userid'); ?>" name="<?php echo $this->get_field_name('userid'); ?>" type="text" value="<?php echo esc_attr($userid); ?>" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e( 'Facebook URL:', 'ConanMD' ); ?></label>
+			<label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e( 'Facebook username:', 'ConanMD' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" value="<?php echo esc_attr($facebook); ?>" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e( 'Twitter URL:', 'ConanMD' ); ?></label>
+			<label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e( 'Twitter username:', 'ConanMD' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo esc_attr($twitter); ?>" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id('weibo'); ?>"><?php _e( 'Weibo URL:', 'ConanMD' ); ?></label>
+			<label for="<?php echo $this->get_field_id('weibo'); ?>"><?php _e( 'Sina weibo username:', 'ConanMD' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('weibo'); ?>" name="<?php echo $this->get_field_name('weibo'); ?>" type="text" value="<?php echo esc_attr($weibo); ?>" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id('github'); ?>"><?php _e( 'Github URL:', 'ConanMD' ); ?></label>
+			<label for="<?php echo $this->get_field_id('github'); ?>"><?php _e( 'Github username:', 'ConanMD' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('github'); ?>" name="<?php echo $this->get_field_name('github'); ?>" type="text" value="<?php echo esc_attr($github); ?>" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e( 'Instagram URL:', 'ConanMD' ); ?></label>
+			<label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e( 'Instagram username:', 'ConanMD' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('instagram'); ?>" name="<?php echo $this->get_field_name('instagram'); ?>" type="text" value="<?php echo esc_attr($instagram); ?>" />
 		</p>
         <p>
-			<label for="<?php echo $this->get_field_id('googleplus'); ?>"><?php _e( 'Google+ URL:', 'ConanMD' ); ?></label>
+			<label for="<?php echo $this->get_field_id('googleplus'); ?>"><?php _e( 'Google+ username:', 'ConanMD' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('googleplus'); ?>" name="<?php echo $this->get_field_name('googleplus'); ?>" type="text" value="<?php echo esc_attr($googleplus); ?>" />
 		</p>
         <p>
