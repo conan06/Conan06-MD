@@ -3156,6 +3156,7 @@ h2.widget-title {
     right: 0;
     top: 0;
 }
+
 .cmd-recommend-background {
 	width: 100%;
 }
@@ -4061,6 +4062,10 @@ object {
 		display: initial;
 	}
 
+	.cmd-recommend-background {
+		margin-top: -12%;
+	}
+
 	/* Site Branding */
 
 	.site-branding {
@@ -4882,6 +4887,10 @@ object {
 
 	.single-post .entry-content p {
 		max-width: auto;
+	}
+
+	.cmd-recommend-background {
+		margin-top: -3%;
 	}
 }
 
