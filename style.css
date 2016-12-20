@@ -2208,7 +2208,6 @@ body:not(.ConanMD-front-page) .entry-header {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-	padding-right: calc(33%);
 }
 
 .single-info-byline {
@@ -2234,7 +2233,7 @@ body:not(.ConanMD-front-page) .entry-header {
 	position: relative;
 	display: inline-block;
     padding-bottom: 17px;
-    padding-right: 50px;
+    padding-right: 20px;
     padding-top: 17px;
     width: 100%;
     font-size: 1.2rem;
@@ -3950,6 +3949,10 @@ object {
 
 	/* Blog Index, Archive, Search */
 
+	.single-info-more > div {
+		padding-right: calc(16%);
+	}
+
 	.taxonomy-description {
 		font-size: 14px;
 		font-size: 0.875rem;
@@ -4467,6 +4470,14 @@ object {
 	}
 
 	/* Posts */
+
+	.single-info-more > div {
+		padding-right: calc(33%);
+	}
+
+	.single-info-byline aside {
+		padding-right: 50px;
+	}
 
 	.single-post .entry-title,
 	.page .entry-title {

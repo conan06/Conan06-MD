@@ -90,7 +90,7 @@ function get_mdl_calendar( $initial = true, $echo = true ) {
     $calendar_caption = _x('%1$s %2$s', 'calendar caption');
 	$calendar_figure = get_theme_file_uri( '/assets/images/calendar/calendar-' . $thismonth );
     
-    $calendar_output = '<figure data-parallax="scroll" data-image-src="' . $calendar_figure . '-540x540.jpg" data-z-index="2" data-speed="0.85">
+    $calendar_output = '<figure data-parallax="scroll" data-image-src="' . $calendar_figure . '-768x768.jpg" data-z-index="2" data-speed="0.85">
     </figure>
 	<div class="cmd-calendar-contain">
 	<nav class="mdl-cell mdl-cell--12-col">';
