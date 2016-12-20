@@ -31,9 +31,16 @@ class conanMD_Profile_Widget extends WP_Widget {
 
         $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
         $user_id = empty( $instance['userid'] ) ? 1 : $instance['userid'];
+        $user_facebook = !empty( $instance['facebook'] ) ? $instance['facebook'] : '';
+        $user_twitter = !empty( $instance['twitter'] ) ? $instance['twitter'] : '';
+        $user_weibo = !empty( $instance['weibo'] ) ? $instance['weibo'] : '';
+        $user_github = !empty( $instance['github'] ) ? $instance['github'] : '';
+        $user_instagram = !empty( $instance['instagram'] ) ? $instance['instagram'] : '';
+        $user_googleplus = !empty( $instance['googleplus'] ) ? $instance['googleplus'] : '';
         $user_occupation = empty( $instance['occupation'] ) ? '' : $instance['occupation'];
         $user_description = empty( $instance['description'] ) ? get_the_author_meta( 'description', $user_id ) : $instance['description'];
         $rss = !empty( $instance['rss'] ) ? '1' : '0';
+        $count = 0;
 
 		echo $args['before_widget'];
 		if ( $title ) {
@@ -45,24 +52,45 @@ class conanMD_Profile_Widget extends WP_Widget {
 		echo '<div class="cmd-widget-profile-header" style="background-image: url('. get_header_image() .');"></div>
             <div class="cmd-widget-profile-social-wrap">
                 ' . get_avatar( get_the_author_meta( 'user_email', $user_id ), 72 ) . '
-                <div class="cmd-widget-profile-social">
-                    <svg class="icon icon-weibo" aria-hidden="true" role="img">
-                        <use href="#icon-weibo" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-weibo"></use>
-                    </svg>
-                    <svg class="icon icon-twitter" aria-hidden="true" role="img">
-                        <use href="#icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
-                    </svg>
-                    <svg class="icon icon-github" aria-hidden="true" role="img">
-                        <use href="#icon-github" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-github"></use>
-                    </svg>
-                    <svg class="icon icon-instagram" aria-hidden="true" role="img">
-                        <use href="#icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use>
-                    </svg>
-                    <svg class="icon icon-google-plus" aria-hidden="true" role="img">
-                        <use href="#icon-google-plus" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-google-plus"></use>
-                    </svg>
-                </div>
-            </div>';
+                <div class="cmd-widget-profile-social">';
+
+        if ( $user_facebook ) {
+			echo '<a id="social-facebook" target="_blank" href="' . $user_facebook . '">';
+            echo '<svg class="icon icon-facebook" aria-hidden="true" role="img"><use href="#icon-facebook" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use></svg>';
+            echo '<div class="mdl-tooltip" for="social-facebook">Facebook</div></a>';
+            $count++;
+        }
+        if ( $user_twitter ) {
+			echo '<a id="social-twitter" target="_blank" href="' . $user_twitter . '">';
+            echo '<svg class="icon icon-twitter" aria-hidden="true" role="img"><use href="#icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use></svg>';
+            echo '<div class="mdl-tooltip" for="social-twitter">Twitter</div></a>';
+            $count++;
+        }
+        if ( $user_weibo ) {
+			echo '<a id="social-weibo" target="_blank" href="' . $user_weibo . '">';
+            echo '<svg class="icon icon-weibo" aria-hidden="true" role="img"><use href="#icon-weibo" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-weibo"></use></svg>';
+            echo '<div class="mdl-tooltip" for="social-weibo">Weibo</div></a>';
+            $count++;
+        }
+        if ( $user_github ) {
+			echo '<a id="social-github" target="_blank" href="' . $user_github . '">';
+            echo '<svg class="icon icon-github" aria-hidden="true" role="img"><use href="#icon-github" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-github"></use></svg>';
+            echo '<div class="mdl-tooltip" for="social-github">Github</div></a>';
+            $count++;
+        }
+        if ( $user_instagram ) {
+			echo '<a id="social-instagram" target="_blank" href="' . $user_instagram . '">';
+            echo '<svg class="icon icon-instagram" aria-hidden="true" role="img"><use href="#icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use></svg>';
+            echo '<div class="mdl-tooltip" for="social-instagram">Instagram</div></a>';
+            $count++;
+        }
+        if ( $user_googleplus && $count<5 ) {
+			echo '<a id="social-gplus" target="_blank" href="' . $user_googleplus . '">';
+            echo '<svg class="icon icon-google-plus" aria-hidden="true" role="img"><use href="#icon-google-plus" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-google-plus"></use></svg>';
+            echo '<div class="mdl-tooltip" for="social-gplus">Google+</div></a>';
+        }
+
+        echo '</div></div>';
         
         echo '<div class="mdl-card__title cmd-widget-profile-title">';
         if ( get_the_author_meta( 'user_nicename', $user_id ) ) {

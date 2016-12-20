@@ -3432,15 +3432,17 @@ h2.widget-title {
 	line-height: 50px;
 }
 
-.cmd-widget-profile-wrap .cmd-widget-profile-social .icon {
+.cmd-widget-profile-wrap .cmd-widget-profile-social a {
 	-webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+	height: 36px;
+}
+
+.cmd-widget-profile-wrap .cmd-widget-profile-social .icon {
 	height: 20px;
 	width: 20px;
-	top: 0;
 	margin: 8px;
-	margin-top: 16px;
 	color: rgba(0,0,0,.25);
 }
 
@@ -3453,13 +3455,21 @@ h2.widget-title {
 	font-size: 18px;
 }
 
-.cmd-widget-profile-wrap .cmd-widget-profile-title .mdl-card__subtitle-text{
+.cmd-widget-profile-wrap .cmd-widget-profile-title .mdl-card__subtitle-text {
 	padding-top: 0.25em;
 	font-size: 12px;
 }
 
 .cmd-widget-profile-wrap .mdl-card__supporting-text {
 	padding-top: 0;
+}
+
+.cmd-widget-profile-wrap .mdl-card__actions a {
+	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", Arial, sans-serif;
+}
+
+.cmd-widget-profile-wrap .mdl-card__actions a i {
+	margin-right: 8px;
 }
 
 /*--------------------------------------------------------------
