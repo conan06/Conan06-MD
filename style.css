@@ -1585,6 +1585,10 @@ body {
 	z-index: 3;
 }
 
+.site-branding .wrap {
+	padding: 0 2em;
+}
+
 .site-branding a {
 	text-decoration: none;
 	-webkit-transition: opacity 0.2s;
@@ -2274,6 +2278,7 @@ body:not(.ConanMD-front-page) .entry-header {
 .single-info-with-image .single-info-wrapper {
 	position: relative;
 	margin-top: -17%;
+	z-index: 2;
 }
 
 .single-info-with-image .single-featured-image {
@@ -2285,6 +2290,8 @@ body:not(.ConanMD-front-page) .entry-header {
     margin: 0;
     overflow: hidden;
     width: 100%;
+	background-size: cover;
+    background-position: center;
 }
 
 .single-info-with-image .single-featured-image img {
@@ -3439,7 +3446,6 @@ h2.widget-title {
 
 .cmd-widget-profile-wrap .cmd-widget-profile-title {
 	text-transform: capitalize;
-	padding-bottom: 0;
 	display: block;
 }
 
@@ -3450,6 +3456,10 @@ h2.widget-title {
 .cmd-widget-profile-wrap .cmd-widget-profile-title .mdl-card__subtitle-text{
 	padding-top: 0.25em;
 	font-size: 12px;
+}
+
+.cmd-widget-profile-wrap .mdl-card__supporting-text {
+	padding-top: 0;
 }
 
 /*--------------------------------------------------------------
@@ -4035,7 +4045,7 @@ object {
 	}
 
 	.cmd-recommend-content span.cmd-recommend-summary {
-		display: block;
+		display: initial;
 	}
 
 	/* Site Branding */
@@ -4144,6 +4154,7 @@ object {
 		top: 0;
 		width: 100%;
 		z-index: 7;
+		box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 	}
 
 	.admin-bar .site-navigation-fixed.navigation-top {

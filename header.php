@@ -31,7 +31,7 @@
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top mdl-shadow--4dp">
+			<div class="navigation-top">
 				<div class="wrap">
 					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 				</div><!-- .wrap -->
@@ -50,7 +50,7 @@
 				<div class="single-header">
 					<div class="single-featured-image-wrapper">';
 			
-			echo '<div class="single-featured-image">' . get_the_post_thumbnail() . '</div>';
+			echo '<div class="single-featured-image"  data-parallax="scroll" data-image-src="' . wp_get_attachment_url( get_post_thumbnail_id($post->ID)) . '" data-z-index="1" data-speed="0.85"></div>';
 						
 			echo '</div></div>';
 				
