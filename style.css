@@ -3326,6 +3326,7 @@ h2.widget-title {
 
 .cmd-widget-tag-cloud-wrap a {
 	margin-right: 6px;
+	min-width: auto;
 }
 
 .cmd-widget-tag-cloud-wrap a span {
@@ -3470,6 +3471,10 @@ h2.widget-title {
 
 .cmd-widget-profile-wrap .mdl-card__actions a i {
 	margin-right: 8px;
+}
+
+.cmd-widget-profile-wrap .cmd-widget-profile-button {
+	color: #4285f4;
 }
 
 /*--------------------------------------------------------------
