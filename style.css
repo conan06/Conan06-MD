@@ -574,9 +574,21 @@ q {
 	quotes: "“" "”" "‘" "’";
 }
 
+blockquote:before {
+	position: initial;
+	left: 0;
+    top: 0;
+}
+
+blockquote:after {
+	margin-left: 0;
+	right: 0;
+    top: 0;
+}
+
 blockquote:before,
 blockquote:after {
-	content: "";
+	font-size: 3em;
 }
 
 :focus {
@@ -2442,13 +2454,6 @@ body:not(.ConanMD-front-page) .entry-header {
 
 /* Post Formats */
 
-.blog .format-status .entry-title,
-.archive .format-status .entry-title,
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
-}
-
 .format-quote blockquote {
 	color: #333;
 	font-size: 20px;
@@ -3386,6 +3391,16 @@ h2.widget-title {
 
 .cmd-widget-links-item a img {
 	box-shadow: none;
+}
+
+.cmd-widget-links-item div {
+	color: #fff;
+	width: 40px;
+    height: 40px;
+    background-color: #757575;
+    border-radius: 50%;
+    margin-right: 16px;
+	padding: 8px;
 }
 
 .cmd-widget-links-wrap li a[rel="me"] + i {

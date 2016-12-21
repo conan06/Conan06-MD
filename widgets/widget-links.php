@@ -96,6 +96,7 @@ function mdl_walk_bookmarks( $bookmarks, $args = '' ) {
                 $output .= "<span>$name</span>";
             }
         } else {
+            $output .= '<div><i class="material-icons">link</i></div>';
             $output .= '<span>' . $name . '</span>';
         }
 
