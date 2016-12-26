@@ -278,14 +278,24 @@ class CMD_Shortcode_Gallery {
 	 */
 	protected function slideshow( $attachments, $atts, $instance, $id ) {
 
-        function conanMD_slidershow() {
-            printf( '<script type="text/javascript" src="%s"></script>' . "\n", get_theme_file_uri( '/assets/js/modernizr.custom.js' ) );
-            printf( '<script type="text/javascript" src="%s"></script>' . "\n", get_theme_file_uri( '/assets/js/jquery.slider.js' ) );
-            printf( '<script>
-                jQuery( function() {
-                    jQuery( \'#cmd-gallery-slider\' ).cbpFWSlider();
+        function conanMD_slidershow_css() {
+	    	printf( '<link rel="stylesheet" href="%s">' . "\n", get_theme_file_uri( '/assets/css/swiper.min.css' ) );
+        }
+        add_action( 'wp_head', 'conanMD_slidershow_css' );
 
-                } );
+        function conanMD_slidershow() {
+            //printf( '<link rel="stylesheet" href="%s">' . "\n", get_theme_file_uri( '/assets/css/swiper.min.css' ) );
+            printf( '<script type="text/javascript" src="%s"></script>' . "\n", get_theme_file_uri( '/assets/js/swiper.min.js' ) );
+            printf( '<script>
+                jQuery(document).ready(function () {
+                    var swiper = new Swiper (\'.swiper-container\', {
+                    pagination: \'.swiper-pagination\',
+                    paginationClickable: true,
+                    nextButton: \'.swiper-button-next\',
+                    prevButton: \'.swiper-button-prev\',
+                    spaceBetween: 30
+                    })        
+                });
             </script>' );
         }
         add_action( 'wp_footer', 'conanMD_slidershow' );
@@ -301,8 +311,8 @@ class CMD_Shortcode_Gallery {
 			$dimensions .= sprintf( ' data-height="%d"', absint( $atts['height'] ) );
 		}
 
-        $output .= "<div id='cmd-gallery-slider' class='cmd-gallery-slider full-width'>";
-		$output .= "<ul class='galleryid-{$id}' style='width: 100%;'{$dimensions}>\n";
+        $output .= "<div id='swiper-container' class='swiper-container full-width'>";
+		$output .= "<div class='swiper-wrapper galleryid-{$id}' style='width: 100%;'{$dimensions}>\n";
 
 		foreach ( $attachments as $id => $attachment ) {
 			$alt = trim( strip_tags( get_post_meta( $id, '_wp_attachment_image_alt', true ) ) ); // Use Alt field first
@@ -318,9 +328,9 @@ class CMD_Shortcode_Gallery {
 				$image_video_url = remove_query_arg( array( 'iframe', 'width', 'height' ), $image_video_url );
 				$image_args['custom'] = "data-video='{$image_video_url}'";
 
-				$output .= "<li class='rollover-video'>\n";
+				$output .= "<div class='swiper-slide rollover-video'>\n";
 			} else {
-				$output .= "<li>\n";
+				$output .= "<div class='swiper-slide'>\n";
 			}
 
             $output .= "<figure>";
@@ -338,10 +348,16 @@ class CMD_Shortcode_Gallery {
 			}
 			$output .= "</figure>";
 
-			$output .= "</li>\n";
+			$output .= "</div>\n";
 		}
 
-		$output .= "</ul>\n";
+		$output .= "</div>\n";
+        $output .= "<nav class='swiper-pagination'></nav>\n";
+
+        $output .= "<div class='swiper-button-container'>\n";
+        $output .= "<div class='swiper-button-prev'><i class='material-icons'>arrow_back</i></div>\n";
+        $output .= "<div class='swiper-button-next'><i class='material-icons'>arrow_forward</i></div>\n";
+        $output .= "</div>\n";
 
         $output .= "</div>\n";
 
