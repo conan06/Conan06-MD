@@ -543,3 +543,8 @@ require get_parent_theme_file_path( '/inc/icon-functions.php' );
  * Customizer widgets.
  */
 require_once get_parent_theme_file_path( '/widgets/widget-functions.php' );
+
+/**
+ * Customizer shortcodes.
+ */
+require_once get_parent_theme_file_path( '/shortcodes/shortcode-functions.php' );

@@ -2124,6 +2124,7 @@ body:not(.ConanMD-front-page) .entry-header {
 .single-post #content .wrap {
 	padding-bottom: 85px;
     padding-top: 40px;
+	overflow: hidden;
 }
 
 .single-featured-image-header {
@@ -2384,6 +2385,148 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .page-links a .page-number {
 	color: #222;
+}
+
+.cmd-gallery-slider {
+	overflow: visible;
+	position: relative;
+	min-height: 600px;
+}
+
+.cmd-gallery-slider ul {
+	list-style-type: none;
+	display: -ms-flexbox;
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+	margin: 0;
+}
+
+.cmd-gallery-slider ul li {
+	transform: translateZ(0);
+	flex: 1 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: .5;
+    white-space: normal;
+    width: 100%;
+}
+
+.cmd-gallery-slider ul li > figure {
+	display: block;
+	text-align: center;
+	outline: none;
+	margin: 0;
+}
+
+.cmd-gallery-slider ul li > figure div {
+	height: 563px;
+	overflow: hidden;
+}
+
+.cmd-gallery-slider ul li > figure img {
+	border: none;
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.cmd-gallery-slider ul li > figure figcaption {
+	position: absolute;
+	margin-top: 8px;
+	margin-right: 15px;
+	padding-right: 20px;
+	text-align: right;
+	right: 0;
+    width: calc(100% - 200px);
+	font-style: normal;
+}
+
+.cmd-gallery-slider ul li.active {
+	opacity: 1;
+	transition: opacity .35s;
+}
+
+.cmd-gallery-slider nav {
+	left: 50%;
+    max-width: 1140px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100vw;
+	height: 563px;
+}
+
+.cmd-gallery-slider nav:hover span {
+	width: 70px;
+    opacity: 1;
+}
+
+.cmd-gallery-slider nav span {
+	font-size: 2rem;
+    background-color: rgba(207,216,220,.7);
+    bottom: 0;
+    color: #fff;
+    cursor: pointer;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    transition: width .35s,opacity .35s;
+    width: 0;
+	text-align: center;
+	padding-top: 263px;
+}
+
+.cmd-gallery-slider nav span i {
+	font-size: 36px;
+}
+
+.cmd-gallery-slider nav span.cmd-gallery-next {
+	left: calc(100% - 70px);
+    right: auto;
+}
+
+.cmd-gallery-slider nav span.cmd-gallery-prev {
+	left: auto;
+    right: calc(100% - 70px);
+}
+
+.cmd-gallery-dots {
+	background-color: inherit;
+    cursor: default;
+    position: absolute;
+	left: 100px;
+    top: 580px;
+	display: -ms-flexbox;
+    display: flex;
+}
+
+.cmd-gallery-dots span {
+	background-color: #cfd8dc;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 8px;
+    padding: 0;
+    transition: transform .2s,background .2s,border .2s;
+    width: 8px;
+	display: block;
+	margin-right: 4px;
+}
+
+.cmd-gallery-dots span:hover {
+	background: #999;
+}
+
+.cmd-gallery-dots span.cmd-gallery-current {
+	background-color: transparent;
+    border: 2px solid #b0bec5;
+    transform: scale(1.3);
+    z-index: 2;
 }
 
 /* Entry footer */
@@ -4516,8 +4659,14 @@ object {
 		width: 800px;
 	}
 
-	.single-post .entry-content p {
+	.single-post .entry-content > * {
 		max-width: 680px;
+	}
+
+	.single-post .entry-content > .full-width {
+		margin-left: -115px;
+		margin-right: -115px;
+		max-width: inherit;
 	}
 
 	.comments-pagination,
