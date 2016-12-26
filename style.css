@@ -4452,6 +4452,7 @@ object {
 	.has-sidebar:not(.error404) #primary {
 		float: left;
 		width: 64%;
+		overflow: hidden;
 	}
 
 	.has-sidebar #secondary {
