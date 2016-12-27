@@ -2387,6 +2387,12 @@ body:not(.ConanMD-front-page) .entry-header {
 	color: #222;
 }
 
+.single-post .entry-content > .full-width {
+    margin-left: -100px;
+    margin-right: -100px;
+    max-width: inherit;
+}
+
 .swiper-container {
 	margin-left: auto;
     margin-right: auto;
@@ -2482,7 +2488,13 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .swiper-slide figure div {
 	height: 563px;
+	background-color: #cfd8dc;
+	text-align: center;
 	overflow: hidden;
+}
+
+.swiper-slide figure div img {
+	width: 100%;
 }
 
 .swiper-slide figcaption {
@@ -4921,12 +4933,6 @@ object {
 		max-width: 680px;
 	}
 
-	.single-post .entry-content > .full-width {
-		margin-left: -100px;
-		margin-right: -100px;
-		max-width: inherit;
-	}
-
 	.comments-pagination,
 	.post-navigation {
 		clear: both;
@@ -5288,6 +5294,7 @@ object {
 		padding-left: 5vw;
 		padding-right: 5vw;
 	}
+
 }
 
 @media only screen and (max-width: 1000px) {
@@ -5310,6 +5317,28 @@ object {
 		margin: 0 auto;
 		text-align: left;
 		width: inherit;
+	}
+
+	.single-post .entry-content > .full-width {
+    	margin-left: 0;
+		margin-right: 0;
+	}
+
+	.swiper-container {
+		min-height: inherit;
+	}
+
+	.swiper-slide figure div,
+	.swiper-button-container {
+		height: 56.25vw;
+	}
+
+	.swiper-button-container {
+		display: none;
+	}
+
+	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+		bottom: 0;
 	}
 
 	.single-post .entry-content p {

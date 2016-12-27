@@ -278,23 +278,6 @@ class CMD_Shortcode_Gallery {
 	 */
 	protected function slideshow( $attachments, $atts, $instance, $id ) {
 
-        function conanMD_slidershow() {
-            //printf( '<link rel="stylesheet" href="%s">' . "\n", get_theme_file_uri( '/assets/css/swiper.min.css' ) );
-            printf( '<script type="text/javascript" src="%s"></script>' . "\n", get_theme_file_uri( '/assets/js/swiper.min.js' ) );
-            printf( '<script>
-                jQuery(document).ready(function () {
-                    var swiper = new Swiper (\'.swiper-container\', {
-                    pagination: \'.swiper-pagination\',
-                    paginationClickable: true,
-                    nextButton: \'.swiper-button-next\',
-                    prevButton: \'.swiper-button-prev\',
-                    spaceBetween: 30
-                    })        
-                });
-            </script>' );
-        }
-        add_action( 'wp_footer', 'conanMD_slidershow' );
-
 		$output = "\n";
 
 		$dimensions = '';

@@ -371,6 +371,18 @@ add_action( 'wp_head', 'conanMD_colors_css_wrap' );
  */
 function conanMD_parallax() {
 	printf( '<script type="text/javascript" src="%s"></script>' . "\n", get_theme_file_uri( '/assets/js/parallax.min.js' ) );
+	printf( '<script type="text/javascript" src="%s"></script>' . "\n", get_theme_file_uri( '/assets/js/swiper.min.js' ) );
+    printf( '<script>
+        jQuery(document).ready(function () {
+            var swiper = new Swiper (\'.swiper-container\', {
+            pagination: \'.swiper-pagination\',
+            paginationClickable: true,
+            nextButton: \'.swiper-button-next\',
+            prevButton: \'.swiper-button-prev\',
+            spaceBetween: 30
+            })        
+        });
+    </script>' );
 }
 add_action( 'wp_footer', 'conanMD_parallax' );
 
