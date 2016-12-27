@@ -278,11 +278,6 @@ class CMD_Shortcode_Gallery {
 	 */
 	protected function slideshow( $attachments, $atts, $instance, $id ) {
 
-        function conanMD_slidershow_css() {
-	    	printf( '<link rel="stylesheet" href="%s">' . "\n", get_theme_file_uri( '/assets/css/swiper.min.css' ) );
-        }
-        add_action( 'wp_head', 'conanMD_slidershow_css' );
-
         function conanMD_slidershow() {
             //printf( '<link rel="stylesheet" href="%s">' . "\n", get_theme_file_uri( '/assets/css/swiper.min.css' ) );
             printf( '<script type="text/javascript" src="%s"></script>' . "\n", get_theme_file_uri( '/assets/js/swiper.min.js' ) );
