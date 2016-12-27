@@ -2494,7 +2494,8 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .swiper-slide figure div img {
-	width: 100%;
+	width: auto;
+    height: 100%;
 }
 
 .swiper-slide figcaption {
@@ -5325,7 +5326,7 @@ object {
 	}
 
 	.swiper-container {
-		min-height: inherit;
+		min-height: 54.5vw;
 	}
 
 	.swiper-slide figure div,
