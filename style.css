@@ -5345,7 +5345,7 @@ object {
 	}
 
 	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
-		top: calc(56.25vw + 6px);
+		top: calc(56.25vw - 30px);
     	left: 5vw;
 	}
 
