@@ -5339,7 +5339,8 @@ object {
 	}
 
 	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
-		bottom: 0;
+		top: calc(56.25vw - 30px);
+    	left: 10px;
 	}
 
 	.single-post .entry-content p {
