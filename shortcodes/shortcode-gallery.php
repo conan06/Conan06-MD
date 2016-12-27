@@ -130,6 +130,8 @@ class CMD_Shortcode_Gallery {
 
 		switch ( $atts['mode'] ) {
 			case 'slideshow':
+				add_action( 'wp_footer', 'conanMD_swiper' );
+
 				$output = $this->slideshow( $attachments, $atts, $instance, $id );
 				break;
 			default:
