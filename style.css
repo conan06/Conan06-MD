@@ -2501,7 +2501,7 @@ body:not(.ConanMD-front-page) .entry-header {
 .swiper-slide figcaption {
 	opacity: 0;
 	transition: opacity .35s;
-	margin-right: 20px;
+	margin-right: 0;
     margin-top: 8px;
     text-align: right;
     font-style: normal;
@@ -4953,6 +4953,10 @@ object {
 	.nav-next,
 	.post-navigation .nav-next {
 		margin-top: 0;
+	}
+
+	.swiper-slide figcaption {
+		margin-right: 20px;
 	}
 
 	/* Blog, archive, search */
