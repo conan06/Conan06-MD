@@ -4133,27 +4133,35 @@ button.swiper-pagination-bullet {
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
-.wp-audio-shortcode .mejs-layers .mejs-poster {
-	width: 72px!important;
-    height: 72px!important;
-    background: #e0e0e0 url(assets/images/player/ic_audiotrack.svg) no-repeat;
-	background-size: 67%;
-    background-position: 45% 45%;
-    display: block!important;
-}
-
-.wp-audio-shortcode .mejs-controls {
-	width: calc(100% - 72px)!important;
-    margin-left: 72px!important;
-}
-
 .wp-audio-shortcode .mejs-controls .mejs-playpause-button {
 	width: 54px;
 	height: 54px;
 	margin-top: 10px;
-    margin-left: -52px;
+    margin-left: -27px;
     left: 50%;
     position: absolute;
+}
+
+.wp-audio-shortcode .mejs-controls .mejs-playpause-button:before,
+.wp-audio-shortcode .mejs-controls .mejs-playpause-button:after {
+	content: '';
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: 14px;
+	opacity: .35;
+}
+
+.wp-audio-shortcode .mejs-controls .mejs-playpause-button:before {
+	background: transparent url(assets/images/player/ic_skip_previous.svg) no-repeat;
+	left: 0;
+    margin-left: -30px;
+}
+
+.wp-audio-shortcode .mejs-controls .mejs-playpause-button:after {
+	background: transparent url(assets/images/player/ic_skip_next.svg) no-repeat;
+	right: 0;
+    margin-right: -30px;
 }
 
 .wp-audio-shortcode .mejs-controls .mejs-playpause-button button {
@@ -4238,6 +4246,11 @@ button.swiper-pagination-bullet {
 .wp-audio-shortcode .mejs-controls .mejs-duration-container span {
 	color: #000;
 	font-weight: 700;
+}
+
+.wp-audio-shortcode .mejs-controls .mejs-volume-button,
+.wp-audio-shortcode .mejs-controls .mejs-horizontal-volume-slider {
+	display: none;
 }
 
 .wp-audio-shortcode .mejs-controls .mejs-volume-button {
@@ -4551,6 +4564,22 @@ button.swiper-pagination-bullet {
 
 	.gallery-columns-4 .gallery-item {
 		max-width: 25%;
+	}
+	
+	/* Audio Player */
+
+	.wp-audio-shortcode .mejs-layers .mejs-poster {
+		width: 72px!important;
+		height: 72px!important;
+		background: #e0e0e0 url(assets/images/player/ic_audiotrack.svg) no-repeat;
+		background-size: 67%;
+		background-position: 45% 45%;
+		display: block!important;
+	}
+
+	.wp-audio-shortcode .mejs-controls {
+		width: calc(100% - 72px)!important;
+		margin-left: 72px!important;
 	}
 }
 
@@ -5340,6 +5369,17 @@ button.swiper-pagination-bullet {
 
 	.gallery-columns-9 .gallery-item {
 		max-width: 11.11%;
+	}
+
+	/* Audio Player */
+
+	.wp-audio-shortcode .mejs-controls .mejs-playpause-button {
+	    margin-left: -52px;
+	}
+
+	.wp-audio-shortcode .mejs-controls .mejs-volume-button,
+	.wp-audio-shortcode .mejs-controls .mejs-horizontal-volume-slider {
+		display: block!important;
 	}
 }
 
