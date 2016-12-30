@@ -4621,7 +4621,26 @@ button.swiper-pagination-bullet {
 	.has-sidebar:not(.error404) #primary {
 		float: left;
 		width: 64%;
+	}
+
+	.has-sidebar #primary .entry-gallery {
 		overflow: hidden;
+	}
+
+	.has-sidebar #primary .entry-gallery .swiper-container {
+		height: 390px;
+	}
+
+	.has-sidebar #primary .entry-gallery .swiper-slide figure div {
+		height: 360px;
+	}
+
+	.has-sidebar #primary .entry-gallery .swiper-pagination {
+		left: 2px;
+	}
+
+	.has-sidebar #primary .entry-gallery .swiper-button-container {
+		display: none;
 	}
 
 	.has-sidebar #secondary {
