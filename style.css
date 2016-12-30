@@ -4628,7 +4628,7 @@ button.swiper-pagination-bullet {
 	}
 
 	.has-sidebar #primary .entry-gallery .swiper-container {
-		height: 390px;
+		min-height: 390px;
 	}
 
 	.has-sidebar #primary .entry-gallery .swiper-slide figure div {
