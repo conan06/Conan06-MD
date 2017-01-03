@@ -1344,7 +1344,6 @@ a:hover .nav-title,
 
 .navigation-top a {
 	color: #222;
-	font-weight: 600;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
 }
@@ -1417,10 +1416,6 @@ a:hover .nav-title,
 	display: block;
 	padding: 0.5em 0;
 	text-decoration: none;
-}
-
-.main-navigation a:hover {
-	color: #767676;
 }
 
 /* Menu toggle */
@@ -4766,11 +4761,7 @@ button.swiper-pagination-bullet {
 	.navigation-top .wrap {
 		max-width: 1440px;
 		/* The font size is 14px here and we need 50px padding in ems */
-		padding: 0.75em 3.4166666666667em;
-	}
-
-	.navigation-top nav {
-		margin-left: -1.25em;
+		padding: 0;
 	}
 
 	.site-navigation-fixed.navigation-top {
@@ -4826,44 +4817,44 @@ button.swiper-pagination-bullet {
 	}
 
 	.main-navigation a {
-		padding: 1em 1.25em;
+		padding: 1.75em 1.25em;
+		border-bottom: 2px solid transparent;
+	}
+
+	.navigation-top .current-menu-item > a,
+	.navigation-top .current_page_item > a {
+		border-bottom-color: #438afe;
+		color: inherit;
 	}
 
 	.main-navigation ul ul {
 		background: #fff;
-		border: 1px solid #bbb;
+		display: block;
+    	padding: 8px 0;
+		list-style: none;
 		left: -999em;
-		padding: 0;
+		padding: 8px 0;
 		position: absolute;
 		top: 100%;
 		z-index: 99999;
+		border-radius: 2px;
+		/* 3dp for sub-menu without fixed */
+		box-shadow:0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.2),0 1px 8px 0 rgba(0,0,0,.12);
 	}
 
-	.main-navigation ul li.menu-item-has-children:before,
-	.main-navigation ul li.menu-item-has-children:after,
-	.main-navigation ul li.page_item_has_children:before,
-	.main-navigation ul li.page_item_has_children:after {
-		border-style: solid;
-		border-width: 0 6px 6px;
-		content: "";
-		display: none;
-		height: 0;
-		position: absolute;
-		right: 1em;
-		bottom: -1px;
-		width: 0;
-		z-index: 100000;
+	.site-navigation-fixed .main-navigation ul ul {
+		/* 6dp for sub-menu */
+		box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
 	}
 
-	.main-navigation ul li.menu-item-has-children.focus:before,
-	.main-navigation ul li.menu-item-has-children:hover:before,
-	.main-navigation ul li.menu-item-has-children.focus:after,
-	.main-navigation ul li.menu-item-has-children:hover:after,
-	.main-navigation ul li.page_item_has_children.focus:before,
-	.main-navigation ul li.page_item_has_children:hover:before,
-	.main-navigation ul li.page_item_has_children.focus:after,
-	.main-navigation ul li.page_item_has_children:hover:after {
-		display: block;
+	.main-navigation ul#top-menu > li > ul {
+		/* 2dp for menu without fixed */
+		box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+	}
+
+	.site-navigation-fixed .main-navigation ul#top-menu > li > ul {
+		/* 5dp for menu */
+		box-shadow: 0 5px 8px 0 rgba(0,0,0,.14), 0 2px 12px -1px rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.2);
 	}
 
 	.main-navigation ul li.menu-item-has-children:before,
@@ -4884,8 +4875,10 @@ button.swiper-pagination-bullet {
 	}
 
 	.main-navigation ul ul a {
-		padding: 0.75em 1.25em;
-		width: 16em;
+		width: 14em;
+		padding: 0 16px;
+    	height: 48px;
+    	line-height: 48px;
 	}
 
 	.main-navigation li li {
@@ -4895,7 +4888,7 @@ button.swiper-pagination-bullet {
 
 	.main-navigation li li:hover,
 	.main-navigation li li.focus {
-		background: #767676;
+		background: #eee;
 	}
 
 	.main-navigation li li a {
@@ -4903,21 +4896,9 @@ button.swiper-pagination-bullet {
 		transition: color 0.3s ease-in-out;
 	}
 
-	.main-navigation li li.focus > a,
-	.main-navigation li li:focus > a,
-	.main-navigation li li:hover > a,
-	.main-navigation li li a:hover,
-	.main-navigation li li a:focus,
-	.main-navigation li li.current_page_item a:hover,
-	.main-navigation li li.current-menu-item a:hover,
-	.main-navigation li li.current_page_item a:focus,
-	.main-navigation li li.current-menu-item a:focus {
-		color: #fff;
-	}
-
 	.main-navigation ul li:hover > ul,
 	.main-navigation ul li.focus > ul {
-		left: 0.5em;
+		left: 0;
 		right: auto;
 	}
 
@@ -4960,6 +4941,11 @@ button.swiper-pagination-bullet {
 
 	.site-header .site-navigation-fixed .menu-scroll-down {
 		display: none;
+	}
+
+	.main-navigation ul#top-menu > li > a {
+		padding: 1.75em 0;
+		margin-right: 2.5em;
 	}
 
 	/* Scroll down arrow */
@@ -5422,11 +5408,8 @@ button.swiper-pagination-bullet {
 	/* Layout */
 
 	/* Navigation */
-	.navigation-top .wrap {
-		padding: 0.75em 2em;
-	}
-
 	.navigation-top nav {
+		margin: 0 2em;
 		margin-left: 0;
 	}
 
