@@ -5400,6 +5400,21 @@ button.swiper-pagination-bullet {
 	.wp-audio-shortcode .mejs-controls .mejs-horizontal-volume-slider {
 		display: block!important;
 	}
+
+	/* Video Player */
+	.wp-video {
+		margin-left: -100px;
+		margin-right: -100px;
+		max-width: 100%!important;
+		width: 1000px!important;
+		height: 562.5px!important;
+	}
+
+	.wp-video-shortcode,
+	.wp-video-shortcode .me-plugin {
+		width: 1000px!important;
+		height: 562.5px!important;
+	}
 }
 
 @media screen and ( min-width: 67em ) {
@@ -5516,9 +5531,16 @@ button.swiper-pagination-bullet {
 		width: inherit;
 	}
 
-	.single-post .entry-content > .full-width {
+	.single-post .entry-content > .full-width,
+	.wp-video {
     	margin-left: -5vw;
     	margin-right: -5vw;
+	}
+
+	.wp-video-shortcode,
+	.wp-video-shortcode .me-plugin {
+		width: 100vw!important;
+		height: 56.25vw!important;
 	}
 
 	.swiper-container {
