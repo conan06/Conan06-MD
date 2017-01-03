@@ -1340,6 +1340,47 @@ a:hover .nav-title,
 	max-width: 1000px;
 	padding: 0;
 	background: #fff;
+	display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.navigation-top .wrap .site-logo {
+	background-color: #f5f5f5;
+	position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    height: 66px;
+    margin-right: 28px;
+    opacity: 0;
+    overflow: hidden;
+    transition: visibility .5s,width .35s,opacity .35s;
+    visibility: hidden;
+    width: 0;
+}
+
+.site-navigation-fixed.navigation-top .wrap .site-logo {
+	opacity: 1;
+    visibility: visible;
+    width: 66px;
+}
+
+.navigation-top .wrap .site-logo figure {
+	margin: 0;
+	display: -ms-flexbox;
+    display: flex;
+	bottom: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 66px;
+}
+
+.navigation-top .wrap .site-logo figure img {
+	margin: auto;
+    width: 26px;
 }
 
 .navigation-top a {
@@ -1416,6 +1457,17 @@ a:hover .nav-title,
 	display: block;
 	padding: 0.5em 0;
 	text-decoration: none;
+}
+
+.navigation-more-menu-wrapper {
+	box-sizing: border-box;
+	position: absolute;
+	right: 6px;
+	padding-top: 16px;
+}
+
+body.home .navigation-more-menu-wrapper  {
+	display: none;
 }
 
 /* Menu toggle */
@@ -3985,6 +4037,7 @@ object {
 .swiper-container-horizontal > .swiper-pagination-bullets {
 	bottom: 10px;
 	left: 0;
+	top: calc(56.25vw - 30px);
 }
 
 .swiper-pagination-bullet {
@@ -4492,7 +4545,9 @@ button.swiper-pagination-bullet {
 	}
 
 	/* Site Branding */
-
+	.site-navigation-fixed.navigation-top .navigation-more-menu-wrapper {
+		display: block;
+	}
 	.site-branding {
 		padding: 3em 0;
 	}
@@ -4559,6 +4614,10 @@ button.swiper-pagination-bullet {
 
 	.gallery-columns-4 .gallery-item {
 		max-width: 25%;
+	}
+
+	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+		top: auto;
 	}
 	
 	/* Audio Player */
@@ -4822,7 +4881,8 @@ button.swiper-pagination-bullet {
 	}
 
 	.main-navigation a {
-		padding: 1.75em 1.25em;
+		height: 66px;
+    	padding-top: 20px;
 		border-bottom: 2px solid transparent;
 	}
 
@@ -4949,7 +5009,6 @@ button.swiper-pagination-bullet {
 	}
 
 	.main-navigation ul#top-menu > li > a {
-		padding: 1.75em 0;
 		margin-right: 2.5em;
 	}
 
@@ -5532,7 +5591,7 @@ button.swiper-pagination-bullet {
 	}
 
 	.swiper-container {
-		min-height: inherit;
+		min-height: 60.5vw;
 	}
 
 	.swiper-slide figure div,
@@ -5545,7 +5604,6 @@ button.swiper-pagination-bullet {
 	}
 
 	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
-		top: calc(56.25vw - 30px);
     	left: 5vw;
 	}
 
