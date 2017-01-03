@@ -4618,23 +4618,28 @@ button.swiper-pagination-bullet {
 		width: 64%;
 	}
 
-	.has-sidebar #primary .entry-gallery {
+	.has-sidebar #primary .entry-gallery,
+	.has-sidebar #primary .entry-content {
 		overflow: hidden;
 	}
 
-	.has-sidebar #primary .entry-gallery .swiper-container {
+	.has-sidebar #primary .entry-gallery .swiper-container,
+	.has-sidebar #primary .entry-content .swiper-container {
 		min-height: 390px;
 	}
 
-	.has-sidebar #primary .entry-gallery .swiper-slide figure div {
+	.has-sidebar #primary .entry-gallery .swiper-slide figure div,
+	.has-sidebar #primary .entry-content .swiper-slide figure div {
 		height: 360px;
 	}
 
-	.has-sidebar #primary .entry-gallery .swiper-pagination {
+	.has-sidebar #primary .entry-gallery .swiper-pagination,
+	.has-sidebar #primary .entry-content .swiper-pagination {
 		left: 2px;
 	}
 
-	.has-sidebar #primary .entry-gallery .swiper-button-container {
+	.has-sidebar #primary .entry-gallery .swiper-button-container,
+	.has-sidebar #primary .entry-content .swiper-button-container {
 		display: none;
 	}
 
