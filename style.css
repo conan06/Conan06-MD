@@ -4883,12 +4883,19 @@ button.swiper-pagination-bullet {
 	.main-navigation a {
 		height: 66px;
     	padding-top: 20px;
+	}
+
+	#top-menu > li > a {
 		border-bottom: 2px solid transparent;
+	}
+
+	#top-menu > li.current-menu-item > a,
+	#top-menu > li.current_page_item > a {
+		border-bottom-color: #438afe;
 	}
 
 	.navigation-top .current-menu-item > a,
 	.navigation-top .current_page_item > a {
-		border-bottom-color: #438afe;
 		color: inherit;
 	}
 
