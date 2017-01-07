@@ -952,7 +952,6 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"],
 input[type="number"],
 input[type="tel"],
 input[type="range"],
@@ -1463,15 +1462,72 @@ a:hover .nav-title,
 .navigation-more-menu-wrapper {
 	box-sizing: border-box;
 	position: absolute;
-	right: 8px;
-	padding-top: 16px;
+	right: 0;
 }
 
-.navigation-more-menu-wrapper .mdl-menu__container .material-icons {
+.navigation-more-menu-container {
+	position: relative;
+	box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.navigation-more-menu-container .mdl-menu__container .material-icons {
 	vertical-align: middle;
     margin-right: 16px;
 	display: none;
 	color: #757575;
+}
+
+.navigation-more-menu-container .mdl-textfield {
+	padding: 0;
+}
+
+.navigation-more-menu-container .mdl-textfield--expandable {
+    height: 32px;
+}
+
+.navigation-more-menu-container .mdl-textfield .search-form {
+	position: inherit;
+	height: 66px;
+}
+
+.navigation-more-menu-container .mdl-textfield .search-form:after {
+	content: '';
+	clear: both;
+}
+
+.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder {
+	padding-top: 16px;
+}
+
+.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder label {
+	margin-bottom: 0;
+}
+
+/*.navigation-more-menu-container .mdl-textfield.is-focused {
+	width: 1440px;
+    right: -40px;
+    background-color: #fff;
+    height: 66px;
+}
+
+.navigation-more-menu-container .mdl-textfield.is-focused > label {
+	left: 16px;
+}
+
+.navigation-more-menu-container .mdl-textfield.is-focused > .mdl-textfield__expandable-holder {
+	width: calc(100% - 66px - 48px);
+    margin-left: 0;
+    left: 64px;
+	max-width: 1350px;
+    position: absolute;
+}*/
+
+.navigation-more-menu-container #navigation-more-menu {
+	margin-top: 16px;
+	margin-right: 8px;
 }
 
 /* Menu toggle */
