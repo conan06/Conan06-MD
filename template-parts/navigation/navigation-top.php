@@ -50,7 +50,10 @@ function mdl_loginout($redirect = '', $echo = true) {
 </a><!-- .site-logo -->
 
 <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Top Menu', 'ConanMD' ); ?>">
-	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><?php echo conanMD_get_svg( array( 'icon' => 'bars' ) ); echo conanMD_get_svg( array( 'icon' => 'close' ) ); _e( 'Menu', 'ConanMD' ); ?></button>
+	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+		<i class="material-icons icon-bars">menu</i>
+		<i class="material-icons icon-close">arrow_back</i>
+	</button>
 	<?php wp_nav_menu( array(
 		'theme_location' => 'top',
 		'menu_id'        => 'top-menu',
@@ -62,6 +65,11 @@ function mdl_loginout($redirect = '', $echo = true) {
 </nav><!-- #site-navigation -->
 
 <div class="navigation-more-menu-wrapper">
+
+	<button id="navigation-search" class="mdl-button mdl-js-button mdl-button--icon">
+		<i class="material-icons">search</i>
+	</button>
+
 	<button id="navigation-more-menu" class="mdl-button mdl-js-button mdl-button--icon">
 		<i class="material-icons">more_vert</i>
 	</button>
