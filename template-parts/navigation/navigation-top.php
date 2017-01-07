@@ -57,7 +57,7 @@ function mdl_loginout($redirect = '', $echo = true) {
 	) ); ?>
 
 	<?php if ( ( conanMD_is_frontpage() || ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
-		<a href="#content" class="menu-scroll-down"><?php echo conanMD_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll down to content', 'ConanMD' ); ?></span></a>
+		<a href="#content" class="mdl-button mdl-js-button mdl-button--icon menu-scroll-down"><i class="material-icons">arrow_downward</i><span class="screen-reader-text"><?php _e( 'Scroll down to content', 'ConanMD' ); ?></span></a>
 	<?php endif; ?>
 </nav><!-- #site-navigation -->
 

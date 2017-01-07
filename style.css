@@ -1463,17 +1463,13 @@ a:hover .nav-title,
 .navigation-more-menu-wrapper {
 	box-sizing: border-box;
 	position: absolute;
-	right: 6px;
+	right: 8px;
 	padding-top: 16px;
 }
 
-.navigation-more-menu-wrapper .material-icons {
+.navigation-more-menu-wrapper .mdl-menu__container .material-icons {
 	vertical-align: middle;
     margin-right: 8px;
-}
-
-.site-header .navigation-more-menu-wrapper  {
-	display: none;
 }
 
 /* Menu toggle */
@@ -4552,10 +4548,6 @@ button.swiper-pagination-bullet {
 
 	/* Site Branding */
 
-	.site-navigation-fixed.navigation-top .navigation-more-menu-wrapper {
-		display: block;
-	}
-
 	.site-branding {
 		padding: 3em 0;
 	}
@@ -4859,6 +4851,15 @@ button.swiper-pagination-bullet {
 
 	/* Main Navigation */
 
+	.navigation-top .navigation-more-menu-wrapper {
+		display: none;
+	}
+
+	.site-navigation-fixed.navigation-top .navigation-more-menu-wrapper,
+	body:not(.home) .navigation-top .navigation-more-menu-wrapper {
+		display: block;
+	}
+
 	.js .menu-toggle,
 	.js .dropdown-toggle {
 		display: none;
@@ -5037,9 +5038,8 @@ button.swiper-pagination-bullet {
 
 	.site-header .menu-scroll-down {
 		display: block;
-		padding: 1em;
 		position: absolute;
-		right: 0;
+		right: 8px;
 	}
 
 	.site-header .menu-scroll-down .icon {
@@ -5048,14 +5048,10 @@ button.swiper-pagination-bullet {
 		transform: rotate(90deg);
 	}
 
-	.site-header .menu-scroll-down {
-		color: #fff;
-		top: 2em;
-	}
-
 	.site-header .navigation-top .menu-scroll-down {
-		color: #767676;
-		top: 0.7em;
+		top: 16px;
+		padding: 0;
+		height: 32px;
 	}
 
 	.menu-scroll-down:focus {
