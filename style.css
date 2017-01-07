@@ -1351,8 +1351,8 @@ a:hover .nav-title,
 	position: relative;
     display: -ms-flexbox;
     display: flex;
-    height: 66px;
-    margin-right: 28px;
+    height: 0;
+    margin-right: 0;
     opacity: 0;
     overflow: hidden;
     transition: visibility .5s,width .35s,opacity .35s;
@@ -1398,6 +1398,7 @@ a:hover .nav-title,
 	clear: both;
 	display: block;
 	height: 100%;
+	width: 100%;
 }
 
 .main-navigation ul {
@@ -1466,7 +1467,12 @@ a:hover .nav-title,
 	padding-top: 16px;
 }
 
-body.home .navigation-more-menu-wrapper  {
+.navigation-more-menu-wrapper .material-icons {
+	vertical-align: middle;
+    margin-right: 8px;
+}
+
+.site-header .navigation-more-menu-wrapper  {
 	display: none;
 }
 
@@ -1483,8 +1489,8 @@ body.home .navigation-more-menu-wrapper  {
 	font-size: 0.875rem;
 	font-weight: 800;
 	line-height: 1.5;
-	margin: 1px auto 2px;
-	padding: 1em;
+	margin: 0;
+    padding: 23px;
 	text-shadow: none;
 }
 
@@ -4545,9 +4551,11 @@ button.swiper-pagination-bullet {
 	}
 
 	/* Site Branding */
+
 	.site-navigation-fixed.navigation-top .navigation-more-menu-wrapper {
 		display: block;
 	}
+
 	.site-branding {
 		padding: 3em 0;
 	}
@@ -4668,6 +4676,11 @@ button.swiper-pagination-bullet {
 		margin: 0 auto;
 	}
 
+	.navigation-top .wrap .site-logo {
+		height: 66px;
+		margin-right: 28px;
+	}
+
 	.page-header {
 		padding-top: 2.5em;
 	}
@@ -4713,6 +4726,7 @@ button.swiper-pagination-bullet {
 	}
 
 	/* Widget */
+
 	.header-widget {
 		display: block;
 		margin-bottom: -2.25em;
