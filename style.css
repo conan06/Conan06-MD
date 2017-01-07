@@ -1470,6 +1470,7 @@ a:hover .nav-title,
 .navigation-more-menu-wrapper .mdl-menu__container .material-icons {
 	vertical-align: middle;
     margin-right: 8px;
+	color: #757575;
 }
 
 /* Menu toggle */
@@ -1485,8 +1486,8 @@ a:hover .nav-title,
 	font-size: 0.875rem;
 	font-weight: 800;
 	line-height: 1.5;
-	margin: 0;
-    padding: 18px;
+	margin: 16px;
+    padding: 0;
 	text-shadow: none;
 }
 
@@ -1498,18 +1499,6 @@ a:hover .nav-title,
 
 .main-navigation.toggled-on ul.nav-menu {
 	display: block;
-}
-
-.menu-toggle:hover,
-.menu-toggle:focus {
-	background-color: transparent;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-}
-
-.menu-toggle .icon {
-	margin-right: 0.5em;
-	top: -2px;
 }
 
 .toggled-on .menu-toggle .icon-bars,

@@ -50,7 +50,7 @@ function mdl_loginout($redirect = '', $echo = true) {
 </a><!-- .site-logo -->
 
 <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Top Menu', 'ConanMD' ); ?>">
-	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+	<button class="mdl-button mdl-js-button mdl-button--icon menu-toggle" aria-controls="top-menu" aria-expanded="false">
 		<i class="material-icons icon-bars">menu</i>
 		<i class="material-icons icon-close">arrow_back</i>
 	</button>
