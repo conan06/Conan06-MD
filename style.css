@@ -1469,7 +1469,8 @@ a:hover .nav-title,
 
 .navigation-more-menu-wrapper .mdl-menu__container .material-icons {
 	vertical-align: middle;
-    margin-right: 8px;
+    margin-right: 16px;
+	display: none;
 	color: #757575;
 }
 
@@ -4832,6 +4833,14 @@ button.swiper-pagination-bullet {
 
 	.admin-bar .site-navigation-fixed.navigation-top {
 		top: 32px;
+	}
+
+	.navigation-more-menu-wrapper .mdl-menu__container .mdl-menu {
+		min-width: 192px;
+	}
+
+	.navigation-more-menu-wrapper .mdl-menu__container .material-icons {
+		display: inline-block;
 	}
 
 	/* Main Navigation */
