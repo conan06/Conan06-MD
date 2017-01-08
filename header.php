@@ -14,6 +14,17 @@
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
+<!--
+                                         
+	  .oooooo.                                                 .oooo.       .ooo   
+	 d8P'  `Y8b                                               d8P'`Y8b    .88'     
+	888           .ooooo.  ooo. .oo.    .oooo.   ooo. .oo.   888    888  d88'      
+	888          d88' `88b `888P"Y88b  `P  )88b  `888P"Y88b  888    888 d888P"Ybo. 
+	888          888   888  888   888   .oP"888   888   888  888    888 Y88[   ]88 
+	`88b    ooo  888   888  888   888  d8(  888   888   888  `88b  d88' `Y88   88P 
+	 `Y8bood8P'  `Y8bod8P' o888o o888o `Y888""8o o888o o888o  `Y8bd8P'   `88bod8'  
+ 
+-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">

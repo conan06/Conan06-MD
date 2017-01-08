@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
-function mdl_register( $echo = true ) {
+function conanMD_register( $echo = true ) {
     if ( ! is_user_logged_in() ) {
         if ( get_option('users_can_register') )
             $link = '<a class="mdl-menu__item" href="' . esc_url( wp_registration_url() ) . '"><i class="material-icons">person_add</i>' . __('Register') . '</a>';
@@ -29,7 +29,7 @@ function mdl_register( $echo = true ) {
     }
 }
 
-function mdl_loginout($redirect = '', $echo = true) {
+function conanMD_loginout($redirect = '', $echo = true) {
     if ( ! is_user_logged_in() )
         $link = '<a class="mdl-menu__item mdl-menu__item--full-bleed-divider" href="' . esc_url( wp_login_url($redirect) ) . '"><i class="material-icons">person</i>' . __('Log in') . '</a>';
     else
@@ -88,8 +88,8 @@ function mdl_loginout($redirect = '', $echo = true) {
 		</button>
 
 		<div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="navigation-more-menu">
-			<?php mdl_register(); ?>
-			<?php mdl_loginout(); ?>
+			<?php conanMD_register(); ?>
+			<?php conanMD_loginout(); ?>
 			<a class="mdl-menu__item" href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>"><i class="material-icons">rss_feed</i><?php _e('Entries <abbr title="Really Simple Syndication">RSS</abbr>'); ?></a>
 			<a class="mdl-menu__item" href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>"><i class="material-icons">rss_feed</i><?php _e('Comments <abbr title="Really Simple Syndication">RSS</abbr>'); ?></a>
 		</div>

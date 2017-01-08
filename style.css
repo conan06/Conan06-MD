@@ -1473,6 +1473,10 @@ a:hover .nav-title,
     display: flex;
 }
 
+.navigation-more-menu-container > * {
+	margin-right: 8px;
+}
+
 .navigation-more-menu-container .mdl-menu__container .material-icons {
 	vertical-align: middle;
     margin-right: 16px;
@@ -1527,7 +1531,11 @@ a:hover .nav-title,
 
 .navigation-more-menu-container #navigation-more-menu {
 	margin-top: 16px;
-	margin-right: 8px;
+}
+
+.navigation-more-menu-container .mdl-menu__container abbr {
+	border-bottom: 0;
+	cursor: inherit;
 }
 
 /* Menu toggle */
