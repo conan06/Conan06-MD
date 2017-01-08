@@ -1214,9 +1214,6 @@ a:active {
 .entry-meta a,
 .page-links a,
 .page-links a .page-number,
-.entry-footer a,
-.entry-footer .cat-links a,
-.entry-footer .tags-links a,
 .edit-link a,
 .post-navigation a,
 .logged-in-as a,
@@ -1265,12 +1262,6 @@ a .nav-title,
 .entry-meta a:hover,
 .page-links a:focus .page-number,
 .page-links a:hover .page-number,
-.entry-footer a:focus,
-.entry-footer a:hover,
-.entry-footer .cat-links a:focus,
-.entry-footer .cat-links a:hover,
-.entry-footer .tags-links a:focus,
-.entry-footer .tags-links a:hover,
 .post-navigation a:focus,
 .post-navigation a:hover,
 .pagination a:not(.prev):not(.next):focus,
@@ -2287,6 +2278,11 @@ body:not(.ConanMD-front-page) .entry-header {
     margin-right: 6px;
 }
 
+.single-info-category:not(:last-of-type):hover:after {
+	color: #222;
+	cursor: default;
+}
+
 .single-info-date {
 	float: right;
 	font-size: 85%;
@@ -2329,6 +2325,10 @@ body:not(.ConanMD-front-page) .entry-header {
     min-width: 60px;
     margin: 0;
     margin-right: 16px;
+}
+
+.single-info-byline figure a {
+	display: block;
 }
 
 .single-info-byline figure img {
@@ -2421,7 +2421,7 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .single-format-image .single-info:not(.single-info-with-image),
 .single-format-image .single-info-with-image .single-info-wrapper {
-	background-color: #f5564a;
+	background-color: #26A69A;
 }
 
 .single-format-video .single-info:not(.single-info-with-image),
@@ -2431,27 +2431,27 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .single-format-quote .single-info:not(.single-info-with-image),
 .single-format-quote .single-info-with-image .single-info-wrapper {
-	background-color: #754cbe;
+	background-color: #9575CD;
 }
 
 .single-format-link .single-info:not(.single-info-with-image),
 .single-format-link .single-info-with-image .single-info-wrapper {
-	background-color: #a132b4;
+	background-color: #BA68C8;
 }
 
 .single-format-gallery .single-info:not(.single-info-with-image),
 .single-format-gallery .single-info-with-image .single-info-wrapper {
-	background-color: #ffcf3e;
+	background-color: #FFF176;
 }
 
 .single-format-audio .single-info:not(.single-info-with-image),
 .single-format-audio .single-info-with-image .single-info-wrapper {
-	background-color: #146BB5;
+	background-color: #4FC3F7;
 }
 
 .single-format-chat .single-info:not(.single-info-with-image),
 .single-format-chat .single-info-with-image .single-info-wrapper {
-	background-color: #eeeeee;
+	background-color: #f5564a;
 }
 
 .single-format-status .single-info:not(.single-info-with-image),
@@ -2499,40 +2499,21 @@ body:not(.ConanMD-front-page) .entry-header {
 /* Entry footer */
 
 .entry-footer {
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
-	margin-top: 2em;
 	padding: 2em 0;
 }
 
-.entry-footer .cat-links,
 .entry-footer .tags-links {
 	display: block;
 	font-size: 11px;
 	font-size: 0.6875rem;
 	font-weight: 800;
 	letter-spacing: 0.1818em;
-	padding-left: 2.5em;
 	position: relative;
 	text-transform: uppercase;
 }
 
-.entry-footer .cat-links + .tags-links {
-	margin-top: 1em;
-}
-
-.entry-footer .cat-links a,
 .entry-footer .tags-links a {
 	color: #333;
-}
-
-.entry-footer .cat-links .icon,
-.entry-footer .tags-links .icon {
-	color: #767676;
-	left: 0;
-	margin-right: 0.5em;
-	position: absolute;
-	top: 2px;
 }
 
 .entry-footer .edit-link {
@@ -5234,7 +5215,8 @@ button.swiper-pagination-bullet {
 		font-size: 1.625rem;
 	}
 
-	.single-post .entry-content {
+	.single-post .entry-content,
+	.single-post .entry-footer {
 		margin: 0 auto;
 		text-align: left;
 		width: 800px;

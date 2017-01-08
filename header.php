@@ -85,7 +85,9 @@
 
 			echo '</div></div><div class="single-info-more"><div><div class="single-info-byline">';
 
-			echo '<figure>' . get_avatar( get_the_author_meta( 'user_email', $post->post_author ), 60 ) . '</figure>';
+			echo '<figure><a class="single-info-author-link" id="author-link" href="'. esc_url( get_author_posts_url( $post->post_author ) ) . '" rel="author">' . get_avatar( get_the_author_meta( 'user_email', $post->post_author ), 60 ) . '</a></figure>';
+
+			echo '<div class="mdl-tooltip" data-mdl-for="author-link">' . __( 'View all posts', 'ConanMD' ) . '</div>';
 
 			echo '<aside><span class="single-info-author">';
 
@@ -122,7 +124,9 @@
 
 			echo '</div></div><div class="single-info-more"><div><div class="single-info-byline">';
 			
-			echo '<figure>' . get_avatar( get_the_author_meta( 'user_email', $post->post_author ), 60 ) . '</figure>';
+			echo '<figure><a class="single-info-author-link" id="author-link" href="'. esc_url( get_author_posts_url( $post->post_author ) ) . '" rel="author">' . get_avatar( get_the_author_meta( 'user_email', $post->post_author ), 60 ) . '</a></figure>';
+
+			echo '<div class="mdl-tooltip" data-mdl-for="author-link">' . __( 'View all posts', 'ConanMD' ) . '</div>';
 
 			echo '<aside><span class="single-info-author">';
 

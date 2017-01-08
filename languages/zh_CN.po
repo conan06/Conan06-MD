@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - ConanMD package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-12-20 20:04+0800\n"
+"PO-Revision-Date: 2017-01-08 20:11+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -391,6 +391,10 @@ msgstr "个人介绍："
 #: widgets/widget-profile.php:208
 msgid "Show RSS Feed button"
 msgstr "显示RSS订阅按钮"
+
+#: header.php:90 header.php:129
+msgid "View all posts"
+msgstr "查看所有文章"
 
 #: header.php:125
 msgid "<a href=\"%s\">Setting your description.</a>"
