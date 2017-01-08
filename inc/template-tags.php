@@ -61,14 +61,8 @@ if ( ! function_exists( 'conanMD_entry_footer' ) ) :
  */
 function conanMD_entry_footer() {
 
-	/* translators: used between list items, there is a space after the comma */
-	$separate_meta = __( ', ', 'ConanMD' );
-
-	// Get Categories for posts.
-	$categories_list = get_the_category_list( $separate_meta );
-
 	// Get Tags for posts.
-	$tags_list = get_the_tag_list( '', $separate_meta );
+	$tags_list = get_the_tag_list();
 
 	// We don't want to output .entry-footer if it will be empty, so make sure its not.
 	if ( ( ( conanMD_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() ) {
@@ -76,16 +70,11 @@ function conanMD_entry_footer() {
 		echo '<footer class="entry-footer">';
 
 			if ( 'post' === get_post_type() ) {
-				if ( ( $categories_list && conanMD_categorized_blog() ) || $tags_list ) {
+				if ( $tags_list ) {
 					echo '<span class="cat-tags-links">';
 
-						// Make sure there's more than one category before displaying.
-						if ( $categories_list && conanMD_categorized_blog() ) {
-							echo '<span class="cat-links">' . conanMD_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'ConanMD' ) . '</span>' . $categories_list . '</span>';
-						}
-
 						if ( $tags_list ) {
-							echo '<span class="tags-links">' . conanMD_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'ConanMD' ) . '</span>' . $tags_list . '</span>';
+							conanMD_entry_tags();
 						}
 
 					echo '</span>';
@@ -112,13 +101,11 @@ if ( ! function_exists( 'conanMD_edit_link' ) ) :
 function conanMD_edit_link() {
 
 	$link = edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'ConanMD' ),
-			get_the_title()
-		),
+		'<i class="material-icons">edit</i>',
 		'<span class="edit-link">',
-		'</span>'
+		'</span>',
+		'',
+		'mdl-button mdl-js-button mdl-button--icon'
 	);
 
 	return $link;
@@ -179,6 +166,22 @@ function conanMD_categorized_blog() {
 	}
 
 	return $category_count > 1;
+}
+
+/**
+ * Prints HTML with category and tags for current post.
+ * 
+ */
+function conanMD_entry_tags() {
+	$posttags = get_the_tags();
+	if ($posttags) {
+		printf( '<div class="tags-links"><span class="screen-reader-text">%s</span>', __( 'Tags', 'ConanMD' ) );
+		foreach ( $posttags as $tag ) {
+			echo '<a class="entry-tag-item" href="' . esc_url( get_category_link( $tag->term_id ) ) . '">
+				  <span class="mdl-chip"><span class="mdl-chip__text">' . esc_html( $tag->name ) . '</span></span></a>';
+		}
+		printf( '</div>' );
+	}
 }
 
 
