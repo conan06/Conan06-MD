@@ -509,21 +509,38 @@ i {
 }
 
 blockquote {
-	color: #666;
-	font-size: 18px;
-	font-size: 1.125rem;
-	font-style: italic;
-	line-height: 1.7;
+	font-style: normal;
+	position: relative;
+	margin: 0 0 1.5em;
+	background: #fff;
+    color: #222222;
+    padding: 20px;
+    padding-left: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    border-radius: 2px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+blockquote p {
 	margin: 0;
-	overflow: hidden;
-	padding: 0;
+    color: rgba(0,0,0,.54);
+    line-height: 1.5;
+	font-size: 20px;
+    overflow: hidden;
+    width: 80%;
+    text-indent: 0!important;
 }
 
 blockquote cite {
-	display: block;
-	font-style: normal;
-	font-weight: 600;
-	margin-top: 0.5em;
+	font-size: 16px;
+    margin-top: 10px;
+    display: block;
+    font-weight: 200;
+	color: #000;
+    opacity: 0.8;
 }
 
 address {
@@ -575,21 +592,25 @@ q {
 	quotes: "“" "”" "‘" "’";
 }
 
-blockquote:before {
-	position: initial;
-	left: 0;
-    top: 0;
-}
-
-blockquote:after {
-	margin-left: 0;
-	right: 0;
-    top: 0;
-}
-
 blockquote:before,
 blockquote:after {
-	font-size: 3em;
+	font-family: Georgia, serif;
+	color: rgba(238, 238, 238, 0.8);
+    font-weight: normal;
+	position: absolute;
+}
+blockquote:before {
+    top: 0;
+    left: 10px;
+    font-size: 5em;
+    
+}
+
+blockquote:after {
+    bottom: -110px;
+    line-height: 100px;
+    right: -32px;
+    font-size: 25em;
 }
 
 :focus {
@@ -2443,7 +2464,7 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .single-format-gallery .single-info:not(.single-info-with-image),
 .single-format-gallery .single-info-with-image .single-info-wrapper {
-	background-color: #FFF176;
+	background-color: #f4b400;
 }
 
 .single-format-audio .single-info:not(.single-info-with-image),
