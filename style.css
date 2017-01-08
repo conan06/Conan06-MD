@@ -513,11 +513,9 @@ blockquote {
 	position: relative;
 	margin: 0 0 1.5em;
 	background: #fff;
-    color: #222222;
-    padding: 20px;
+    padding: 18px;
     padding-left: 50px;
-    font-size: 16px;
-    font-weight: 400;
+	font-size: 16px;
     overflow: hidden;
     border-radius: 2px;
     box-sizing: border-box;
@@ -526,20 +524,20 @@ blockquote {
 
 blockquote p {
 	margin: 0;
-    color: rgba(0,0,0,.54);
+    color: rgba(0,0,0,.72);
     line-height: 1.5;
-	font-size: 20px;
+	font-size: 18px;
     overflow: hidden;
     width: 80%;
     text-indent: 0!important;
 }
 
 blockquote cite {
-	font-size: 16px;
+	font-size: 14px;
     margin-top: 10px;
     display: block;
     font-weight: 200;
-	color: #000;
+	color: rgba(0,0,0,.54);
     opacity: 0.8;
 }
 
@@ -714,7 +712,8 @@ html[lang^="zh-"] h2,
 html[lang^="zh-"] h3,
 html[lang^="zh-"] h4,
 html[lang^="zh-"] h5,
-html[lang^="zh-"] h6 {
+html[lang^="zh-"] h6,
+html[lang^="zh-"] blockquote p {
 	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", Arial, sans-serif;
 }
 
