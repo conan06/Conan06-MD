@@ -2486,6 +2486,16 @@ body:not(.ConanMD-front-page) .entry-header {
     max-width: 1000px;
 }
 
+.entry-content > h3 {
+    padding: 0;
+}
+
+.entry-content > h3:before {
+	content: '#';
+	color: #FF4081;
+	margin-right: 8px;
+}
+
 /* Entry footer */
 
 .entry-footer {
