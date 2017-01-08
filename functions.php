@@ -563,3 +563,40 @@ require_once get_parent_theme_file_path( '/widgets/widget-functions.php' );
  * Customizer shortcodes.
  */
 require_once get_parent_theme_file_path( '/shortcodes/shortcode-functions.php' );
+
+
+/* Menu icon */
+
+function conanMD_register( $echo = true ) {
+    if ( ! is_user_logged_in() ) {
+        if ( get_option('users_can_register') )
+            $link = '<a class="mdl-menu__item" href="' . esc_url( wp_registration_url() ) . '"><i class="material-icons">person_add</i>' . __('Register') . '</a>';
+        else
+            $link = '';
+    } elseif ( current_user_can( 'read' ) ) {
+        $link = '<a class="mdl-menu__item" href="' . admin_url() . '"><i class="material-icons">settings</i>' . __('Site Admin') . '</a>';
+    } else {
+        $link = '';
+    }
+
+    $link = apply_filters( 'register', $link );
+ 
+    if ( $echo ) {
+        echo $link;
+    } else {
+        return $link;
+    }
+}
+
+function conanMD_loginout($redirect = '', $echo = true) {
+    if ( ! is_user_logged_in() )
+        $link = '<a class="mdl-menu__item mdl-menu__item--full-bleed-divider" href="' . esc_url( wp_login_url($redirect) ) . '"><i class="material-icons">person</i>' . __('Log in') . '</a>';
+    else
+        $link = '<a class="mdl-menu__item mdl-menu__item--full-bleed-divider" href="' . esc_url( wp_logout_url($redirect) ) . '"><i class="material-icons">exit_to_app</i>' . __('Log out') . '</a>';
+ 
+    if ( $echo ) {
+        echo apply_filters( 'loginout', $link );
+    } else {
+        return apply_filters( 'loginout', $link );
+    }
+}
