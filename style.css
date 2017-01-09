@@ -2174,7 +2174,6 @@ body.page:not(.ConanMD-front-page) .entry-title {
 .archive .site-main > article,
 .search .site-main > article {
 	padding-bottom: 2em;
-	overflow: hidden;
 }
 
 body:not(.ConanMD-front-page) .entry-header {
@@ -2210,6 +2209,66 @@ body:not(.ConanMD-front-page) .entry-header {
 	color: #666;
 	font-size: 13px;
 	font-size: 0.8125rem;
+}
+
+.blog .site-main > article .mdl-card,
+.archive .site-main > article .mdl-card,
+.search .site-main > article .mdl-card {
+	width: 100%;
+	min-height: auto;
+	overflow: hidden;
+}
+
+.blog .site-main > article .mdl-card figure,
+.archive .site-main > article .mdl-card figure,
+.search .site-main > article .mdl-card figure {
+	margin: 0;
+	max-height: 50.625vw;
+    overflow: hidden;
+}
+
+.blog .site-main > article .mdl-card figure + header,
+.archive .site-main > article .mdl-card figure + header,
+.search .site-main > article .mdl-card figure + header {
+	padding-top: 24px;
+}
+
+.blog .site-main > article .mdl-card header.mdl-card__title,
+.archive .site-main > article .mdl-card header.mdl-card__title,
+.search .site-main > article .mdl-card header.mdl-card__title {
+	display: block;
+}
+
+.blog .site-main > article .mdl-card header .mdl-card__subtitle-text,
+.archive .site-main > article .mdl-card header .mdl-card__subtitle-text,
+.search .site-main > article .mdl-card header .mdl-card__subtitle-text {
+	padding: 0;
+}
+
+.blog .site-main > article .mdl-card header .mdl-card__subtitle-text a,
+.archive .site-main > article .mdl-card header .mdl-card__subtitle-text a,
+.search .site-main > article .mdl-card header .mdl-card__subtitle-text a {
+	color: rgba(0,0,0,.54);
+}
+
+.blog .site-main > article .mdl-card header + .mdl-card__supporting-text,
+.archive .site-main > article .mdl-card header + .mdl-card__supporting-text,
+.search .site-main > article .mdl-card header + .mdl-card__supporting-text {
+	padding-top: 0;
+}
+
+.blog .site-main > article .mdl-card header + .mdl-card__supporting-text .link-more,
+.archive .site-main > article .mdl-card header + .mdl-card__supporting-text .link-more,
+.search .site-main > article .mdl-card header + .mdl-card__supporting-text .link-more {
+	display: none;
+}
+
+.blog .site-main > article .mdl-card .mdl-card__actions,
+.archive .site-main > article .mdl-card .mdl-card__actions,
+.search .site-main > article .mdl-card .mdl-card__actions {
+	display: flex;
+	box-sizing:border-box;
+	align-items: center;
 }
 
 /* More tag */
