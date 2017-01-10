@@ -2220,9 +2220,9 @@ body:not(.ConanMD-front-page) .entry-header {
 	overflow: hidden;
 }
 
-.blog .site-main > article .mdl-card figure,
-.archive .site-main > article .mdl-card figure,
-.search .site-main > article .mdl-card figure {
+.blog .site-main > article .mdl-card .mdl-card__media,
+.archive .site-main > article .mdl-card .mdl-card__media,
+.search .site-main > article .mdl-card .mdl-card__media {
 	margin: 0;
 	background-color: #fff;
 	max-height: 50.625vw;
@@ -2344,6 +2344,22 @@ body:not(.ConanMD-front-page) .entry-header {
 .archive .site-main > article .mdl-card .mdl-card-media-info .mdl-card--border,
 .search .site-main > article .mdl-card .mdl-card-media-info .mdl-card--border {
 	border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* content-gallery */
+
+.blog .site-main > article .mdl-card .entry-gallery .swiper-slide,
+.archive .site-main > article .mdl-card .entry-gallery .swiper-slide,
+.search .site-main > article .mdl-card .entry-gallery .swiper-slide {
+	height: 50.625vw;
+}
+
+.blog .site-main > article .mdl-card .entry-gallery .swiper-pagination,
+.archive .site-main > article .mdl-card .entry-gallery .swiper-pagination,
+.search .site-main > article .mdl-card .entry-gallery .swiper-pagination {
+	position: relative;
+    bottom: 30px;
+	left: 0;
 }
 
 /* More tag */
@@ -4890,7 +4906,8 @@ button.swiper-pagination-bullet {
 
 	.has-sidebar #primary .entry-gallery .swiper-container,
 	.has-sidebar #primary .entry-content .swiper-container {
-		min-height: 390px;
+		height: 360px;
+    	min-height: inherit;
 	}
 
 	.has-sidebar #primary .entry-gallery .swiper-slide figure div,
