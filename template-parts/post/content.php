@@ -13,19 +13,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		if ( is_sticky() && is_home() ) :
-			echo conanMD_get_svg( array( 'icon' => 'thumb-tack' ) );
-		endif;
-	?>
 
 	<?php if ( is_home() ) : ?>
 		<div class="mdl-card mdl-shadow--2dp">
 
 			<?php if ( '' !== get_the_post_thumbnail() ) : ?>
 				<figure class="mdl-card__media">
-					<?php the_post_thumbnail( 'ConanMD-featured-image' ); ?>
-				</figure><!-- .post-thumbnail -->
+					<a href="<?php the_permalink(); ?>">
+						<?php the_post_thumbnail( 'ConanMD-featured-image' ); ?>
+					</a>
+				</figure>
 			<?php endif; ?>
 
 			<header class="mdl-card__title">
@@ -46,7 +43,7 @@
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'ConanMD-featured-image' ); ?>
 			</a>
-		</div><!-- .post-thumbnail -->
+		</div>
 	<?php endif; ?>
 
 	<?php if ( is_home() ) : ?>
@@ -63,13 +60,15 @@
 		</div>
 
 		<div class="mdl-card__actions mdl-card--border">
-			<a href="<?php the_permalink(); ?>" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+			<a href="<?php the_permalink(); ?>" class="mdl-button mdl-js-button mdl-js-ripple-effect">
 				<?php printf(
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ConanMD' ),
 					get_the_title()
 				) ?>
 			</a>
 			<div class="mdl-layout-spacer"></div>
+			<?php conanMD_comment_link(); ?>
+			<?php conanMD_view_link(); ?>
 			<?php conanMD_edit_link(); ?>
 		</div>
 
@@ -94,6 +93,12 @@
 		</div><!-- .entry-content -->
 
 	<?php endif; ?>
+
+	<?php
+		if ( is_sticky() && is_home() ) :
+			echo '<div class="mdl-card__menu"><i class="material-icons">whatshot</i></div>';
+		endif;
+	?>
 
 	<?php if ( is_home() ) : ?>
 		</div>

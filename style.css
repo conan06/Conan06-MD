@@ -2244,6 +2244,8 @@ body:not(.ConanMD-front-page) .entry-header {
 .archive .site-main > article .mdl-card header .mdl-card__subtitle-text,
 .search .site-main > article .mdl-card header .mdl-card__subtitle-text {
 	padding: 0;
+	padding-top: 8px;
+	font-size: 12px;
 }
 
 .blog .site-main > article .mdl-card header .mdl-card__subtitle-text a,
@@ -2256,6 +2258,7 @@ body:not(.ConanMD-front-page) .entry-header {
 .archive .site-main > article .mdl-card header + .mdl-card__supporting-text,
 .search .site-main > article .mdl-card header + .mdl-card__supporting-text {
 	padding-top: 0;
+	color: rgba(0,0,0,.68);
 }
 
 .blog .site-main > article .mdl-card header + .mdl-card__supporting-text .link-more,
@@ -2264,12 +2267,82 @@ body:not(.ConanMD-front-page) .entry-header {
 	display: none;
 }
 
+.blog .site-main > article .mdl-card figure ~ .mdl-card__menu,
+.archive .site-main > article .mdl-card figure ~ .mdl-card__menu,
+.search .site-main > article .mdl-card figure ~ .mdl-card__menu {
+	color: #fff;
+}
+
 .blog .site-main > article .mdl-card .mdl-card__actions,
 .archive .site-main > article .mdl-card .mdl-card__actions,
 .search .site-main > article .mdl-card .mdl-card__actions {
 	display: flex;
 	box-sizing:border-box;
 	align-items: center;
+}
+
+.blog .site-main > article .mdl-card .mdl-card__actions span b,
+.archive .site-main > article .mdl-card .mdl-card__actions span b,
+.search .site-main > article .mdl-card .mdl-card__actions span b {
+	padding-left: 2px;
+	padding-right: 8px;
+	font-size: 14px;
+    font-weight: normal;
+}
+
+.blog .site-main > article .mdl-card .mdl-card__actions > a.mdl-button,
+.archive .site-main > article .mdl-card .mdl-card__actions > a.mdl-button,
+.search .site-main > article .mdl-card .mdl-card__actions > a.mdl-button {
+	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", Arial, sans-serif;
+	color: #4285f4;	
+}
+
+/* content-image */
+
+.blog .site-main > article .mdl-card .mdl-card-media-info,
+.archive .site-main > article .mdl-card .mdl-card-media-info,
+.search .site-main > article .mdl-card .mdl-card-media-info {
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.35);
+    color: #fff;
+}
+
+.blog .site-main > article .mdl-card .mdl-card-media-info header,
+.archive .site-main > article .mdl-card .mdl-card-media-info header,
+.search .site-main > article .mdl-card .mdl-card-media-info header {
+	padding-top: 24px;
+}
+
+.blog .site-main > article .mdl-card .mdl-card-media-info header a,
+.archive .site-main > article .mdl-card .mdl-card-media-info header a,
+.search .site-main > article .mdl-card .mdl-card-media-info header a,
+.blog .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions > a,
+.archive .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions > a,
+.search .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions > a, 
+.blog .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions span a:hover,
+.archive .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions span a:hover,
+.search .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions span a:hover {
+	color: #fff;
+}
+
+.blog .site-main > article .mdl-card .mdl-card-media-info header .mdl-card__subtitle-text a,
+.archive .site-main > article .mdl-card .mdl-card-media-info header .mdl-card__subtitle-text a,
+.search .site-main > article .mdl-card .mdl-card-media-info header .mdl-card__subtitle-text a,
+.blog .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions span a,
+.archive .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions span a,
+.search .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions span a,
+.blog .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions span b,
+.archive .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions span b,
+.search .site-main > article .mdl-card .mdl-card-media-info .mdl-card__actions span b {
+	color: rgba(255,255,255,.64);
+}
+
+.blog .site-main > article .mdl-card .mdl-card-media-info .mdl-card--border,
+.archive .site-main > article .mdl-card .mdl-card-media-info .mdl-card--border,
+.search .site-main > article .mdl-card .mdl-card-media-info .mdl-card--border {
+	border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* More tag */

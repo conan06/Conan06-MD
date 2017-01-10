@@ -112,6 +112,69 @@ function conanMD_edit_link() {
 }
 endif;
 
+
+if ( ! function_exists( 'conanMD_format_link' ) ) :
+/**
+ * Returns an accessibility-friendly link to show post format.
+ *
+ */
+function conanMD_format_link() {
+
+	$link = edit_post_link(
+		'<i class="material-icons">archive</i>',
+		'<span class="format-link">',
+		'</span>',
+		'',
+		'mdl-button mdl-js-button mdl-button--icon'
+	);
+
+	return $link;
+}
+endif;
+
+
+if ( ! function_exists( 'conanMD_comment_link' ) ) :
+/**
+ * Returns an accessibility-friendly link to show comments.
+ *
+ */
+function conanMD_comment_link() {
+
+	echo '<span class="comment-link">';
+	echo '<a class="mdl-button mdl-js-button mdl-button--icon" href="' . get_the_permalink() . '#comments">';
+	echo '<i class="material-icons">comment</i>';
+	echo '</a>';
+	echo '<b>' . get_comments_number() . '</b>';
+	echo '</span>';
+
+}
+endif;
+
+
+if ( ! function_exists( 'conanMD_view_link' ) ) :
+/**
+ * Returns an accessibility-friendly link to show view counts.
+ *
+ */
+function conanMD_view_link() {
+
+	if ( function_exists('the_views') ) : 
+
+		$post_views = intval( post_custom( 'views' ) );
+
+		echo '<span class="view-link">';
+		echo '<a class="mdl-button mdl-js-button mdl-button--icon" href="' . get_the_permalink() . '">';
+		echo '<i class="material-icons">visibility</i>';
+		echo '</a>';
+		echo '<b>' . $post_views . '</b>';
+		echo '</span>';
+
+	else : 
+		echo '';
+	endif;
+}
+endif;
+
 /**
  * Display a front page section.
  *

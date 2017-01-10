@@ -12,41 +12,88 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		if ( is_sticky() && is_home() ) :
-			echo conanMD_get_svg( array( 'icon' => 'thumb-tack' ) );
-		endif;
-	?>
 
 	<?php if ( is_home() ) : ?>
-		<header class="entry-header">
-			<?php
-				if ( 'post' === get_post_type() ) :
-					echo '<div class="entry-meta">';
-						if ( is_single() ) :
-							conanMD_posted_on();
-						else :
-							echo conanMD_time_link();
-							conanMD_edit_link();
-						endif;
-					echo '</div><!-- .entry-meta -->';
-				endif;
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			?>
-		</header><!-- .entry-header -->
+		<div class="mdl-card mdl-shadow--2dp">
+
+			<?php if ( '' !== get_the_post_thumbnail() ) : ?>
+				<figure class="mdl-card__media">
+					<a href="<?php the_permalink(); ?>">
+						<?php the_post_thumbnail( 'ConanMD-featured-image' ); ?>
+					</a>
+				</figure>
+
+				<div class="mdl-card-media-info">
+			<?php endif; ?>
+
+			<header class="mdl-card__title">
+				<?php the_title( '<h2 class="mdl-card__title-text"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+				<?php 
+					if ( 'post' === get_post_type() ) :
+						echo '<h6 class="mdl-card__subtitle-text">';
+						echo conanMD_time_link();
+						echo '</h6>';
+					endif;
+				?>
+			</header>
+
 	<?php endif; ?>
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+	<?php if ( '' !== get_the_post_thumbnail() && ! ( is_single() || is_home() ) ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'ConanMD-featured-image' ); ?>
 			</a>
-		</div><!-- .post-thumbnail -->
+		</div>
 	<?php endif; ?>
 
-	<div class="entry-content">
+	<?php if ( is_home() && '' === get_the_post_thumbnail() ) : ?>
 
-		<?php if ( is_single() || '' === get_the_post_thumbnail() ) :
+		<div class="mdl-card__supporting-text">
+			<?php 
+				$post_excerpt = get_the_excerpt();
+				if ( '' != $post_excerpt ) :
+					echo $post_excerpt;
+				else :
+					the_content();
+				endif;
+			?>
+		</div>
+
+		<div class="mdl-card__actions mdl-card--border">
+			<a href="<?php the_permalink(); ?>" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+				<?php printf(
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ConanMD' ),
+					get_the_title()
+				) ?>
+			</a>
+			<div class="mdl-layout-spacer"></div>
+			<?php conanMD_comment_link(); ?>
+			<?php conanMD_view_link(); ?>
+			<?php conanMD_edit_link(); ?>
+		</div>
+
+	<?php elseif ( is_home() && '' !== get_the_post_thumbnail() ) : ?>
+
+			<div class="mdl-card__actions mdl-card--border">
+				<a href="<?php the_permalink(); ?>" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+					<?php printf(
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ConanMD' ),
+						get_the_title()
+					) ?>
+				</a>
+				<div class="mdl-layout-spacer"></div>
+				<?php conanMD_comment_link(); ?>
+				<?php conanMD_view_link(); ?>
+				<?php conanMD_edit_link(); ?>
+			</div>
+
+		</div><!-- .mdl-card-media-info -->
+
+	<?php else : ?>
+
+		<div class="entry-content">
+			<?php
 
 			// Only show content if is a single post, or if there's no featured image.
 			/* translators: %s: Name of current post */
@@ -61,12 +108,20 @@
 				'link_before' => '<span class="page-number">',
 				'link_after'  => '</span>',
 			) );
+		?>
+		</div><!-- .entry-content -->
 
-		endif; ?>
+	<?php endif; ?>
 
-	</div><!-- .entry-content -->
+	<?php
+		if ( is_sticky() && is_home() ) :
+			echo '<div class="mdl-card__menu"><i class="material-icons">whatshot</i></div>';
+		endif;
+	?>
 
-	<?php if ( is_single() ) : ?>
+	<?php if ( is_home() ) : ?>
+		</div>
+	<?php elseif ( is_single() ) : ?>
 		<?php conanMD_entry_footer(); ?>
 	<?php endif; ?>
 
