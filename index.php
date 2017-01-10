@@ -50,8 +50,8 @@ get_header(); ?>
 					endwhile;
 
 					the_posts_pagination( array(
-						'prev_text' => conanMD_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'ConanMD' ) . '</span>',
-						'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'ConanMD' ) . '</span>' . conanMD_get_svg( array( 'icon' => 'arrow-right' ) ),
+						'prev_text' => '<i class="material-icons">arrow_back</i><span class="screen-reader-text">' . __( 'Previous page', 'ConanMD' ) . '</span>',
+						'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'ConanMD' ) . '</span><i class="material-icons">arrow_forward</i>',
 						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'ConanMD' ) . ' </span>',
 					) );
 

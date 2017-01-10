@@ -13,7 +13,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( is_home() ) : ?>
+	<?php if ( ! is_single() ) : ?>
 		<div class="mdl-card mdl-shadow--2dp">
 
 			<?php 
@@ -42,15 +42,7 @@
 			</header>
 	<?php endif; ?>
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() && ! get_post_gallery() ) : ?>
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'ConanMD-featured-image' ); ?>
-			</a>
-		</div><!-- .post-thumbnail -->
-	<?php endif; ?>
-
-	<?php if ( is_home() ) : ?>
+	<?php if ( ! is_single() ) : ?>
 
 		<div class="mdl-card__supporting-text">
 			<?php 
@@ -104,9 +96,9 @@
 		endif;
 	?>
 	
-	<?php if ( is_home() ) : ?>
+	<?php if ( ! is_single() ) : ?>
 		</div>
-	<?php elseif ( is_single() ) : ?>
+	<?php else : ?>
 		<?php conanMD_entry_footer(); ?>
 	<?php endif; ?>
 

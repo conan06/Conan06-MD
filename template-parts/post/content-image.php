@@ -13,7 +13,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( is_home() ) : ?>
+	<?php if ( ! is_single() ) : ?>
 		<div class="mdl-card mdl-shadow--2dp">
 
 			<?php if ( '' !== get_the_post_thumbnail() ) : ?>
@@ -39,15 +39,7 @@
 
 	<?php endif; ?>
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! ( is_single() || is_home() ) ) : ?>
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'ConanMD-featured-image' ); ?>
-			</a>
-		</div>
-	<?php endif; ?>
-
-	<?php if ( is_home() && '' === get_the_post_thumbnail() ) : ?>
+	<?php if ( ! is_single() && '' === get_the_post_thumbnail() ) : ?>
 
 		<div class="mdl-card__supporting-text">
 			<?php 
@@ -73,7 +65,7 @@
 			<?php conanMD_edit_link(); ?>
 		</div>
 
-	<?php elseif ( is_home() && '' !== get_the_post_thumbnail() ) : ?>
+	<?php elseif ( ! is_single() && '' !== get_the_post_thumbnail() ) : ?>
 
 			<div class="mdl-card__actions mdl-card--border">
 				<a href="<?php the_permalink(); ?>" class="mdl-button mdl-js-button mdl-js-ripple-effect">
@@ -119,9 +111,9 @@
 		endif;
 	?>
 
-	<?php if ( is_home() ) : ?>
+	<?php if ( ! is_single() ) : ?>
 		</div>
-	<?php elseif ( is_single() ) : ?>
+	<?php else : ?>
 		<?php conanMD_entry_footer(); ?>
 	<?php endif; ?>
 
