@@ -17,7 +17,7 @@
 		<div class="mdl-card mdl-shadow--2dp">
 
 			<?php if ( '' !== get_the_post_thumbnail() ) : ?>
-				<figure class="mdl-card__media">
+				<figure class="mdl-card__media entry-image">
 					<a href="<?php the_permalink(); ?>">
 						<?php the_post_thumbnail( 'ConanMD-featured-image' ); ?>
 					</a>

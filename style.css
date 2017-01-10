@@ -2300,6 +2300,12 @@ body:not(.ConanMD-front-page) .entry-header {
 
 /* content-image */
 
+.blog .site-main > article .mdl-card .entry-image,
+.archive .site-main > article .mdl-card .entry-image,
+.search .site-main > article .mdl-card .entry-image {
+	max-height: inherit;
+}
+
 .blog .site-main > article .mdl-card .mdl-card-media-info,
 .archive .site-main > article .mdl-card .mdl-card-media-info,
 .search .site-main > article .mdl-card .mdl-card-media-info {
