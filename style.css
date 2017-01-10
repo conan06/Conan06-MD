@@ -2350,7 +2350,10 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .blog .site-main > article .mdl-card .entry-gallery .swiper-slide,
 .archive .site-main > article .mdl-card .entry-gallery .swiper-slide,
-.search .site-main > article .mdl-card .entry-gallery .swiper-slide {
+.search .site-main > article .mdl-card .entry-gallery .swiper-slide,
+.blog .site-main > article .mdl-card .entry-gallery .swiper-slide figure div,
+.archive .site-main > article .mdl-card .entry-gallery .swiper-slide figure div,
+.search .site-main > article .mdl-card .entry-gallery .swiper-slide figure div {
 	height: 50.625vw;
 }
 
