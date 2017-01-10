@@ -2360,6 +2360,7 @@ body:not(.ConanMD-front-page) .entry-header {
 	position: relative;
     bottom: 30px;
 	left: 0;
+	top: auto;
 }
 
 /* More tag */
