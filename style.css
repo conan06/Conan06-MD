@@ -1528,7 +1528,7 @@ a:hover .nav-title,
 
 .navigation-more-menu-container .mdl-textfield.is-focused .mdl-textfield__expandable-holder,
 .navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
-	max-width: calc( 100vw - 112px);
+	max-width: inherit;
 	padding-left: 16px;
 }
 
@@ -4763,6 +4763,7 @@ button.swiper-pagination-bullet {
 	}
 
 	/* Fix image alignment */
+
 	img.alignleft {
 		float: left;
 		margin-right: 1.5em;
@@ -4796,6 +4797,11 @@ button.swiper-pagination-bullet {
 
 	.panel-content .recent-posts .entry-header {
 		margin-bottom: 0;
+	}
+
+	.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
+		border-bottom: 0;
+		width: calc(100vw - 128px);
 	}
 
 	/* Blog Index, Archive, Search */
