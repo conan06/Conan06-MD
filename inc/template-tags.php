@@ -240,3 +240,45 @@ function conanMD_category_transient_flusher() {
 }
 add_action( 'edit_category', 'conanMD_category_transient_flusher' );
 add_action( 'save_post',     'conanMD_category_transient_flusher' );
+
+
+/**
+ * Redesign the Password Form.
+ * 
+ */
+function conanMD_password_form( $post = 0 ) {
+	$post = get_post( $post );
+    $label = 'pwbox-' . ( empty($post->ID) ? rand() : $post->ID );
+
+	$output = '<p>' . __( 'This content is password protected. To view it please enter your password below:' ) . '</p>';
+
+    $output .= '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post">';
+    $output .= '<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">';
+	$output .= '<label class="mdl-textfield__label" for="' . $label . '">' . __( 'Password:' ) . '</label>';
+	$output .= '<input class="mdl-textfield__input" name="post_password" id="' . $label . '" type="password" size="20" />';
+	$output .= '</div>';
+	$output .= '<div class="post-password-form-submit"><button class="mdl-button mdl-js-button mdl-button--icon" type="submit" name="Submit"><i class="material-icons">check</i></button></div>';
+	$output .= '</form>';
+
+    return $output;
+}
+add_filter( 'the_password_form', 'conanMD_password_form' );
+
+/**
+ * Removing protected prefix from post titles
+ * 
+ */
+function conanMD_protected_title( $format ) {
+	return '<i class="material-icons">lock</i>%s';
+}
+add_filter( 'protected_title_format',   'conanMD_protected_title' );
+
+/**
+ * Removing private prefix from post titles
+ * 
+ */
+function conanMD_private_title( $format ) {
+	return '<i class="material-icons">visibility_off</i>%s';
+}
+add_filter( 'private_title_format',   'conanMD_private_title' );
+

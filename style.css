@@ -971,7 +971,6 @@ fieldset {
 input[type="text"],
 input[type="email"],
 input[type="url"],
-input[type="password"],
 input[type="number"],
 input[type="tel"],
 input[type="range"],
@@ -997,7 +996,6 @@ textarea {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
-input[type="password"]:focus,
 input[type="search"]:focus,
 input[type="number"]:focus,
 input[type="tel"]:focus,
@@ -1089,6 +1087,19 @@ input[type="reset"].secondary:focus,
 input[type="submit"].secondary:hover,
 input[type="submit"].secondary:focus {
 	background: #bbb;
+}
+
+.post-password-form {
+	padding-left: 2em;
+}
+
+.post-password-form label {
+	font-weight: normal;
+    margin-bottom: 0;
+}
+
+.post-password-form-submit {
+	display: inline-block;
 }
 
 /* Placeholder text color -- selectors need to be separate to work. */
@@ -2484,6 +2495,10 @@ body:not(.ConanMD-front-page) .entry-header {
     margin-bottom: 23px;
     font-size: 70px;
     line-height: 1em;
+}
+
+.single-info-title h1 .material-icons {
+	font-size: 70px;
 }
 
 .single-info-more {
@@ -5828,7 +5843,8 @@ button.swiper-pagination-bullet {
     	padding-right: 5vw;
 	}
 
-	.single-info-title h1 {
+	.single-info-title h1,
+	.single-info-title h1 .material-icons {
 		font-size: calc(8vw);
 	}
 
