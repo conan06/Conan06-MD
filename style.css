@@ -1522,12 +1522,13 @@ a:hover .nav-title,
 
 .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
 	border-bottom: 0;
-	width: calc(100vw - 130px);
+	width: calc(100vw - 112px);
+	/* (16 + 32 + 16) + 8 + 32 + 8 = 112 */
 }
 
 .navigation-more-menu-container .mdl-textfield.is-focused .mdl-textfield__expandable-holder,
 .navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
-	max-width: 1344px;
+	max-width: calc( 100vw - 112px);
 	padding-left: 16px;
 }
 
@@ -5765,6 +5766,22 @@ button.swiper-pagination-bullet {
 
 	.cmd-recommend-background {
 		margin-top: -3%;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+
+	.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
+		width: calc(1440px - 112px);
+	}
+}
+
+
+@media only screen and (min-width: 1460px) {
+	
+	.navigation-more-menu-container .mdl-textfield.is-focused .mdl-textfield__expandable-holder,
+	.navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
+		max-width: 1344px;
 	}
 }
 
