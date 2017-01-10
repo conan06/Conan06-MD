@@ -2224,6 +2224,7 @@ body:not(.ConanMD-front-page) .entry-header {
 .archive .site-main > article .mdl-card figure,
 .search .site-main > article .mdl-card figure {
 	margin: 0;
+	background-color: #fff;
 	max-height: 50.625vw;
     overflow: hidden;
 }

@@ -113,26 +113,6 @@ function conanMD_edit_link() {
 endif;
 
 
-if ( ! function_exists( 'conanMD_format_link' ) ) :
-/**
- * Returns an accessibility-friendly link to show post format.
- *
- */
-function conanMD_format_link() {
-
-	$link = edit_post_link(
-		'<i class="material-icons">archive</i>',
-		'<span class="format-link">',
-		'</span>',
-		'',
-		'mdl-button mdl-js-button mdl-button--icon'
-	);
-
-	return $link;
-}
-endif;
-
-
 if ( ! function_exists( 'conanMD_comment_link' ) ) :
 /**
  * Returns an accessibility-friendly link to show comments.
