@@ -179,7 +179,7 @@ function get_mdl_calendar( $initial = true, $echo = true ) {
         if ( $day == gmdate( 'j', $ts ) &&
             $thismonth == gmdate( 'm', $ts ) &&
             $thisyear == gmdate( 'Y', $ts ) ) {
-            $calendar_output .= '<div id="today"><span>';
+            $calendar_output .= '<div id="today"><span class="mdl-color--blue">';
         } else {
             $calendar_output .= '<div><span>';
         }

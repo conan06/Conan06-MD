@@ -52,7 +52,7 @@
 		</div>
 
 		<div class="mdl-card__actions mdl-card--border">
-			<a href="<?php the_permalink(); ?>" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+			<a href="<?php the_permalink(); ?>" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue">
 				<?php printf(
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ConanMD' ),
 					get_the_title()

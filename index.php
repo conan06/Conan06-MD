@@ -50,10 +50,16 @@ get_header(); ?>
 					endwhile;
 
 					the_posts_pagination( array(
-						'prev_text' => '<i class="material-icons">arrow_back</i><span class="screen-reader-text">' . __( 'Previous page', 'ConanMD' ) . '</span>',
-						'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'ConanMD' ) . '</span><i class="material-icons">arrow_forward</i>',
+						'prev_text' => '<span class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+											<i class="material-icons">arrow_back</i>
+										</span>
+										<span class="screen-reader-text">' . __( 'Previous page', 'ConanMD' ) . '</span>',
+						'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'ConanMD' ) . '</span>
+										<span class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+											<i class="material-icons">arrow_forward</i>
+										</span>',
 						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'ConanMD' ) . ' </span>',
-					) );
+					) );				
 
 				else :
 

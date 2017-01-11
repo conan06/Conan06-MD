@@ -1252,7 +1252,6 @@ a:active {
 .comment-metadata a.comment-edit-link,
 .comment-reply-link,
 a .nav-title,
-.pagination a,
 .comments-pagination a,
 .site-info a,
 .widget .widget-title a,
@@ -1294,8 +1293,6 @@ a .nav-title,
 .page-links a:hover .page-number,
 .post-navigation a:focus,
 .post-navigation a:hover,
-.pagination a:not(.prev):not(.next):focus,
-.pagination a:not(.prev):not(.next):hover,
 .comments-pagination a:not(.prev):not(.next):focus,
 .comments-pagination a:not(.prev):not(.next):hover,
 .logged-in-as a:focus,
@@ -2100,11 +2097,10 @@ body.page:not(.ConanMD-front-page) .entry-title {
 
 .pagination,
 .comments-pagination {
-	border-top: 1px solid #eee;
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: 800;
-	padding: 2em 0 3em;
+	padding-bottom: 2em;
 	text-align: center;
 }
 
@@ -2138,28 +2134,13 @@ body.page:not(.ConanMD-front-page) .entry-title {
 
 .prev.page-numbers,
 .next.page-numbers {
-	background-color: #ddd;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	display: inline-block;
 	font-size: 24px;
 	font-size: 1.5rem;
 	line-height: 1;
-	padding: 0.25em 0.5em 0.4em;
-}
-
-.prev.page-numbers,
-.next.page-numbers {
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-}
-
-.prev.page-numbers:focus,
-.prev.page-numbers:hover,
-.next.page-numbers:focus,
-.next.page-numbers:hover {
-	background-color: #767676;
-	color: #fff;
+	padding: 0;
 }
 
 .prev.page-numbers {
@@ -2306,7 +2287,6 @@ body:not(.ConanMD-front-page) .entry-header {
 .archive .site-main > article .mdl-card .mdl-card__actions > a.mdl-button,
 .search .site-main > article .mdl-card .mdl-card__actions > a.mdl-button {
 	font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "Roboto", Arial, sans-serif;
-	color: #4285f4;	
 }
 
 /* content-image */
@@ -3394,7 +3374,6 @@ h2.widget-title {
     color: #fff;
     display: inline-block;
     outline: none;
-	background-color: #4285f4;
 }
 
 .cmd-widget-calendar #today > span a:hover {
@@ -3778,10 +3757,6 @@ h2.widget-title {
 
 .cmd-widget-profile-wrap .mdl-card__actions a i {
 	margin-right: 8px;
-}
-
-.cmd-widget-profile-wrap .cmd-widget-profile-button {
-	color: #4285f4;
 }
 
 /*--------------------------------------------------------------
@@ -5491,12 +5466,6 @@ button.swiper-pagination-bullet {
 	body.page-two-column #comments {
 		float: right;
 		width: 58%;
-	}
-
-	.blog .site-main > article,
-	.archive .site-main > article,
-	.search .site-main > article {
-		padding-bottom: 4em;
 	}
 
 	.navigation.pagination {

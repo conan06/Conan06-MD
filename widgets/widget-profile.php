@@ -107,7 +107,7 @@ class conanMD_Profile_Widget extends WP_Widget {
 
         if ( $rss ) {
             echo '<div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-js-button mdl-js-ripple-effect cmd-widget-profile-button" href="' . esc_url( get_bloginfo( 'rss2_url' ) ) . '"><i class="material-icons">rss_feed</i>' 
+                    <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue" href="' . esc_url( get_bloginfo( 'rss2_url' ) ) . '">' 
                     . __('Subscribe entries', 'ConanMD')
                     . '</a>';
             echo "</div>\n";
