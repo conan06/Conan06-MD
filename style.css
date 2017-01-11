@@ -1244,13 +1244,11 @@ a:active {
 .entry-meta a,
 .page-links a,
 .page-links a .page-number,
-.post-navigation a,
 .logged-in-as a,
 .comment-navigation a,
 .comment-metadata a,
 .comment-metadata a.comment-edit-link,
 .comment-reply-link,
-a .nav-title,
 .comments-pagination a,
 .site-info a,
 .widget .widget-title a,
@@ -1290,14 +1288,10 @@ a .nav-title,
 .entry-meta a:hover,
 .page-links a:focus .page-number,
 .page-links a:hover .page-number,
-.post-navigation a:focus,
-.post-navigation a:hover,
 .comments-pagination a:not(.prev):not(.next):focus,
 .comments-pagination a:not(.prev):not(.next):hover,
 .logged-in-as a:focus,
 .logged-in-as a:hover,
-a:focus .nav-title,
-a:hover .nav-title,
 .site-info a:focus,
 .site-info a:hover,
 .widget .widget-title a:focus,
@@ -2749,10 +2743,17 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .post-navigation {
 	font-weight: 800;
+	padding-top: 1em;
+    padding-bottom: 1em;
+	background-color: #ebeef0;
 }
 
 .post-navigation .nav-links {
 	padding: 1em 0;
+}
+
+.post-navigation .nav-links a {
+	display: block;
 }
 
 .nav-subtitle {
@@ -2762,26 +2763,20 @@ body:not(.ConanMD-front-page) .entry-header {
 	font-size: 11px;
 	font-size: 0.6875rem;
 	letter-spacing: 0.1818em;
-	margin-bottom: 1em;
 	text-transform: uppercase;
 }
 
 .nav-title {
 	color: #333;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 16px;
 }
 
-.post-navigation .nav-next {
+.post-navigation .nav-next:not(:first-child) {
 	margin-top: 1.5em;
 }
 
-.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
-	margin-right: 0.5em;
-}
-
-.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
-	margin-left: 0.5em;
+.post-navigation .nav-links .nav-title-icon-wrapper {
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -2914,7 +2909,6 @@ body:not(.ConanMD-front-page) .entry-header {
 	clear: both;
 	padding-top: 2em;
 	padding-bottom: 0.5em;
-	background-color: #ebeef0;
 }
 
 .comments-title {
@@ -4888,7 +4882,8 @@ button.swiper-pagination-bullet {
 	}
 
 	.site-content-contain .wrap .wrap-content .site-main > article,
-	.site-content-contain .wrap .wrap-content .site-main > nav,
+	.site-content-contain .wrap .wrap-content .site-main > nav > *,
+	.site-content-contain .wrap .wrap-content .site-main #comments > *,
 	footer .wrap .wrap-content {
 		max-width: 1000px;
 		margin: 0 auto;
@@ -5405,7 +5400,7 @@ button.swiper-pagination-bullet {
 	.single-post .entry-footer {
 		margin: 0 auto;
 		text-align: left;
-		width: 800px;
+		max-width: 800px;
 	}
 
 	.single-post .entry-content > * {
@@ -5422,6 +5417,18 @@ button.swiper-pagination-bullet {
 		clear: both;
 	}
 
+	.post-navigation {
+		padding-top: 2em;
+    	padding-bottom: 2em;
+		-webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+				transition: padding-top 0.3s, padding-bottom 0.3s;
+	}
+
+	.post-navigation .nav-links .nav-title-icon-wrapper {
+		display: inline-block;
+		top: -16px;
+	}
+
 	.post-navigation .nav-previous {
 		float: left;
 		width: 50%;
@@ -5434,7 +5441,7 @@ button.swiper-pagination-bullet {
 	}
 
 	.nav-next,
-	.post-navigation .nav-next {
+	.post-navigation .nav-next:not(:first-child) {
 		margin-top: 0;
 	}
 
@@ -5580,10 +5587,6 @@ button.swiper-pagination-bullet {
 
 	/* Comments */
 
-	#comments {
-		margin-top: 3em;
-	}
-
 	.comments-title {
 		padding-bottom: 2.5em;
 	}
@@ -5594,22 +5597,25 @@ button.swiper-pagination-bullet {
 
 	/* Posts pagination */
 
-	.nav-links .nav-title {
+	.nav-links .nav-title-container {
 		position: relative;
 	}
 
 	.nav-title-icon-wrapper {
 		position: absolute;
 		text-align: center;
-		width: 2em;
 	}
 
-	.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
-		left: -2em;
+	.nav-links .nav-previous .nav-title-container .nav-title-icon-wrapper {
+		left: -1.5em;
+		-webkit-transition: left 0.3s;
+				transition: left 0.3s;
 	}
 
-	.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
-		right: -2em;
+	.nav-links .nav-next .nav-title-container .nav-title-icon-wrapper {
+		right: -1.5em;
+		-webkit-transition: right 0.3s;
+				transition: right 0.3s;
 	}
 
 	/* Secondary */
@@ -5754,6 +5760,18 @@ button.swiper-pagination-bullet {
 		width: 1px;
 	}
 
+	.nav-links .nav-previous .nav-title-container .nav-title-icon-wrapper {
+		left: -2em;
+		-webkit-transition: left 0.3s;
+				transition: left 0.3s;
+	}
+
+	.nav-links .nav-next .nav-title-container .nav-title-icon-wrapper {
+		right: -2em;
+		-webkit-transition: right 0.3s;
+				transition: right 0.3s;
+	}
+
 }
 
 @media screen and ( min-width: 79em ) {
@@ -5781,11 +5799,6 @@ button.swiper-pagination-bullet {
 @media only screen and (min-width: 1100px) {
 
 	/* Comments */
-	
-	.site-content-contain .wrap .wrap-content .site-main #comments > *{
-		max-width: 1000px;
-    	margin: 0 auto;
-	}
 
 	.comment-body {
 		margin-left: 0;
