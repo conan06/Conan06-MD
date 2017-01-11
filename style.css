@@ -4884,6 +4884,9 @@ button.swiper-pagination-bullet {
 	.site-content-contain .wrap .wrap-content .site-main > article,
 	.site-content-contain .wrap .wrap-content .site-main > nav > *,
 	.site-content-contain .wrap .wrap-content .site-main #comments > *,
+	.blog .site-content-contain .wrap .wrap-content,
+	.archive .site-content-contain .wrap .wrap-content,
+	.search .site-content-contain .wrap .wrap-content,
 	footer .wrap .wrap-content {
 		max-width: 1000px;
 		margin: 0 auto;
