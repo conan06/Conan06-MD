@@ -528,7 +528,7 @@ blockquote p {
     line-height: 1.5;
 	font-size: 18px;
     overflow: hidden;
-    width: 80%;
+    margin-right: 90px;
     text-indent: 0!important;
 }
 
@@ -961,7 +961,6 @@ label {
 	color: #333;
 	display: block;
 	font-weight: 800;
-	margin-bottom: 0.5em;
 }
 
 fieldset {
@@ -2382,7 +2381,6 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .single-post #content .wrap {
-	padding-bottom: 85px;
     padding-top: 40px;
 	overflow: hidden;
 }
@@ -2914,13 +2912,16 @@ body:not(.ConanMD-front-page) .entry-header {
 
 #comments {
 	clear: both;
-	padding: 2em 0 0.5em;
+	padding-top: 2em;
+	padding-bottom: 0.5em;
+	background-color: #ebeef0;
 }
 
 .comments-title {
 	font-size: 20px;
 	font-size: 1.25rem;
-	margin-bottom: 1.5em;
+	padding-bottom: 1.5em;
+    margin-bottom: 0;
 }
 
 .comment-list,
@@ -4886,7 +4887,9 @@ button.swiper-pagination-bullet {
 		max-width: 1440px;
 	}
 
-	.site-content-contain .wrap .wrap-content {
+	.site-content-contain .wrap .wrap-content .site-main > article,
+	.site-content-contain .wrap .wrap-content .site-main > nav,
+	footer .wrap .wrap-content {
 		max-width: 1000px;
 		margin: 0 auto;
 	}
@@ -5578,11 +5581,11 @@ button.swiper-pagination-bullet {
 	/* Comments */
 
 	#comments {
-		padding-top: 5em;
+		margin-top: 3em;
 	}
 
 	.comments-title {
-		margin-bottom: 2.5em;
+		padding-bottom: 2.5em;
 	}
 
 	ol.children .children {
@@ -5751,11 +5754,6 @@ button.swiper-pagination-bullet {
 		width: 1px;
 	}
 
-	/* Comments */
-
-	.comment-body {
-		margin-left: 0;
-	}
 }
 
 @media screen and ( min-width: 79em ) {
@@ -5780,6 +5778,19 @@ button.swiper-pagination-bullet {
 	}
 }
 
+@media only screen and (min-width: 1100px) {
+
+	/* Comments */
+	
+	.site-content-contain .wrap .wrap-content .site-main #comments > *{
+		max-width: 1000px;
+    	margin: 0 auto;
+	}
+
+	.comment-body {
+		margin-left: 0;
+	}
+}
 @media only screen and (max-width: 1100px) {
 
 	.cmd-recommend-content {
@@ -5794,6 +5805,10 @@ button.swiper-pagination-bullet {
 
 	.site-content-contain .wrap .wrap-content {
 		max-width: inherit;
+	}
+
+	.site-content-contain .wrap .wrap-content .site-main > *,
+	footer .wrap .wrap-content {
 		padding-left: 5vw;
 		padding-right: 5vw;
 	}

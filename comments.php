@@ -77,6 +77,58 @@ if ( post_password_required() ) {
 	endif;
 
 	comment_form();
+	/*
+	comment_form(array(
+		'fields'				=> apply_filters( 'comment_form_default_fields', array(
+									'author' => '<div class="comment-info">' . 
+												'<div class="comment-form-author mdl-textfield mdl-js-textfield mdl-textfield--floating-label">' . 
+												'<input class="mdl-textfield__input" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' />' . 
+												'<label class="mdl-textfield__label" for="author">' . __( 'Name' ) . '</label> ' .
+												'</div>',
+									'email'  => '<div class="comment-form-email mdl-textfield mdl-js-textfield mdl-textfield--floating-label">' . 
+												'<input class="mdl-textfield__input" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' />' . 
+												'<label class="mdl-textfield__label" for="email">' . __( 'Email' ) . '</label> ' .
+												'</div>',
+									'url'    => '<div class="comment-form-url mdl-textfield mdl-js-textfield mdl-textfield--floating-label">' . 
+												'<input class="mdl-textfield__input" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" />' . 
+												'<label class="mdl-textfield__label" for="url">' . __( 'Website' ) . '</label> ' .
+												'</div>' . 
+												'</div><!-- .comment-info -->' ) ),
+        'comment_field'        => '<div class="comment-form mdl-textfield mdl-js-textfield mdl-textfield--floating-label">' . 
+								  '<textarea id="comment" name="comment" class="mdl-textfield__input" rows="1" type="text" maxlength="65525" aria-required="true" oninput="resize(this)"></textarea>' . 
+								  '<label class="mdl-textfield__label" for="comment">' . sprintf( __( 'Leave a Reply' ) ) . '</label>' . 
+								  '</div>',
+        'must_log_in'          => '<p class="must-log-in">' . sprintf(
+                                      __( 'You must be <a href="%s">logged in</a> to post a comment.' ),
+                                      wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
+                                  ) . '</p>',
+        'logged_in_as'         => '<p class="logged-in-as">' . sprintf(
+                                      __( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>' ),
+                                      get_edit_user_link(),
+                                      esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.' ), $user_identity ) ),
+                                      $user_identity,
+                                      wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
+                                  ) . '</p>',
+        'comment_notes_before' => '',
+        'comment_notes_after'  => '',
+        'action'               => site_url( '/wp-comments-post.php' ),
+        'id_form'              => 'commentform',
+        'id_submit'            => 'submit',
+        'class_form'           => 'commentform',
+        'class_submit'         => 'submit',
+        'name_submit'          => 'submit',
+        'title_reply'          => '',
+        'title_reply_to'       => __( 'Leave a Reply to %s' ),
+        'title_reply_before'   => '<h2 id="reply-title" class="comment-reply-title">',
+        'title_reply_after'    => '</h2>',
+        'cancel_reply_before'  => '<small>',
+        'cancel_reply_after'   => '</small>',
+        'cancel_reply_link'    => __( 'Cancel reply' ),
+        'label_submit'         => __( 'Post Comment' ),
+        'format'               => 'xhtml',
+		) );
+	
+		*/
 	?>
 
 </div><!-- #comments -->
