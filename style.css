@@ -2754,6 +2754,7 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .post-navigation .nav-links a {
 	display: block;
+	position: relative;
 }
 
 .nav-subtitle {
@@ -2764,11 +2765,13 @@ body:not(.ConanMD-front-page) .entry-header {
 	font-size: 0.6875rem;
 	letter-spacing: 0.1818em;
 	text-transform: uppercase;
+	padding-left: 40px;
 }
 
 .nav-title {
 	color: #333;
 	font-size: 16px;
+	padding-left: 40px;
 }
 
 .post-navigation .nav-next:not(:first-child) {
@@ -2776,7 +2779,9 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .post-navigation .nav-links .nav-title-icon-wrapper {
-	display: none;
+	position: absolute;
+    left: 0;
+    top: 6px;
 }
 
 /*--------------------------------------------------------------
@@ -5436,7 +5441,6 @@ button.swiper-pagination-bullet {
 	}
 
 	.post-navigation .nav-links .nav-title-icon-wrapper {
-		display: inline-block;
 		top: -16px;
 	}
 
@@ -5617,6 +5621,11 @@ button.swiper-pagination-bullet {
 		text-align: center;
 	}
 
+	.nav-subtitle,
+	.nav-title {
+		padding-left: 0;
+	}
+
 	.nav-links .nav-previous .nav-title-container .nav-title-icon-wrapper {
 		left: -1.5em;
 		-webkit-transition: left 0.3s;
@@ -5625,6 +5634,7 @@ button.swiper-pagination-bullet {
 
 	.nav-links .nav-next .nav-title-container .nav-title-icon-wrapper {
 		right: -1.5em;
+		left: auto;
 		-webkit-transition: right 0.3s;
 				transition: right 0.3s;
 	}
