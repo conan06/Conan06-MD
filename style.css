@@ -967,50 +967,6 @@ fieldset {
 	margin-bottom: 1em;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: #666;
-	background: #fff;
-	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-	border: 1px solid #bbb;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	display: block;
-	padding: 0.7em;
-	width: 100%;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: #222;
-	border-color: #333;
-}
-
 select {
 	border: 1px solid #bbb;
 	-webkit-border-radius: 3px;
@@ -2663,15 +2619,17 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .entry-content > h3:before {
-	content: '#';
+	content: '';
 	color: #FF4081;
 	margin-right: 8px;
+	background: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_label_black_24px.svg);
+    width: 58px;
 }
 
 /* Entry footer */
 
 .entry-footer {
-	padding: 2em 0;
+	padding: 2em 0 3.5em;
 }
 
 .entry-footer .tags-links {
@@ -2910,8 +2868,9 @@ body:not(.ConanMD-front-page) .entry-header {
 
 #comments {
 	clear: both;
-	padding-top: 2em;
+	padding-top: 2.5em;
 	padding-bottom: 0.5em;
+	background-color: #f4f4f4;
 }
 
 .comments-title {
@@ -2945,10 +2904,11 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .comment-author .avatar {
-	height: 50px;
+	height: 48px;
 	left: -65px;
 	position: absolute;
-	width: 50px;
+	width: 48px;
+	border-radius: 50%;
 }
 
 .comment-author .says {
@@ -2991,11 +2951,11 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .comment-reply-link .icon {
 	color: #222;
-	left: -2em;
-	height: 1em;
-	position: absolute;
-	top: 0;
-	width: 1em;
+    left: -40px;
+    height: 32px;
+    position: absolute;
+    top: -8px;
+    width: 32px;
 }
 
 .children .comment-author .avatar {
@@ -3021,8 +2981,44 @@ body:not(.ConanMD-front-page) .entry-header {
 	margin: 2em 0 3em;
 }
 
-.form-submit {
-	text-align: right;
+/* Comment Form */
+.comment-form {
+	width: 100%;
+	padding: 16px 24px;
+	margin-bottom: 3.5em;
+}
+.comment-form .mdl-textfield.is-focused label > span,
+.comment-form .mdl-textfield.is-dirty label > span {
+	color: #d50000;
+}
+
+.comment-form .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+.comment-form .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
+.comment-form .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+	color: #2196f3;
+}
+
+.comment-form .mdl-textfield--floating-label.is-invalid .mdl-textfield__label {
+	color: #d50000!important;
+	font-size: inherit;
+}
+
+.comment-form .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+	font-size: 12px;
+}
+
+.comment-form .mdl-textfield__label:after {
+	background-color: #2196f3;
+}
+
+.comment-form .comment-form-textarea,
+.comment-form .comment-info > div {
+	width: 100%;
+}
+
+
+.comment-form .form-submit {
+	padding: 8px 0;
 }
 
 /*--------------------------------------------------------------
@@ -5431,11 +5427,10 @@ button.swiper-pagination-bullet {
 		clear: both;
 	}
 
-	.post-navigation {
-		padding-top: 1em;
-    	padding-bottom: 1em;
-		-webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-				transition: padding-top 0.3s, padding-bottom 0.3s;
+	.post-navigation .nav-links div {
+		padding: 3em 0;
+		-webkit-transition: padding 0.3s;
+				transition: padding 0.3s;
 	}
 
 	.post-navigation .nav-links .nav-title-icon-wrapper {
@@ -5606,6 +5601,10 @@ button.swiper-pagination-bullet {
 
 	ol.children .children {
 		padding-left: 2em;
+	}
+
+	.comment-form .comment-info > div {
+		width: calc( (90vw - 75px) / 3 );
 	}
 
 	/* Posts pagination */
@@ -5821,6 +5820,10 @@ button.swiper-pagination-bullet {
 
 	.comment-body {
 		margin-left: 0;
+	}
+
+	.comment-form .comment-info > div {
+		width: 33%;
 	}
 }
 @media only screen and (max-width: 1100px) {

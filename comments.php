@@ -57,7 +57,9 @@ if ( post_password_required() ) {
 					'avatar_size' => 100,
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'reply_text'  => conanMD_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'ConanMD' ),
+					'reply_text'  => '<span class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon icon">
+									  	<i class="material-icons">reply</i>
+									  </span>' . __( 'Reply', 'ConanMD' ),
 				) );
 			?>
 		</ol>
@@ -76,28 +78,70 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	comment_form(array(
+		'comment_field'       	=> 	'<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label comment-form-textarea">' .
+										'<textarea	class="mdl-textfield__input"
+													id="comment"
+													name="comment"
+													cols="45"
+													rows="8"
+													maxlength="65525"
+													aria-required="true"></textarea>' .
+										'<label class="mdl-textfield__label" for="comment">' . _x( 'Comment', 'noun' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label>' .
+										'<span class="mdl-textfield__error">' . __( 'Three or more characters!', 'ConanMD' ) . '</span>' .
+									'</div>',
+		'fields'				=>	apply_filters( 'comment_form_default_fields', array(
+									'author' => '<div class="comment-info">' . 
+													'<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label comment-form-author">' . 
+														'<input class="mdl-textfield__input" 
+																id="author" 
+																name="author" 
+																type="text" 
+																value="' . esc_attr( $commenter['comment_author'] ) . '" 
+																size="30" 
+																maxlength="245" 
+																pattern=".{3,}"
+																' . $aria_req . $html_req . ' />' . 
+														'<label class="mdl-textfield__label" for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+														'<span class="mdl-textfield__error">' . __( 'Use 3 characters at least', 'ConanMD' ) . '</span>' .
+													'</div>',
+									'email'  => 	'<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label comment-form-email">' . 
+														'<input class="mdl-textfield__input" 
+																id="email" 
+																name="email" 
+																' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' 
+																value="' . esc_attr(  $commenter['comment_author_email'] ) . '" 
+																size="30" 
+																maxlength="100" 
+																pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[A-Za-z]{2,6}$" 
+																aria-describedby="email-notes" 
+																' . $aria_req . $html_req  . ' />' . 
+														'<label class="mdl-textfield__label" for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+														'<span class="mdl-textfield__error">' . __( 'Your email address is invalid', 'ConanMD' ) . '</span>' .
+													'</div>',
+									'url'    => 	'<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label comment-form-url">' . 
+														'<input class="mdl-textfield__input" 
+																id="url" 
+																name="url" 
+																' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' 
+																value="' . esc_attr( $commenter['comment_author_url'] ) . '" 
+																size="30" 
+																maxlength="200" 
+																pattern="https?://.+" />' . 
+														'<label class="mdl-textfield__label" for="url">' . __( 'Website' ) . '</label> ' .
+														'<span class="mdl-textfield__error">' . __( 'Include http:// or https://', 'ConanMD' ) . '</span>' .
+													'</div>' . 
+												'</div><!-- .comment-info -->',
+									) ),
+        'comment_notes_before'	=>	'',
+        'comment_notes_after'	=>	'',
+		'class_form'           	=> 	'mdl-card mdl-shadow--2dp comment-form',
+		'class_submit'      	=>	'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--blue mdl-color-text--white',
+		'submit_button'       	=>	'<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
+		'submit_field'        	=>	'<div class="form-submit">%1$s %2$s</div>',
+		) );
 	/*
 	comment_form(array(
-		'fields'				=> apply_filters( 'comment_form_default_fields', array(
-									'author' => '<div class="comment-info">' . 
-												'<div class="comment-form-author mdl-textfield mdl-js-textfield mdl-textfield--floating-label">' . 
-												'<input class="mdl-textfield__input" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' />' . 
-												'<label class="mdl-textfield__label" for="author">' . __( 'Name' ) . '</label> ' .
-												'</div>',
-									'email'  => '<div class="comment-form-email mdl-textfield mdl-js-textfield mdl-textfield--floating-label">' . 
-												'<input class="mdl-textfield__input" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' />' . 
-												'<label class="mdl-textfield__label" for="email">' . __( 'Email' ) . '</label> ' .
-												'</div>',
-									'url'    => '<div class="comment-form-url mdl-textfield mdl-js-textfield mdl-textfield--floating-label">' . 
-												'<input class="mdl-textfield__input" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" />' . 
-												'<label class="mdl-textfield__label" for="url">' . __( 'Website' ) . '</label> ' .
-												'</div>' . 
-												'</div><!-- .comment-info -->' ) ),
-        'comment_field'        => '<div class="comment-form mdl-textfield mdl-js-textfield mdl-textfield--floating-label">' . 
-								  '<textarea id="comment" name="comment" class="mdl-textfield__input" rows="1" type="text" maxlength="65525" aria-required="true" oninput="resize(this)"></textarea>' . 
-								  '<label class="mdl-textfield__label" for="comment">' . sprintf( __( 'Leave a Reply' ) ) . '</label>' . 
-								  '</div>',
         'must_log_in'          => '<p class="must-log-in">' . sprintf(
                                       __( 'You must be <a href="%s">logged in</a> to post a comment.' ),
                                       wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
@@ -109,13 +153,6 @@ if ( post_password_required() ) {
                                       $user_identity,
                                       wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
                                   ) . '</p>',
-        'comment_notes_before' => '',
-        'comment_notes_after'  => '',
-        'action'               => site_url( '/wp-comments-post.php' ),
-        'id_form'              => 'commentform',
-        'id_submit'            => 'submit',
-        'class_form'           => 'commentform',
-        'class_submit'         => 'submit',
         'name_submit'          => 'submit',
         'title_reply'          => '',
         'title_reply_to'       => __( 'Leave a Reply to %s' ),
