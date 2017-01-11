@@ -4942,6 +4942,14 @@ button.swiper-pagination-bullet {
 		float: none;
 	}
 
+	.has-sidebar .site-content-contain .wrap .wrap-content #primary .site-main > * {
+		padding-right: 0!important;
+	}
+
+	.has-sidebar .site-content-contain .wrap .wrap-content #secondary {
+		padding-left: 0!important;
+	}
+
 	/* Widget */
 
 	.header-widget {
@@ -5823,7 +5831,9 @@ button.swiper-pagination-bullet {
 		max-width: inherit;
 	}
 
-	.site-content-contain .wrap .wrap-content .site-main > *,
+	.site-content-contain .wrap .wrap-content #primary .site-main > *,
+	.site-content-contain .wrap .wrap-content #secondary,
+	.site-content-contain .wrap .wrap-content > header.page-header,
 	footer .wrap .wrap-content {
 		padding-left: 5vw;
 		padding-right: 5vw;
