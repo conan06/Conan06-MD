@@ -2743,13 +2743,11 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .post-navigation {
 	font-weight: 800;
-	padding-top: 1em;
-    padding-bottom: 1em;
 	background-color: #ebeef0;
 }
 
-.post-navigation .nav-links {
-	padding: 1em 0;
+.post-navigation .nav-links div {
+	padding: 2em 0;
 }
 
 .post-navigation .nav-links a {
@@ -2775,7 +2773,7 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .post-navigation .nav-next:not(:first-child) {
-	margin-top: 1.5em;
+	border-top: 1px solid rgba(0,0,0,.1);
 }
 
 .post-navigation .nav-links .nav-title-icon-wrapper {
@@ -5434,8 +5432,8 @@ button.swiper-pagination-bullet {
 	}
 
 	.post-navigation {
-		padding-top: 2em;
-    	padding-bottom: 2em;
+		padding-top: 1em;
+    	padding-bottom: 1em;
 		-webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
 				transition: padding-top 0.3s, padding-bottom 0.3s;
 	}
@@ -5457,7 +5455,7 @@ button.swiper-pagination-bullet {
 
 	.nav-next,
 	.post-navigation .nav-next:not(:first-child) {
-		margin-top: 0;
+		border-top: none;
 	}
 
 	.swiper-slide figcaption {
