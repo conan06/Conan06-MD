@@ -2619,11 +2619,9 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 .entry-content > h3:before {
-	content: '';
-	color: #FF4081;
+	content: '#';
+	color: #2196f3;
 	margin-right: 8px;
-	background: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_label_black_24px.svg);
-    width: 58px;
 }
 
 /* Entry footer */
