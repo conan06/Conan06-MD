@@ -39,7 +39,7 @@ class conanMD_Profile_Widget extends WP_Widget {
         $user_googleplus = !empty( $instance['googleplus'] ) ? $instance['googleplus'] : '';
         $user_occupation = empty( $instance['occupation'] ) ? '' : $instance['occupation'];
         $user_description = empty( $instance['description'] ) ? get_the_author_meta( 'description', $user_id ) : $instance['description'];
-        $rss = !empty( $instance['rss'] ) ? '1' : '0';
+        $user_view = !empty( $instance['view'] ) ? '1' : '0';
         $count = 0;
 
 		echo $args['before_widget'];
@@ -105,10 +105,10 @@ class conanMD_Profile_Widget extends WP_Widget {
             echo '<div class="mdl-card__supporting-text">'. $user_description .'</div>';
         }
 
-        if ( $rss ) {
+        if ( $user_view ) {
             echo '<div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue" href="' . esc_url( get_bloginfo( 'rss2_url' ) ) . '">' 
-                    . __('Subscribe entries', 'ConanMD')
+                    <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue" href="' . esc_url( get_author_posts_url( $user_id ) ) . '">' 
+                    . __( 'View all posts', 'ConanMD' )
                     . '</a>';
             echo "</div>\n";
         }
@@ -139,7 +139,7 @@ class conanMD_Profile_Widget extends WP_Widget {
 		} else {
 			$instance['description'] = wp_kses_post( $new_instance['description'] );
 		}
-        $instance['rss'] = $new_instance['rss'] ? 1 : 0;
+        $instance['view'] = $new_instance['view'] ? 1 : 0;
 
 		return $instance;
 	}
@@ -150,7 +150,7 @@ class conanMD_Profile_Widget extends WP_Widget {
 	 * --------------------------------------------------------------------------- */
 	function form( $instance ) {
 		
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'userid' => 1, 'rss' => 1 ) );
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'userid' => 1, 'view' => 1 ) );
         $title = sanitize_text_field( $instance['title'] );
         $userid = sanitize_text_field( $instance['userid'] );
         $facebook = sanitize_text_field( $instance['facebook'] );
@@ -204,8 +204,8 @@ class conanMD_Profile_Widget extends WP_Widget {
 			<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('description'); ?>" name="<?php echo $this->get_field_name('description'); ?>"><?php echo esc_textarea( $instance['description'] ); ?></textarea>
 		</p>
         <p>
-			<input class="checkbox" type="checkbox"<?php checked( $instance['rss'] ); ?> id="<?php echo $this->get_field_id('rss'); ?>" name="<?php echo $this->get_field_name('rss'); ?>" />
-            <label for="<?php echo $this->get_field_id('rss'); ?>"><?php _e( 'Show RSS Feed button', 'ConanMD' ); ?></label>
+			<input class="checkbox" type="checkbox"<?php checked( $instance['view'] ); ?> id="<?php echo $this->get_field_id('view'); ?>" name="<?php echo $this->get_field_name('view'); ?>" />
+            <label for="<?php echo $this->get_field_id('view'); ?>"><?php _e( 'Show view all posts button', 'ConanMD' ); ?></label>
 		</p>
 		<?php
 	}
