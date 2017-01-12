@@ -2884,6 +2884,7 @@ body:not(.ConanMD-front-page) .entry-header {
 	position: absolute;
 	width: 48px;
 	border-radius: 50%;
+	max-width: inherit;
 }
 
 .comment-author .says {
