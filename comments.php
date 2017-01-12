@@ -133,6 +133,15 @@ if ( post_password_required() ) {
 													'</div>' . 
 												'</div><!-- .comment-info -->',
 									) ),
+		'logged_in_as'         	=> 	'<div class="logged-in-as">
+										<a id="logged-in-avatar" href="' . get_edit_user_link() . '">' . get_avatar( get_the_author_meta( 'user_email', $user_identity ), 48 ) . '</a>
+										<div class="mdl-tooltip" data-mdl-for="logged-in-avatar">' . sprintf( __( 'Edit your profile', 'ConanMD' ), $user_identity ) . '</div>
+										' . sprintf( __( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>' ),
+                                      	get_edit_user_link(),
+                                      	esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.' ), $user_identity ) ),
+                                      	$user_identity,
+                                      	wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . 
+									'</div>',
         'comment_notes_before'	=>	'',
         'comment_notes_after'	=>	'',
 		'class_form'           	=> 	'mdl-card mdl-shadow--2dp comment-form',
@@ -145,13 +154,6 @@ if ( post_password_required() ) {
         'must_log_in'          => '<p class="must-log-in">' . sprintf(
                                       __( 'You must be <a href="%s">logged in</a> to post a comment.' ),
                                       wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
-                                  ) . '</p>',
-        'logged_in_as'         => '<p class="logged-in-as">' . sprintf(
-                                      __( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>' ),
-                                      get_edit_user_link(),
-                                      esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.' ), $user_identity ) ),
-                                      $user_identity,
-                                      wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
                                   ) . '</p>',
         'name_submit'          => 'submit',
         'title_reply'          => '',

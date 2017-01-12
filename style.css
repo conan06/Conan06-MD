@@ -1200,7 +1200,6 @@ a:active {
 .entry-meta a,
 .page-links a,
 .page-links a .page-number,
-.logged-in-as a,
 .comment-navigation a,
 .comment-metadata a,
 .comment-metadata a.comment-edit-link,
@@ -1246,8 +1245,6 @@ a:active {
 .page-links a:hover .page-number,
 .comments-pagination a:not(.prev):not(.next):focus,
 .comments-pagination a:not(.prev):not(.next):hover,
-.logged-in-as a:focus,
-.logged-in-as a:hover,
 .site-info a:focus,
 .site-info a:hover,
 .widget .widget-title a:focus,
@@ -2620,7 +2617,7 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .entry-content > h3:before {
 	content: '#';
-	color: #2196f3;
+	color: #FF4081;
 	margin-right: 8px;
 }
 
@@ -2980,6 +2977,7 @@ body:not(.ConanMD-front-page) .entry-header {
 }
 
 /* Comment Form */
+
 .comment-form {
 	width: 100%;
 	padding: 16px 24px;
@@ -3014,9 +3012,23 @@ body:not(.ConanMD-front-page) .entry-header {
 	width: 100%;
 }
 
-
 .comment-form .form-submit {
 	padding: 8px 0;
+}
+
+.comment-form .logged-in-as #logged-in-avatar {
+	margin-right: 16px;
+	float: left;
+}
+
+.comment-form .logged-in-as img {
+	border-radius: 50%;
+}
+
+.comment-form .logged-in-as a:last-of-type {
+	display: block;
+	color: #767676;
+	font-size: 1rem;
 }
 
 /*--------------------------------------------------------------
