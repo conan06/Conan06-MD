@@ -148,7 +148,7 @@ if ( post_password_required() ) {
 										'</div>
 									</div>',
 		'logged_in_as'         	=> 	'<div class="logged-in-as">
-										<a id="logged-in-avatar" href="' . get_edit_user_link() . '">' . get_avatar( get_the_author_meta( 'user_email', $user_identity ), 48 ) . '</a>
+										<a id="logged-in-avatar" href="' . get_edit_user_link() . '">' . get_avatar( $user_ID, 48 ) . '</a>
 										<div class="mdl-tooltip" data-mdl-for="logged-in-avatar">' . sprintf( __( 'Edit your profile', 'ConanMD' ), $user_identity ) . '</div>
 										' . sprintf( __( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>' ),
                                       	get_edit_user_link(),
