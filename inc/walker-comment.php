@@ -282,7 +282,7 @@ class ConanMD_Walker_Comment extends Walker {
 		<?php comment_text( $comment, array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 
 		<?php
-		mdl6_comment_reply_link( array_merge( $args, array(
+		comment_reply_link( array_merge( $args, array(
 			'add_below'     => $add_below,
 			'depth'         => $depth,
 			'max_depth'     => $args['max_depth'],
