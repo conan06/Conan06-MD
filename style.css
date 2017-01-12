@@ -1223,8 +1223,6 @@ a:active {
 .widget a:hover,
 .site-footer .widget-area a:focus,
 .site-footer .widget-area a:hover,
-.posts-navigation a:focus,
-.posts-navigation a:hover,
 .widget_authors a:focus strong,
 .widget_authors a:hover strong,
 .entry-title a:focus,
@@ -2928,10 +2926,7 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .comment-reply-link .icon {
 	color: #222;
-    left: -40px;
     height: 32px;
-    position: absolute;
-    top: -8px;
     width: 32px;
 }
 

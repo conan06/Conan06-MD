@@ -54,8 +54,9 @@ if ( post_password_required() ) {
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
-					'avatar_size' => 100,
+					'walker'      => new ConanMD_Walker_Comment,
 					'style'       => 'ol',
+					'avatar_size' => 64,
 					'short_ping'  => true,
 					'reply_text'  => '<span class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon icon">
 									  	<i class="material-icons">reply</i>

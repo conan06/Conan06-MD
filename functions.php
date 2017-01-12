@@ -555,6 +555,11 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
 /**
+ * Walker_Comment additions.
+ */
+require get_template_directory() . '/inc/walker-comment.php';
+
+/**
  * Customizer widgets.
  */
 require_once get_parent_theme_file_path( '/widgets/widget-functions.php' );
