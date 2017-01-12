@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - ConanMD package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-01-12 09:28+0800\n"
+"PO-Revision-Date: 2017-01-12 16:34+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -167,6 +167,10 @@ msgstr "顶部菜单"
 #: comments.php:60
 msgid "Reply"
 msgstr "回复"
+
+#: comments.php:95
+msgid "You need to comment in more detail."
+msgstr "您需要丰富您的评论内容。"
 
 #: comments.php:106
 msgid "Use 3 characters at least"

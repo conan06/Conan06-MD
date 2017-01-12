@@ -92,7 +92,7 @@ if ( post_password_required() ) {
 													maxlength="65525"
 													aria-required="true"></textarea>' .
 										'<label class="mdl-textfield__label" for="comment">' . _x( 'Comment', 'noun' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label>' .
-										'<span class="mdl-textfield__error">' . __( 'Three or more characters!', 'ConanMD' ) . '</span>' .
+										'<span class="mdl-textfield__error">' . __( 'You need to comment in more detail.', 'ConanMD' ) . '</span>' .
 									'</div>',
 		'fields'				=>	apply_filters( 'comment_form_default_fields', array(
 									'author' => '<div class="comment-info">' . 
