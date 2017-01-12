@@ -65,8 +65,14 @@ if ( post_password_required() ) {
 		</ol>
 
 		<?php the_comments_pagination( array(
-			'prev_text' => conanMD_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'ConanMD' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'ConanMD' ) . '</span>' . conanMD_get_svg( array( 'icon' => 'arrow-right' ) ),
+			'prev_text' => 	'<span class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon nav-title-icon-wrapper">
+								<i class="material-icons">arrow_back</i>
+							</span>' . 
+							'<span class="screen-reader-text">' . __( 'Previous', 'ConanMD' ) . '</span>',
+			'next_text' => 	'<span class="screen-reader-text">' . __( 'Next', 'ConanMD' ) . '</span>' . 
+							'<span class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon nav-title-icon-wrapper">
+								<i class="material-icons">arrow_forward</i>
+							</span>',
 		) );
 
 	endif; // Check for have_comments().
@@ -133,6 +139,14 @@ if ( post_password_required() ) {
 													'</div>' . 
 												'</div><!-- .comment-info -->',
 									) ),
+		'must_log_in'          	=> 	'<div class="mdl-card mdl-shadow--2dp must-log-in">
+										<div>'
+											. sprintf( 
+												__( 'You must be <a href="%s" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--blue mdl-color-text--white">logged in</a> to post a comment.', 'ConanMD' ),
+												wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
+											) . 
+										'</div>
+									</div>',
 		'logged_in_as'         	=> 	'<div class="logged-in-as">
 										<a id="logged-in-avatar" href="' . get_edit_user_link() . '">' . get_avatar( get_the_author_meta( 'user_email', $user_identity ), 48 ) . '</a>
 										<div class="mdl-tooltip" data-mdl-for="logged-in-avatar">' . sprintf( __( 'Edit your profile', 'ConanMD' ), $user_identity ) . '</div>
@@ -151,10 +165,7 @@ if ( post_password_required() ) {
 		) );
 	/*
 	comment_form(array(
-        'must_log_in'          => '<p class="must-log-in">' . sprintf(
-                                      __( 'You must be <a href="%s">logged in</a> to post a comment.' ),
-                                      wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
-                                  ) . '</p>',
+        
         'name_submit'          => 'submit',
         'title_reply'          => '',
         'title_reply_to'       => __( 'Leave a Reply to %s' ),
@@ -163,8 +174,6 @@ if ( post_password_required() ) {
         'cancel_reply_before'  => '<small>',
         'cancel_reply_after'   => '</small>',
         'cancel_reply_link'    => __( 'Cancel reply' ),
-        'label_submit'         => __( 'Post Comment' ),
-        'format'               => 'xhtml',
 		) );
 	
 		*/
