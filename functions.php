@@ -56,6 +56,9 @@ function conanMD_setup() {
 
 	add_image_size( 'ConanMD-thumbnail-avatar', 100, 100, true );
 
+	// Set the default content width. 
+ 	$GLOBALS['content_width'] = 525;
+
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'top'    => __( 'Top Menu', 'ConanMD' ),
@@ -104,7 +107,7 @@ function conanMD_setup() {
  	 */
 	add_editor_style( array( 'assets/css/editor-style.css', conanMD_fonts_url() ) );
 
-	add_theme_support( 'starter-content', array(
+	$starter_content = array(
 		'widgets' => array(
 			'sidebar-1' => array(
 				'text_business_info',
@@ -170,7 +173,7 @@ function conanMD_setup() {
 			'top' => array(
 				'name' => __( 'Top Menu', 'ConanMD' ),
 				'items' => array(
-					'page_home',
+					'link_home',
 					'page_about',
 					'page_blog',
 					'page_contact',
@@ -187,7 +190,18 @@ function conanMD_setup() {
 				),
 			),
 		),
-	) );
+	); 
+ 
+    /** 
+     * Filters Twenty Seventeen array of starter content. 
+     * 
+     * @since Twenty Seventeen 1.1 
+     * 
+     * @param array $starter_content Array of starter content. 
+     */ 
+    $starter_content = apply_filters( 'conanMD_starter_content', $starter_content ); 
+ 
+    add_theme_support( 'starter-content', $starter_content );
 }
 add_action( 'after_setup_theme', 'conanMD_setup' );
 
@@ -200,10 +214,23 @@ add_action( 'after_setup_theme', 'conanMD_setup' );
  */
 function conanMD_content_width() {
 
-	$content_width = 700;
+	$content_width = $GLOBALS['content_width']; 
 
-	if ( conanMD_is_frontpage() ) {
-		$content_width = 1120;
+ 	// Get layout. 
+ 	$page_layout = get_theme_mod( 'page_layout' ); 
+
+ 	// Check if layout is one column. 
+ 	if ( 'one-column' === $page_layout ) { 
+ 		if ( conanMD_is_frontpage() ) { 
+ 		            $content_width = 644; 
+ 		        } elseif ( is_page() ) { 
+ 		            $content_width = 740; 
+ 		        } 
+ 		    } 
+ 		 
+ 		    // Check if is single post and there is no sidebar. 
+ 		    if ( is_single() && ! is_active_sidebar( 'sidebar-1' ) ) { 
+ 		        $content_width = 740;
 	}
 
 	/**
@@ -215,7 +242,7 @@ function conanMD_content_width() {
 	 */
 	$GLOBALS['content_width'] = apply_filters( 'conanMD_content_width', $content_width );
 }
-add_action( 'after_setup_theme', 'conanMD_content_width', 0 );
+add_action( 'template_redirect', 'conanMD_content_width', 0 );
 
 /**
  * Register custom fonts.
