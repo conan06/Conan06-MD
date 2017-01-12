@@ -289,9 +289,16 @@ function conanMD_comment_reply_link( $args = array(), $comment = null, $post = n
     $args = apply_filters( 'comment_reply_link_args', $args, $comment, $post );
  
     if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) {
-        $link = sprintf( '<a rel="nofollow" class="comment-reply-login" href="%s">%s</a>',
+        $link = sprintf( '
+			<a rel="nofollow" 
+				class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+				id="comment-reply-login-%s" href="%s">%s</a>
+			<div class="mdl-tooltip" data-mdl-for="comment-reply-login-%s">%s</div>',
+			$comment->comment_ID,
             esc_url( wp_login_url( get_permalink() ) ),
-            $args['login_text']
+            $args['login_text'],
+			$comment->comment_ID,
+			__( 'Log in to Reply' )
         );
     } else {
         $onclick = sprintf( 'return addComment.moveForm( "%1$s-%2$s", "%2$s", "%3$s", "%4$s" )',

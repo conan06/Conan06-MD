@@ -282,14 +282,14 @@ class ConanMD_Walker_Comment extends Walker {
 		<?php comment_text( $comment, array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 
 		<?php
-		comment_reply_link( array_merge( $args, array(
+		conanMD_comment_reply_link( array_merge( $args, array(
 			'add_below'     => $add_below,
 			'depth'         => $depth,
 			'max_depth'     => $args['max_depth'],
 			'before'        => '<nav class="comment-actions">',
 			'after'         => '</nav>',
             'reply_text'    => '<i class="material-icons">reply</i>',
-            'login_text'    => '<i class="material-icons">account_circle</i>'
+            'login_text'    => '<i class="material-icons">lock_outline</i>'
 		) ) );
 		?>
 
@@ -348,7 +348,7 @@ class ConanMD_Walker_Comment extends Walker {
 						'depth'         => $depth,
 						'max_depth'     => $args['max_depth'],
                         'reply_text'    => '<i class="material-icons">reply</i>',
-                        'login_text'    => '<i class="material-icons">account_circle</i>'
+                        'login_text'    => '<i class="material-icons">lock_outline</i>'
 					) ) ); ?>
 
                     <?php conanMD_edit_comment_link( '<i class="material-icons">edit</i>' ); ?>
