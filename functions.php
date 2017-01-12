@@ -374,6 +374,9 @@ function conanMD_parallax() {
 }
 add_action( 'wp_footer', 'conanMD_parallax' );
 
+/**
+ * Add Swiper.js for gallery shortcode
+ */
 function conanMD_swiper() {
 	printf( '<script type="text/javascript" src="%s"></script>' . "\n", get_theme_file_uri( '/assets/js/swiper.min.js' ) );
 	printf( '<script>
@@ -387,6 +390,21 @@ function conanMD_swiper() {
 			})        
 		});
 	</script>' );
+}
+
+/**
+ * Add comment-check for comment form
+ */
+function conanMD_comment_respond_check() {
+	$comment_check = '
+	<script type="text/javascript">
+		jQuery("#respond textarea#comment, #respond input#author, #respond input#email").focus( function(){
+			if ( jQuery(this).val() == "" ) {
+				jQuery(this).parent().addClass("is-invalid");
+			}
+		} );
+	</script>';
+	printf( $comment_check );
 }
 
 /**

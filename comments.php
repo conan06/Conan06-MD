@@ -161,20 +161,8 @@ if ( post_password_required() ) {
 		'submit_button'       	=>	'<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
 		'submit_field'        	=>	'<div class="form-submit">%1$s %2$s</div>',
 		) );
-	/*
-	comment_form(array(
-        
-        'name_submit'          => 'submit',
-        'title_reply'          => '',
-        'title_reply_to'       => __( 'Leave a Reply to %s' ),
-        'title_reply_before'   => '<h2 id="reply-title" class="comment-reply-title">',
-        'title_reply_after'    => '</h2>',
-        'cancel_reply_before'  => '<small>',
-        'cancel_reply_after'   => '</small>',
-        'cancel_reply_link'    => __( 'Cancel reply' ),
-		) );
 	
-		*/
+	add_action( 'wp_footer', 'conanMD_comment_respond_check' );
 	?>
 
 </div><!-- #comments -->

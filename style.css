@@ -2964,18 +2964,20 @@ body:not(.ConanMD-front-page) .entry-header {
 	color: #d50000;
 }
 
-.comment-form .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
-.comment-form .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
-.comment-form .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+.comment-form .mdl-textfield.is-focused .mdl-textfield__label,
+.comment-form .mdl-textfield.is-dirty .mdl-textfield__label,
+.comment-form .mdl-textfield.has-placeholder .mdl-textfield__label {
 	color: #2196f3;
 }
 
-.comment-form .mdl-textfield--floating-label.is-invalid .mdl-textfield__label {
+.comment-form .mdl-textfield--floating-label.is-invalid .mdl-textfield__label,
+.comment-form .mdl-textfield.is-invalid textarea ~ .mdl-textfield__label {
 	color: #d50000!important;
 	font-size: inherit;
 }
 
-.comment-form .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+.comment-form .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
+.comment-form .mdl-textfield--floating-label.is-invalid.is-focused .mdl-textfield__label {
 	font-size: 12px;
 }
 
