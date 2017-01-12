@@ -1982,11 +1982,11 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 .page-title,
 body.page:not(.ConanMD-front-page) .entry-title {
 	color: #222;
-	font-size: 14px;
-	font-size: 0.875rem;
 	font-weight: 800;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
+	float: left;
+    margin-right: 8px;
 }
 
 .entry-header .entry-title {
