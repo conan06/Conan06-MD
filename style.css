@@ -2873,8 +2873,8 @@ body:not(.ConanMD-front-page) .entry-header {
 .comment-author {
 	font-size: 16px;
 	font-size: 1rem;
-	margin-bottom: 0.4em;
 	position: relative;
+	float: left;
 	z-index: 2;
 }
 
@@ -2890,10 +2890,6 @@ body:not(.ConanMD-front-page) .entry-header {
 	display: none;
 }
 
-.comment-meta {
-	margin-bottom: 1.5em;
-}
-
 .comment-metadata {
 	color: #767676;
 	font-size: 10px;
@@ -2901,15 +2897,16 @@ body:not(.ConanMD-front-page) .entry-header {
 	font-weight: 800;
 	letter-spacing: 0.1818em;
 	text-transform: uppercase;
+	margin-left: 1em;
+	float: left;
 }
 
 .comment-metadata a {
 	color: #767676;
 }
 
-.comment-metadata a.comment-edit-link {
-	color: #222;
-	margin-left: 1em;
+.comment-content p {
+	margin: 16px 0;
 }
 
 .comment-body {
@@ -2919,15 +2916,9 @@ body:not(.ConanMD-front-page) .entry-header {
 	margin-bottom: 4em;
 }
 
-.comment-reply-link {
-	font-weight: 800;
-	position: relative;
-}
-
-.comment-reply-link .icon {
-	color: #222;
-    height: 32px;
-    width: 32px;
+.comment-actions a {
+	margin-right: 16px;
+	color: rgba(0, 0, 0, 0.36);
 }
 
 .children .comment-author .avatar {
@@ -2936,9 +2927,16 @@ body:not(.ConanMD-front-page) .entry-header {
 	width: 30px;
 }
 
-.bypostauthor > .comment-body > .comment-meta > .comment-author .avatar {
-	border: 1px solid #333;
-	padding: 2px;
+.bypostauthor > .comment-body > .comment-meta > .comment-author b.fn {
+	background-color: #2196f3;
+	border-radius: 25px;
+	padding: 2px 10px;
+}
+
+.bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.bypostauthor > .comment-body > .comment-meta > .comment-author b.fn > a {
+	color: #fff;
+	font-weight: 500;
 }
 
 .no-comments,

@@ -58,9 +58,6 @@ if ( post_password_required() ) {
 					'style'       => 'ol',
 					'avatar_size' => 64,
 					'short_ping'  => true,
-					'reply_text'  => '<span class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon icon">
-									  	<i class="material-icons">reply</i>
-									  </span>' . __( 'Reply', 'ConanMD' ),
 				) );
 			?>
 		</ol>
@@ -86,7 +83,7 @@ if ( post_password_required() ) {
 	endif;
 
 	comment_form(array(
-		'comment_field'       	=> 	'<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label comment-form-textarea">' .
+		'comment_field'       	=> 	'<div class="mdl-textfield mdl-js-textfield comment-form-textarea">' .
 										'<textarea	class="mdl-textfield__input"
 													id="comment"
 													name="comment"

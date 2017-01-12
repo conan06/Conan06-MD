@@ -316,13 +316,13 @@ class ConanMD_Walker_Comment extends Walker {
 ?>
 		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
 			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-				<footer class="comment-meta">
-					<div class="comment-author vcard">
+				<header class="comment-meta">
+					<span class="comment-author vcard">
 						<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
 						<?php printf( __( '%s <span class="says">says:</span>' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) ) ); ?>
-					</div><!-- .comment-author -->
+					</span>
 
-					<div class="comment-metadata">
+					<span class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 							<time datetime="<?php comment_time( 'c' ); ?>">
 								<?php
@@ -331,30 +331,28 @@ class ConanMD_Walker_Comment extends Walker {
 								?>
 							</time>
 						</a>
-					</div><!-- .comment-metadata -->
+					</span>
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
 					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
 					<?php endif; ?>
-				</footer><!-- .comment-meta -->
+				</header><!-- .comment-meta -->
 
 				<div class="comment-content">
 					<?php comment_text(); ?>
 				</div><!-- .comment-content -->
 
-				<nav class="comment-actions">
-					<?php
-					comment_reply_link( array_merge( $args, array(
+				<footer class="comment-actions">
+					<?php conanMD_comment_reply_link( array_merge( $args, array(
 						'add_below'     => 'div-comment',
 						'depth'         => $depth,
 						'max_depth'     => $args['max_depth'],
                         'reply_text'    => '<i class="material-icons">reply</i>',
                         'login_text'    => '<i class="material-icons">account_circle</i>'
-					) ) );
-					?>
+					) ) ); ?>
 
-                    <?php edit_comment_link( '<i class="material-icons">edit</i>', '', '' ); ?>
-				</nav>
+                    <?php conanMD_edit_comment_link( '<i class="material-icons">edit</i>' ); ?>
+				</footer>
 			</article><!-- .comment-body -->
 <?php
 	}

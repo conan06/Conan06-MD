@@ -221,10 +221,100 @@ function conanMD_entry_tags() {
 		printf( '<div class="tags-links"><span class="screen-reader-text">%s</span>', __( 'Tags', 'ConanMD' ) );
 		foreach ( $posttags as $tag ) {
 			echo '<a class="entry-tag-item" href="' . esc_url( get_category_link( $tag->term_id ) ) . '">
-				  <span class="mdl-chip"><span class="mdl-chip__text">' . esc_html( $tag->name ) . '</span></span></a>';
+				  	<span class="mdl-chip">
+					  <span class="mdl-chip__text">' . esc_html( $tag->name ) . '</span>
+					</span>
+				</a>';
 		}
 		printf( '</div>' );
 	}
+}
+
+/**
+ * Comment Edit Button
+ *
+ */
+function conanMD_edit_comment_link( $text = null ) {
+    $comment = get_comment();
+ 
+    if ( ! current_user_can( 'edit_comment', $comment->comment_ID ) ) {
+        return;
+    }
+ 
+    if ( null === $text ) {
+        $text = __( 'Edit This' );
+    }
+ 
+    $link = '<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+				id="comment-edit-link-' . $comment->comment_ID . '"
+				href="' . esc_url( get_edit_comment_link( $comment ) ) . '">' . $text . '</a>'
+			. '<div class="mdl-tooltip" data-mdl-for="comment-edit-link-' . $comment->comment_ID . '">' . __( 'Edit' ) . '</div>';
+
+    echo apply_filters( 'edit_comment_link', $link, $comment->comment_ID, $text );
+}
+
+/**
+ * Comment Reply Button
+ *
+ */
+function conanMD_comment_reply_link( $args = array(), $comment = null, $post = null ) {
+    $defaults = array(
+        'add_below'     => 'comment',
+        'respond_id'    => 'respond',
+        'reply_text'    => __( 'Reply' ),
+        'reply_to_text' => __( 'Reply to %s' ),
+        'login_text'    => __( 'Log in to Reply' ),
+        'max_depth'     => 0,
+        'depth'         => 0,
+    );
+ 
+    $args = wp_parse_args( $args, $defaults );
+ 
+    if ( 0 == $args['depth'] || $args['max_depth'] <= $args['depth'] ) {
+        return;
+    }
+ 
+    $comment = get_comment( $comment );
+ 
+    if ( empty( $post ) ) {
+        $post = $comment->comment_post_ID;
+    }
+ 
+    $post = get_post( $post );
+ 
+    if ( ! comments_open( $post->ID ) ) {
+        return false;
+    }
+ 
+    $args = apply_filters( 'comment_reply_link_args', $args, $comment, $post );
+ 
+    if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) {
+        $link = sprintf( '<a rel="nofollow" class="comment-reply-login" href="%s">%s</a>',
+            esc_url( wp_login_url( get_permalink() ) ),
+            $args['login_text']
+        );
+    } else {
+        $onclick = sprintf( 'return addComment.moveForm( "%1$s-%2$s", "%2$s", "%3$s", "%4$s" )',
+            $args['add_below'], $comment->comment_ID, $args['respond_id'], $post->ID
+        );
+ 
+        $link = sprintf( 
+			"<a rel='nofollow' 
+				 class='mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon' 
+				 id='comment-reply-link-%s' href='%s' onclick='%s' aria-label='%s'>%s</a>
+			<div class='mdl-tooltip' data-mdl-for='comment-reply-link-%s'>%s</div>",
+			$comment->comment_ID,
+            esc_url( add_query_arg( 'replytocom', $comment->comment_ID, get_permalink( $post->ID ) ) ) . "#" . $args['respond_id'],
+            $onclick,
+            esc_attr( sprintf( $args['reply_to_text'], $comment->comment_author ) ),
+            $args['reply_text'],
+			$comment->comment_ID,
+			__( 'Reply' )
+        );
+    }
+
+    $output = apply_filters( 'comment_reply_link', $link, $args, $comment, $post );
+	echo $output;
 }
 
 
