@@ -526,9 +526,8 @@ blockquote p {
 	margin: 0;
     color: rgba(0,0,0,.72);
     line-height: 1.5;
-	font-size: 18px;
+	font-size: 16px;
     overflow: hidden;
-    margin-right: 90px;
     text-indent: 0!important;
 }
 
@@ -605,6 +604,7 @@ blockquote:before {
 }
 
 blockquote:after {
+	display: none;
     bottom: -110px;
     line-height: 100px;
     right: -32px;
@@ -1982,11 +1982,16 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 .page-title,
 body.page:not(.ConanMD-front-page) .entry-title {
 	color: #222;
+	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 800;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	float: left;
-    margin-right: 8px;
+}
+
+.page-template-default .entry-header .entry-title {
+	margin-right: 8px;
+	float:left;
 }
 
 .entry-header .entry-title {
@@ -2149,7 +2154,7 @@ body:not(.ConanMD-front-page) .entry-header {
 .search .site-main > article .mdl-card .mdl-card__media {
 	margin: 0;
 	background-color: #fff;
-	max-height: 50.625vw;
+	/*max-height: 50.625vw;*/
     overflow: hidden;
 }
 
@@ -5405,7 +5410,7 @@ button.swiper-pagination-bullet {
 	.single-post .entry-title,
 	.page .entry-title {
 		font-size: 26px;
-		font-size: 1.625rem;
+		font-size: 1.625rem!important;
 	}
 
 	.single-post .entry-content,
@@ -5458,6 +5463,15 @@ button.swiper-pagination-bullet {
 	.swiper-slide figcaption {
 		margin-right: 20px;
 		margin-bottom: 0;
+	}
+
+	blockquote p {
+		font-size: 18px;
+    	margin-right: 90px;
+	}
+
+	blockquote:after {
+		display: block;
 	}
 
 	/* Blog, archive, search */
@@ -5904,10 +5918,6 @@ button.swiper-pagination-bullet {
 
 	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
     	left: 5vw;
-	}
-
-	.single-post .entry-content p {
-		max-width: auto;
 	}
 
 	.cmd-recommend-background {
