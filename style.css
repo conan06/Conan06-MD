@@ -2222,6 +2222,19 @@ body:not(.ConanMD-front-page) .entry-header {
 
 /* content-image */
 
+.entry-content p.history-archive {
+	text-align: center;
+}
+
+.entry-content p.history-archive > img {
+    margin-bottom: 8px;
+}
+
+.entry-content p.history-archive > span {
+	color: red;
+	font-size: 14px;
+}
+
 .blog .site-main > article .mdl-card .entry-image,
 .archive .site-main > article .mdl-card .entry-image,
 .search .site-main > article .mdl-card .entry-image {
