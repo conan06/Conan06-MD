@@ -4921,7 +4921,7 @@ button.swiper-pagination-bullet {
 		padding-top: 2.5em;
 	}
 
-	.has-sidebar:not(.error404) #primary {
+	.has-sidebar:not(.error404):not(.search) #primary {
 		float: left;
 		width: 64%;
 	}
