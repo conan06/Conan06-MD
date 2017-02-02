@@ -11,7 +11,10 @@
 ?>
 <a href="<?php printf( site_url() ) ?>" class="site-logo">
      <figure>
-        <img src="<?php printf( esc_url( get_site_icon_url( 64 ) ) ) ?>" alt=" Google">
+	 	<?php if ( has_custom_logo() ) : ?>
+		<?php else : ?>
+			<img src="<?php printf( esc_url( get_theme_file_uri( '/assets/images/site_icon.png' ) ) )  ?>" alt="<?php bloginfo('name'); ?>">
+		<?php endif; ?>
     </figure>
 </a><!-- .site-logo -->
 
