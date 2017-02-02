@@ -2518,6 +2518,7 @@ body:not(.ConanMD-front-page) .entry-header {
     margin: 0;
     overflow: hidden;
     width: 100%;
+	background-color: #eee;
 	background-size: cover;
     background-position: center;
 }
