@@ -1285,6 +1285,8 @@ a:active {
 
 .mdl-layout__drawer {
 	width: 270px;
+	position: fixed;
+	top: inherit;
 	-webkit-transform: translateX(-280px);
     		transform: translateX(-280px);
 }
@@ -4923,11 +4925,6 @@ button.swiper-pagination-bullet {
 	}
 
 	/* Navigation */
-
-	.navigation-top,
-	.mdl-layout__drawer {
-		position: fixed;
-	}
 
 	.admin-bar .navigation-top,
 	.admin-bar .mdl-layout__drawer {
