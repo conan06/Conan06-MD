@@ -6,18 +6,17 @@
 		$customHeader = $body.find( '.custom-header' ),
 		$branding = $customHeader.find( '.site-branding' ),
 		$navigation = $body.find( '.navigation-top' ),
-		$navWrap = $navigation.find( '.wrap' ),
 		$navMenuItem = $navigation.find( '.menu-item' ),
-		$menuToggle = $navigation.find( '.menu-toggle' ),
+		$navMenuRow = $navigation.find( '.mdl-layout__header-row' ),
 		$menuScrollDown = $body.find( '.menu-scroll-down' ),
 		$sidebar = $body.find( '#secondary' ),
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
 		isFrontPage = $body.hasClass( 'ConanMD-front-page' ) || $body.hasClass( 'home blog' ),
 		navigationFixedClass = 'site-navigation-fixed',
+		navigationShadowClass = 'mdl-shadow--4dp',
 		navigationHeight,
 		navigationOuterHeight,
-		navPadding,
 		navMenuItemHeight,
 		idealNavHeight,
 		navIsNotTooTall,
@@ -48,57 +47,28 @@
 	function setNavProps() {
 		navigationHeight      = $navigation.height();
 		navigationOuterHeight = $navigation.outerHeight();
-		navPadding            = parseFloat( $navWrap.css( 'padding-top' ) ) * 2;
 		navMenuItemHeight     = $navMenuItem.outerHeight() * 2;
-		idealNavHeight        = navPadding + navMenuItemHeight;
+		idealNavHeight        = navMenuItemHeight;
 		navIsNotTooTall       = navigationHeight <= idealNavHeight;
 	}
 
 	// Make navigation 'stick'.
 	function adjustScrollClass() {
 
-		// Make sure we're not on a mobile screen.
-		if ( 'none' === $menuToggle.css( 'display' ) ) {
-
-			// Make sure the nav isn't taller than two rows.
-			if ( navIsNotTooTall ) {
-
-				// When there's a custom header image or video, the header offset includes the height of the navigation.
-				if ( isFrontPage && ( $body.hasClass( 'has-header-image' ) || $body.hasClass( 'has-header-video' ) ) ) {
-					headerOffset = $customHeader.innerHeight() - navigationOuterHeight;
-				} else {
-					headerOffset = $customHeader.innerHeight();
-				}
-
-				// If the scroll is more than the custom header, set the fixed class.
-				if ( $( window ).scrollTop() >= headerOffset ) {
-					$navigation.addClass( navigationFixedClass );
-				} else {
-					$navigation.removeClass( navigationFixedClass );
-				}
-
-			} else {
-
-				// Remove 'fixed' class if nav is taller than two rows.
-				$navigation.removeClass( navigationFixedClass );
-			}
-		}
-	}
-
-	// Set margins of branding in header.
-	function adjustHeaderHeight() {
-		if ( 'none' === $menuToggle.css( 'display' ) ) {
-
-			// The margin should be applied to different elements on front-page or home vs interior pages.
-			if ( isFrontPage ) {
-				$branding.css( 'margin-bottom', navigationOuterHeight );
-			} else {
-				$customHeader.css( 'margin-bottom', navigationOuterHeight );
-			}
-
+		// When there's a custom header image or video, the header offset includes the height of the navigation.
+		if ( isFrontPage && ( $body.hasClass( 'has-header-image' ) || $body.hasClass( 'has-header-video' ) ) ) {
+			headerOffset = $branding.outerHeight() + $navigation.height();
 		} else {
-			$customHeader.css( 'margin-bottom', '0' );
-			$branding.css( 'margin-bottom', '0' );
+			headerOffset = $branding.outerHeight() - $navigation.height();
+		}
+		
+		// If the scroll is more than the custom header, set the fixed class.
+		if ( $( window ).scrollTop() >= headerOffset ) {
+			$navigation.addClass( navigationFixedClass );
+			$navMenuRow.addClass( navigationShadowClass );
+		} else {
+			$navigation.removeClass( navigationFixedClass );
+			$navMenuRow.removeClass( navigationShadowClass );
 		}
 	}
 
@@ -206,7 +176,6 @@
 			});
 		}
 
-		adjustHeaderHeight();
 		setQuotesIcon();
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
@@ -223,7 +192,6 @@
 		// On scroll, we want to stick/unstick the navigation.
 		$( window ).on( 'scroll', function() {
 			adjustScrollClass();
-			adjustHeaderHeight();
 		});
 
 		// Also want to make sure the navigation is where it should be on resize.
@@ -238,7 +206,6 @@
 		resizeTimer = setTimeout( function() {
 			belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
 		}, 300 );
-		setTimeout( adjustHeaderHeight, 1000 );
 	});
 
 	// Add header video class after the video is loaded.

@@ -37,19 +37,11 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'ConanMD' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+	</div>
 
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
-
-	</header><!-- #masthead -->
+	<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 
 	<?php
 	// If a regular post or page, and not the front page, show the featured image.
