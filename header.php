@@ -40,8 +40,12 @@
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 	</div>
-
-	<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+	
+	<?php if ( ( conanMD_is_frontpage() || ( is_home() && is_front_page() ) ) ) : ?>
+		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+	<?php else : ?>
+		<div class="custom-header-blank" style="height: 56px;"></div>
+	<?php endif; ?>
 
 	<?php
 	// If a regular post or page, and not the front page, show the featured image.
