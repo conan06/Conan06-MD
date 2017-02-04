@@ -1368,6 +1368,7 @@ a:active {
 }
 
 .navigation-more-menu-wrapper {
+	height: 64px;
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
@@ -1392,48 +1393,48 @@ a:active {
 	color: #757575;
 }
 
-.navigation-more-menu-container .mdl-textfield {
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield {
 	padding: 0;
 	transition: background-color 0.2s;
 }
 
-.navigation-more-menu-container .mdl-textfield--expandable {
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield--expandable {
     height: 64px;
 }
 
-.navigation-more-menu-container .mdl-textfield .search-form {
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .search-form {
 	position: inherit;
 	height: 66px;
 }
 
-.navigation-more-menu-container .mdl-textfield .search-form:after {
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .search-form:after {
 	content: '';
 	clear: both;
 }
 
-.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder {
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder {
 	padding-top: 16px;
 	overflow: hidden;
 }
 
-.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder label {
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder label {
 	margin-bottom: 0;
 }
 
-.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
 	border-bottom: 0;
 	width: calc(100vw - 112px);
 	/* (16 + 32 + 16) + 8 + 32 + 8 = 112 */
 }
 
-.navigation-more-menu-container .mdl-textfield.is-focused .mdl-textfield__expandable-holder,
-.navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-focused .mdl-textfield__expandable-holder,
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
 	max-width: inherit;
 	padding-left: 16px;
 }
 
-.navigation-more-menu-container .mdl-textfield.is-focused,
-.navigation-more-menu-container .mdl-textfield.is-dirty {
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-focused,
+.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-dirty {
 	background-color: #fff;
 	transition: background-color 0.2s;
 	height: 64px;
@@ -2209,6 +2210,16 @@ body:not(.ConanMD-front-page) .entry-header {
     top: 0;
     width: 100%;
     z-index: 0;
+}
+
+.custom-header-blank {
+	content: '';
+	height: 64px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 2;
 }
 
 .single-info {
@@ -4666,7 +4677,7 @@ button.swiper-pagination-bullet {
 		margin-bottom: 0;
 	}
 
-	.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
+	.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
 		border-bottom: 0;
 		width: calc(100vw - 128px);
 	}
@@ -5743,7 +5754,7 @@ button.swiper-pagination-bullet {
 
 @media only screen and (min-width: 1440px) {
 
-	.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
+	.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
 		width: calc(1440px - 112px);
 	}
 }
@@ -5751,8 +5762,8 @@ button.swiper-pagination-bullet {
 
 @media only screen and (min-width: 1460px) {
 	
-	.navigation-more-menu-container .mdl-textfield.is-focused .mdl-textfield__expandable-holder,
-	.navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
+	.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-focused .mdl-textfield__expandable-holder,
+	.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
 		max-width: 1344px;
 	}
 }

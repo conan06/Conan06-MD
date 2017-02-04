@@ -10,6 +10,8 @@
 		$navMenuRow = $navigation.find( '.mdl-layout__header-row' ),
 		$menuScrollDown = $body.find( '.menu-scroll-down' ),
 		$sidebar = $body.find( '#secondary' ),
+		$entryHeader = $body.find( '.single-info' ),
+		$entryHeaderTitle = $entryHeader.find( '.single-info-header' ),
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
 		isFrontPage = $body.hasClass( 'ConanMD-front-page' ) || $body.hasClass( 'home blog' ),
@@ -58,6 +60,8 @@
 		// When there's a custom header image or video, the header offset includes the height of the navigation.
 		if ( isFrontPage && ( $body.hasClass( 'has-header-image' ) || $body.hasClass( 'has-header-video' ) ) ) {
 			headerOffset = $branding.outerHeight() + $navigation.height();
+		} else if ( $entryHeader.hasClass( 'single-info-with-image' ) ) {
+			headerOffset = $entryHeaderTitle.height() - $navigation.height();
 		} else {
 			headerOffset = $branding.outerHeight() - $navigation.height();
 		}

@@ -42,7 +42,7 @@
 	</div>
 	
 	<?php if ( ( is_single() && has_post_thumbnail() ) || ( is_page() && has_post_thumbnail() ) ) : ?>
-		<div class="custom-header-blank" style="height: 56px;"></div>
+		<div class="custom-header-blank"></div>
 	<?php else : ?>
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 	<?php endif; ?>
