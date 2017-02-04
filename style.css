@@ -1393,18 +1393,18 @@ a:active {
 	color: #757575;
 }
 
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield {
-	padding: 0;
+.navigation-more-menu-container .mdl-textfield {
+	padding: 16px 0;
 	transition: background-color 0.2s;
 }
 
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield--expandable {
+.navigation-more-menu-container .mdl-textfield--expandable {
     height: 64px;
 }
 
 .site-navigation-fixed .navigation-more-menu-container .mdl-textfield .search-form {
 	position: inherit;
-	height: 66px;
+	height: 64px;
 }
 
 .site-navigation-fixed .navigation-more-menu-container .mdl-textfield .search-form:after {
@@ -1413,7 +1413,6 @@ a:active {
 }
 
 .site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder {
-	padding-top: 16px;
 	overflow: hidden;
 }
 
@@ -1422,7 +1421,6 @@ a:active {
 }
 
 .site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
-	border-bottom: 0;
 	width: calc(100vw - 112px);
 	/* (16 + 32 + 16) + 8 + 32 + 8 = 112 */
 }
@@ -1431,6 +1429,10 @@ a:active {
 .site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
 	max-width: inherit;
 	padding-left: 16px;
+}
+
+.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
+	border-bottom: 0;
 }
 
 .site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-focused,
@@ -2016,7 +2018,7 @@ body:not(.ConanMD-front-page) .entry-header {
 .archive .site-main > article .mdl-card .mdl-card__media,
 .search .site-main > article .mdl-card .mdl-card__media {
 	margin: 0;
-	background-color: #fff;
+	background-color: #eee;
 	/*max-height: 50.625vw;*/
     overflow: hidden;
 }
@@ -4678,8 +4680,7 @@ button.swiper-pagination-bullet {
 	}
 
 	.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
-		border-bottom: 0;
-		width: calc(100vw - 128px);
+		width: calc(100vw - 140px);
 	}
 
 	/* Blog Index, Archive, Search */
