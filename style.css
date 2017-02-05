@@ -1367,92 +1367,40 @@ a:active {
 			transition: background-color 0.2s;
 }
 
-.navigation-more-menu-wrapper {
+.navigation-icon-menu-wrapper {
 	height: 64px;
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
 }
 
-.navigation-more-menu-container {
+.navigation-icon-menu-container {
 	position: relative;
 	box-sizing: border-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+	margin-top: 16px;
 }
 
-.navigation-more-menu-container > * {
+.navigation-icon-menu-container > * {
 	margin-right: 8px;
 }
 
-.navigation-more-menu-container .mdl-menu__container .material-icons {
+/* more_vert */
+.navigation-icon-menu-container .mdl-menu__container .material-icons {
 	vertical-align: middle;
     margin-right: 16px;
 	display: none;
 	color: #757575;
 }
 
-.navigation-more-menu-container .mdl-textfield {
-	padding: 16px 0;
-	transition: background-color 0.2s;
-}
-
-.navigation-more-menu-container .mdl-textfield--expandable {
-    height: 64px;
-}
-
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .search-form {
-	position: inherit;
-	height: 64px;
-}
-
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .search-form:after {
-	content: '';
-	clear: both;
-}
-
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder {
-	overflow: hidden;
-}
-
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder label {
-	margin-bottom: 0;
-}
-
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
-	width: calc(100vw - 112px);
-	/* (16 + 32 + 16) + 8 + 32 + 8 = 112 */
-}
-
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-focused .mdl-textfield__expandable-holder,
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
-	max-width: inherit;
-	padding-left: 16px;
-}
-
-.navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
-	border-bottom: 0;
-}
-
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-focused,
-.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-dirty {
-	background-color: #fff;
-	transition: background-color 0.2s;
-	height: 64px;
-	padding-left: 16px;
-}
-
-.navigation-more-menu-container #navigation-more-menu {
-	margin-top: 16px;
-}
-
-.site-navigation-fixed .navigation-more-menu-container .mdl-menu__container .mdl-menu__outline {
+.site-navigation-fixed .navigation-icon-menu-container .mdl-menu__container .mdl-menu__outline {
 	/* shadow 6dp */
 	box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
 }
 
-.navigation-more-menu-container .mdl-menu__container abbr {
+.navigation-icon-menu-container .mdl-menu__container abbr {
 	border-bottom: 0;
 	cursor: inherit;
 }
@@ -4679,10 +4627,6 @@ button.swiper-pagination-bullet {
 		margin-bottom: 0;
 	}
 
-	.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
-		width: calc(100vw - 140px);
-	}
-
 	/* Blog Index, Archive, Search */
 
 	.single-info-more > div {
@@ -4943,18 +4887,18 @@ button.swiper-pagination-bullet {
 		top: 32px;
 	}
 
-	.navigation-more-menu-wrapper .mdl-menu__container .mdl-menu {
+	.navigation-icon-menu-wrapper .mdl-menu__container .mdl-menu {
 		min-width: 192px;
 	}
 
-	.navigation-more-menu-wrapper .mdl-menu__container .material-icons {
+	.navigation-icon-menu-wrapper .mdl-menu__container .material-icons {
 		display: inline-block;
 	}
 
 	/* Main Navigation */
 
-	.site-navigation-fixed.navigation-top .navigation-more-menu-wrapper,
-	body:not(.home) .navigation-top .navigation-more-menu-wrapper {
+	.site-navigation-fixed.navigation-top .navigation-icon-menu-wrapper,
+	body:not(.home) .navigation-top .navigation-icon-menu-wrapper {
 		display: block;
 	}
 
@@ -5750,22 +5694,6 @@ button.swiper-pagination-bullet {
 
 	.cmd-recommend-background {
 		margin-top: -3%;
-	}
-}
-
-@media only screen and (min-width: 1440px) {
-
-	.site-navigation-fixed .navigation-more-menu-container .mdl-textfield .mdl-textfield__expandable-holder .mdl-textfield__input {
-		width: calc(1440px - 112px);
-	}
-}
-
-
-@media only screen and (min-width: 1460px) {
-	
-	.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-focused .mdl-textfield__expandable-holder,
-	.site-navigation-fixed .navigation-more-menu-container .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
-		max-width: 1344px;
 	}
 }
 

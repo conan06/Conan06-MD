@@ -4,7 +4,7 @@
 	// Variables and DOM Caching.
 	var $body = $( 'body' ),
 		$customHeader = $body.find( '.custom-header' ),
-		$branding = $customHeader.find( '.site-branding' ),
+		$branding = $customHeader.find( '.site-branding-text' ),
 		$navigation = $body.find( '.navigation-top' ),
 		$navMenuItem = $navigation.find( '.menu-item' ),
 		$navMenuRow = $navigation.find( '.mdl-layout__header-row' ),
@@ -58,12 +58,10 @@
 	function adjustScrollClass() {
 
 		// When there's a custom header image or video, the header offset includes the height of the navigation.
-		if ( isFrontPage && ( $body.hasClass( 'has-header-image' ) || $body.hasClass( 'has-header-video' ) ) ) {
-			headerOffset = $branding.outerHeight() + $navigation.height();
-		} else if ( $entryHeader.hasClass( 'single-info-with-image' ) ) {
-			headerOffset = $entryHeaderTitle.height() - $navigation.height();
+		if ( $entryHeader.hasClass( 'single-info-with-image' ) ) {
+			headerOffset = $entryHeaderTitle.offset().top - $navigation.height();
 		} else {
-			headerOffset = $branding.outerHeight() - $navigation.height();
+			headerOffset = $branding.offset().top - $navigation.height();
 		}
 		
 		// If the scroll is more than the custom header, set the fixed class.
