@@ -10,7 +10,7 @@
 
 ?>
 
-<header class="mdl-layout__header mdl-layout__header--transparent navigation-top">
+<header class="mdl-layout__header mdl-layout__header--transparent navigation-top search-bar-active">
 	<div class="mdl-layout__header-row">
 
 		<span class="mdl-layout-title">
@@ -20,7 +20,7 @@
 		
 		<div class="navigation-icon-menu-wrapper">
 			<div class="navigation-icon-menu-container">
-				<button id="navigation-search" class="mdl-button mdl-js-button mdl-button--icon">
+				<button class="mdl-button mdl-js-button mdl-button--icon" for="navigation-search">
 					<i class="material-icons">search</i>
 				</button>
 				<button id="navigation-more-menu" class="mdl-button mdl-js-button mdl-button--icon">
@@ -35,6 +35,18 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="navigation-search-form">
+		<div class="nav-search-form-back"><i class="material-icons">arrow_back</i></div>
+		<form role="search" method="get" class="nav-search-form-input" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<div class="mdl-textfield mdl-js-textfield">
+				<input id="navigation-search" class="mdl-textfield__input" type="search"
+						placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'ConanMD' ); ?>"
+						value="<?php echo get_search_query(); ?>" name="s">
+			</div>
+		</form>
+	</div>
+
 </header>
 
 <?php if ( has_nav_menu( 'top' ) ) : ?>

@@ -1283,6 +1283,8 @@ a:active {
 			transition: background-color 0.2s;
 }
 
+/* Menu Drawer */
+
 .mdl-layout__drawer {
 	width: 270px;
 	position: fixed;
@@ -1341,6 +1343,7 @@ a:active {
 	margin-right: 24px;
 }
 
+/* reset */
 #top-menu li > ul,
 #top-menu li > ol {
 	margin-left: 0;
@@ -1403,6 +1406,66 @@ a:active {
 .navigation-icon-menu-container .mdl-menu__container abbr {
 	border-bottom: 0;
 	cursor: inherit;
+}
+
+/* Navigation Search Form */
+
+.navigation-search-form {
+	display: none;
+	visibility: hidden;
+    height: 64px;
+    width: calc( 100% - 48px); /* Don't cover the more_vert menu button */
+    padding: 0;
+	position: absolute;
+    top: 0;
+    left: 0;
+	box-sizing: border-box;
+}
+
+.navigation-search-form .nav-search-form-back {
+	width: 48px;
+	height: 48px;
+	line-height: 52px;
+	margin: 8px 12px;
+	overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+	font-size: 26px;
+}
+
+.navigation-search-form .nav-search-form-input {
+	padding: 16px 0;
+	position: absolute;
+	left: 80px;
+	top: 0;
+}
+
+.navigation-search-form .nav-search-form-input > div {
+	padding: 0;
+	width: calc(100vw - 180px);
+}
+
+.navigation-search-form .nav-search-form-input > div > input {
+	border-bottom: 0;
+}
+
+.search-bar-active {
+	background-color: #fff!important;
+	color: #000;
+}
+
+.search-bar-active .navigation-search-form {
+	visibility: visible;
+	display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+	z-index: 4;
+}
+
+.search-bar-active .mdl-layout__drawer-button,
+.search-bar-active .mdl-layout-title,
+.search-bar-active .mdl-layout-spacer {
+	display: none;
 }
 
 /*--------------------------------------------------------------
