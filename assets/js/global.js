@@ -8,6 +8,10 @@
 		$navigation = $body.find( '.navigation-top' ),
 		$navMenuItem = $navigation.find( '.menu-item' ),
 		$navMenuRow = $navigation.find( '.mdl-layout__header-row' ),
+		$navSearchBtn = $navigation.find( '#navigation-search-btn' ),
+		$navSearchBack = $navigation.find( '.nav-search-form-back' ),
+		$navSearchForm = $navigation.find( '.nav-search-form-input' ),
+		$navSearchClear = $navigation.find( '#nav-search-form-clear' ),
 		$menuScrollDown = $body.find( '.menu-scroll-down' ),
 		$sidebar = $body.find( '#secondary' ),
 		$entryHeader = $body.find( '.single-info' ),
@@ -213,6 +217,35 @@
 	// Add header video class after the video is loaded.
 	$( document ).on( 'wp-custom-header-video-loaded', function() {
 		$body.addClass( 'has-header-video' );
+	});
+
+	$navSearchBtn.click( function() {
+		if ( $navSearchForm.find( '#navigation-search' ).val() ) {
+			$navSearchForm.find( '#navigation-search' ).val("");
+			$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
+		} 
+		$navigation.addClass( 'search-bar-active' );
+		$navSearchForm.find( '#navigation-search' ).focus();
+	});
+
+	$navSearchBack.click( function() {
+		$navigation.removeClass( 'search-bar-active' );
+		$navSearchForm.find( '#navigation-search' ).val("");
+		$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
+	});
+
+	$navSearchForm.change( function() {
+		if ( $( this ).find( '#navigation-search' ).val() ) {
+			$navSearchClear.fadeIn(200);
+		} else {
+			$navSearchClear.fadeOut(200);
+		}
+	});
+
+	$navSearchClear.click( function() {
+		$navSearchForm.find( '#navigation-search' ).val("");
+		$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
+		$( this ).fadeOut(200);
 	});
 
 })( jQuery );
