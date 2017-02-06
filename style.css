@@ -1663,9 +1663,9 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 .custom-header-media:before {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+75 */
-	background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.2) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.2) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: 　　-moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%); /* FF3.6-15 */
+	background:	-webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: 　　　　　linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0); /* IE6-9 */
 	top: 0;
 	content: "";
@@ -2254,7 +2254,7 @@ body:not(.ConanMD-front-page) .entry-header {
     position: absolute;
     width: 100%;
     top: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%);
     z-index: 2;
 }
 
