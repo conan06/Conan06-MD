@@ -1659,6 +1659,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	right: 0;
 	top: 0;
 	width: 100%;
+	z-index: -1;
 }
 
 .custom-header-media:before {
@@ -1689,7 +1690,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	min-width: 100vw; /* vw prevents 1px gap on left that 100% has */
 	width: auto;
 	top: 50%;
-	padding-bottom: 1px; /* Prevent header from extending beyond the footer */
 	-ms-transform: translateX(-50%) translateY(0);
 	-moz-transform: translateX(-50%) translateY(0);
 	-webkit-transform: translateX(-50%) translateY(0);
@@ -4691,7 +4691,7 @@ button.swiper-pagination-bullet {
 	/* Site Branding */
 
 	.site-branding {
-		padding: 3em 0;
+		padding-bottom: 3em;
 	}
 
 	/* Front Page */
@@ -5193,7 +5193,7 @@ button.swiper-pagination-bullet {
 	.ConanMD-front-page.has-header-video .site-branding,
 	.home.blog.has-header-image .site-branding,
 	.home.blog.has-header-video .site-branding {
-		margin-bottom: 60px;
+		margin-bottom: 100px;
 	}
 
 	.ConanMD-front-page.has-header-image .custom-header-media,
