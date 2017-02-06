@@ -40,8 +40,7 @@
 		<div class="nav-search-form-back"><i class="material-icons">arrow_back</i></div>
 		<form role="search" method="get" class="nav-search-form-input" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<div class="mdl-textfield mdl-js-textfield">
-				<input id="navigation-search" class="mdl-textfield__input" type="search"
-						value="<?php echo get_search_query(); ?>" name="s">
+				<input id="navigation-search" class="mdl-textfield__input" type="search" name="s">
 				<label class="mdl-textfield__label" for="navigation-search"><?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'ConanMD' ); ?></label>
 			</div>
 		</form>

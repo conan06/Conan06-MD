@@ -19,4 +19,4 @@
 	<button type="submit" class="search-submit"><?php echo conanMD_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', 'ConanMD' ); ?></span></button>
 </form>
 
-<div></div>
+<div style="min-height:5em;"></div>
