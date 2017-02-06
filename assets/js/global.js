@@ -234,7 +234,7 @@
 		$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
 	});
 
-	$navSearchForm.change( function() {
+	$navSearchForm.on('input', function() {
 		if ( $( this ).find( '#navigation-search' ).val() ) {
 			$navSearchClear.fadeIn(200);
 		} else {
