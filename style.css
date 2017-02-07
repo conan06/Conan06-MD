@@ -5545,11 +5545,19 @@ button.swiper-pagination-bullet {
 				transition: left 0.3s;
 	}
 
+	.nav-links .nav-previous:hover .nav-title-container .nav-title-icon-wrapper {
+		left: -2.5em;
+	}
+
 	.nav-links .nav-next .nav-title-container .nav-title-icon-wrapper {
 		right: -1.5em;
 		left: auto;
 		-webkit-transition: right 0.3s;
 				transition: right 0.3s;
+	}
+
+	.nav-links .nav-next:hover .nav-title-container .nav-title-icon-wrapper {
+		right: -2.5em;
 	}
 
 	/* Secondary */
