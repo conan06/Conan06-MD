@@ -40,8 +40,14 @@ get_header(); ?>
 				endwhile; // End of the loop.
 
 				the_posts_pagination( array(
-					'prev_text' => conanMD_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'ConanMD' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'ConanMD' ) . '</span>' . conanMD_get_svg( array( 'icon' => 'arrow-right' ) ),
+					'prev_text' => '<span class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+											<i class="material-icons">arrow_back</i>
+										</span>
+										<span class="screen-reader-text">' . __( 'Previous page', 'ConanMD' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'ConanMD' ) . '</span>
+										<span class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+											<i class="material-icons">arrow_forward</i>
+										</span>',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'ConanMD' ) . ' </span>',
 				) );
 
