@@ -41,9 +41,7 @@
 		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 	</div>
 	
-	<?php if ( ( is_single() && has_post_thumbnail() ) || ( is_page() && has_post_thumbnail() ) ) : ?>
-		<div class="custom-header-blank"></div>
-	<?php else : ?>
+	<?php if ( ! ( is_single() || is_page() ) || (( is_single() || is_page() ) && ! has_post_thumbnail() ) )  : ?>
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 	<?php endif; ?>
 

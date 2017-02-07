@@ -64,6 +64,8 @@
 		// When there's a custom header image or video, the header offset includes the height of the navigation.
 		if ( $entryHeader.hasClass( 'single-info-with-image' ) ) {
 			headerOffset = $entryHeaderTitle.offset().top - $navigation.height();
+		} else if ( $body.hasClass( 'page' ) ) {
+			headerOffset = $navigation.height();
 		} else {
 			headerOffset = $branding.offset().top - $navigation.height();
 		}

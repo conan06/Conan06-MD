@@ -1276,11 +1276,30 @@ a:active {
 	position: fixed;
 }
 
+.navigation-top:before {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+75 */
+	background:	   -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%); /* Chrome10-25,Safari5.1-6 */
+	background:         linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0); /* IE6-9 */
+	content: '';
+	height: 72px;
+    width: 100%;
+    position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+}
+
 .site-navigation-fixed.navigation-top {
 	background-color: #fafafa;
 	color: #000;
 	-webkit-transition: background-color 0.2s;
 			transition: background-color 0.2s;
+}
+
+.site-navigation-fixed.navigation-top:before {
+	content: none;
 }
 
 /* Menu Drawer */
@@ -1661,22 +1680,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	top: 0;
 	width: 100%;
 	z-index: -1;
-}
-
-.custom-header-media:before {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+75 */
-	background:	   -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%); /* Chrome10-25,Safari5.1-6 */
-	background:         linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0); /* IE6-9 */
-	top: 0;
-	content: "";
-	display: block;
-	height: 33%;
-	left: 0;
-	position: absolute;
-	right: 0;
-	z-index: 2;
 }
 
 .has-header-image .custom-header-media img,
@@ -2249,16 +2252,6 @@ body:not(.ConanMD-front-page) .entry-header {
     z-index: 0;
 }
 
-.custom-header-blank {
-	content: '';
-	height: 64px;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.2) 100%);
-    z-index: 2;
-}
-
 .single-info {
 	max-width:  1440px;
 	margin: 0 auto;
@@ -2415,7 +2408,7 @@ body:not(.ConanMD-front-page) .entry-header {
 
 .single-info-with-image .single-info-wrapper {
 	position: relative;
-	margin-top: -17%;
+	margin-top: -13%;
 	z-index: 2;
 }
 
