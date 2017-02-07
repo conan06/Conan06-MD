@@ -47,7 +47,10 @@ get_header(); ?>
 
 			else : ?>
 
+				<div class="null-image"></div>
+
 				<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ConanMD' ); ?></p>
+				
 				<?php
 					get_search_form();
 

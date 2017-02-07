@@ -2673,13 +2673,41 @@ body:not(.ConanMD-front-page) .entry-header {
 
 /* 404 page */
 
-.error404 .page-content {
-	padding-bottom: 4em;
+.error404 .site-content,
+.search-no-results .site-content {
+	text-align: center;
 }
 
-.error404 .page-content .search-form,
-.search .page-content .search-form {
+.error404 .site-content .search-form,
+.search .site-content .search-form {
 	margin-bottom: 3em;
+}
+
+.error404 .site-content .search-form .mdl-textfield__label:after,
+.search .site-content .search-form .mdl-textfield__label:after {
+	background-color: #2196f3!important;
+}
+
+.error404 .site-content .page-title,
+.search-no-results .site-content .page-title {
+	font-size: 24px;
+    line-height: 32px;
+    font-weight: normal;
+}
+
+.error404 .site-content .null-image,
+.search-no-results .site-content .null-image {
+	background-image: url(assets/images/null_page.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 200px;
+	width: 200px;
+    margin: 0 auto;
+	margin-bottom: 40px;
+}
+
+.search-no-results .site-content .null-image {
+	background-image: url(assets/images/null_search.png);
 }
 
 /*--------------------------------------------------------------
@@ -3163,11 +3191,8 @@ h2.widget-title {
 }
 
 .search-form .search-submit {
-	bottom: 3px;
-	padding: 0.5em 1em;
 	position: absolute;
-	right: 3px;
-	top: 3px;
+	right: 0;
 }
 
 .search-form .search-submit .icon {
@@ -4812,6 +4837,7 @@ button.swiper-pagination-bullet {
 	.blog .site-content-contain .wrap .wrap-content,
 	.archive .site-content-contain .wrap .wrap-content,
 	.search .site-content-contain .wrap .wrap-content,
+	.error404 .site-content-contain .wrap .wrap-content,
 	footer .wrap .wrap-content {
 		max-width: 1000px;
 		margin: 0 auto;
@@ -5445,12 +5471,6 @@ button.swiper-pagination-bullet {
 
 	.page:not(.home) #content {
 		padding-bottom: 0;
-	}
-
-	/* 404 page */
-
-	.error404 .page-content {
-		padding-bottom: 9em;
 	}
 
 	/* Comments */
