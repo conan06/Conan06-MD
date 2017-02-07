@@ -1305,7 +1305,7 @@ a:active {
 /* Menu Title */
 
 .navigation-top .mdl-layout-title {
-	width: calc(100vw - 180px);
+	width: 100%;
 }
 
 .navigation-top .navigation-title {
