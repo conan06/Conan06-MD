@@ -317,7 +317,7 @@ template {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+			box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	color: #21759b;
 	display: block;
@@ -994,7 +994,7 @@ input[type="submit"] {
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	-webkit-box-shadow: none;
-	box-shadow: none;
+			box-shadow: none;
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
@@ -1190,7 +1190,7 @@ a:active {
 .posts-navigation a,
 .widget_authors a strong {
 	-webkit-box-shadow: inset 0 -1px 0 rgba(15, 15, 15, 1);
-	box-shadow: inset 0 -1px 0 rgba(15, 15, 15, 1);
+			box-shadow: inset 0 -1px 0 rgba(15, 15, 15, 1);
 	-webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
@@ -1207,7 +1207,7 @@ a:active {
 .site-footer .widget-area ul li a,
 .site-footer .widget-area ul li a {
 	-webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);
+			box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);
 	text-decoration: none;
 	-webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
@@ -1239,7 +1239,7 @@ a:active {
 .widget ul li a:hover {
 	color: #000;
 	-webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
-	box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
+			box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
 }
 
 .post-navigation a:focus .icon,
@@ -1306,11 +1306,17 @@ a:active {
 
 .navigation-top .mdl-layout-title {
 	width: 100%;
+	width: calc(100% - 64px);
 }
 
 .navigation-top .navigation-title {
 	position: absolute;
 	top: 0;
+	width: 100%;
+	height: 100%;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	opacity: 0;
 	visibility: hidden;
 }
@@ -1915,9 +1921,17 @@ body.page:not(.ConanMD-front-page) .entry-title {
 	text-transform: uppercase;
 }
 
+.single-post .entry-title, .page .entry-title {
+	font-size: 22px;
+    font-size: 1.625rem!important;
+}
+
 .page-template-default .entry-header .entry-title {
 	margin-right: 8px;
-	float:left;
+}
+
+.admin-bar.page-template-default .entry-header .entry-title {
+	float: left;
 }
 
 .entry-header .entry-title {
@@ -5318,11 +5332,7 @@ button.swiper-pagination-bullet {
 		padding-right: 50px;
 	}
 
-	.single-post .entry-title,
-	.page .entry-title {
-		font-size: 26px;
-		font-size: 1.625rem!important;
-	}
+	c
 
 	.single-post .entry-content,
 	.single-post .entry-footer {

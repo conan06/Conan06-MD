@@ -62,13 +62,16 @@
 	function adjustScrollClass() {
 
 		// When there's a custom header image or video, the header offset includes the height of the navigation.
-		if ( $entryHeader.hasClass( 'single-info-with-image' ) ) {
-			headerOffset = $entryHeaderTitle.offset().top - $navigation.height();
-		} else if ( $body.hasClass( 'page' ) ) {
-			headerOffset = $navigation.height();
+		if ( ! $branding.length ) {
+			if ( $entryHeader.hasClass( 'single-info-with-image' ) ) {
+				headerOffset = $entryHeaderTitle.offset().top - $navigation.height();
+			} else {
+				headerOffset = $navigation.height();
+			}
 		} else {
 			headerOffset = $branding.offset().top - $navigation.height();
 		}
+		
 		
 		// If the scroll is more than the custom header, set the fixed class.
 		if ( $( window ).scrollTop() >= headerOffset ) {
