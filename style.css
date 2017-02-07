@@ -2061,7 +2061,7 @@ body:not(.ConanMD-front-page) .entry-header {
 	padding-top: 0;
 }
 
-body:not(.ConanMD-front-page) .entry-content {
+body:not(.ConanMD-front-page):not(.page) .entry-content {
 	max-width: 800px;
 }
 
