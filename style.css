@@ -1302,6 +1302,25 @@ a:active {
 	content: none;
 }
 
+/* Menu Title */
+
+.navigation-top .navigation-title {
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.site-navigation-fixed.navigation-top .navigation-title {
+	opacity: 1;
+	visibility: visible;
+}
+
+.site-navigation-fixed.navigation-top .navigation-title + a {
+	opacity: 0;
+    visibility: hidden;
+}
+
 /* Menu Drawer */
 
 .mdl-layout__drawer {

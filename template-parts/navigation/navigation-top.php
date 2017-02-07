@@ -14,7 +14,12 @@
 	<div class="mdl-layout__header-row">
 
 		<span class="mdl-layout-title">
-			<a href="<?php printf( site_url() ) ?>"><?php bloginfo('name'); ?></a>
+			<?php if ( is_single() || is_page() ) :?>
+				<a class="navigation-title"><?php wp_title(''); ?></a>
+				<a href="<?php printf( site_url() ) ?>"><?php bloginfo('name'); ?></a>
+			<?php else :?>
+				<a href="<?php printf( site_url() ) ?>"><?php bloginfo('name'); ?></a>
+			<?php endif; ?>
 		</span>
 		<div class="mdl-layout-spacer"></div>
 		

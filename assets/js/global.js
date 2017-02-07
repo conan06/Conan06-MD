@@ -246,6 +246,7 @@
 
 	$navSearchClear.click( function() {
 		$navSearchForm.find( '#navigation-search' ).val("");
+		$navSearchForm.find( '#navigation-search' ).focus();
 		$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
 		$( this ).fadeOut(200);
 	});
