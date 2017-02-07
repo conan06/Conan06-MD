@@ -4795,6 +4795,25 @@ button.swiper-pagination-bullet {
 		font-size: 1rem;
 	}
 
+	.search .site-main {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-flow: row wrap;
+		justify-content: space-around;
+	}
+
+	.search .site-main > article {
+		width: 33%;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
 	/* Site Footer */
 
 	.site-footer {
@@ -5408,13 +5427,7 @@ button.swiper-pagination-bullet {
 		width: 32px;
 	}
 
-	.navigation.pagination {
-		clear: both;
-		float: right;
-		width: 58%;
-	}
-
-	.has-sidebar .navigation.pagination,
+	.navigation.pagination,
 	.archive.page-one-column:not(.has-sidebar) .navigation.pagination {
 		float: none;
 		width: 100%;

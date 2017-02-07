@@ -40,7 +40,7 @@ function conanMD_body_classes( $classes ) {
 	}
 
 	// Add class if sidebar is used.
-	if ( is_active_sidebar( 'sidebar-1' ) && ! is_page() && ! is_single() ) {
+	if ( is_active_sidebar( 'sidebar-1' ) && ! is_page() && ! is_single() && ! is_search() && ! is_404() ) {
 		$classes[] = 'has-sidebar';
 	}
 
