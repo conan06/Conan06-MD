@@ -2720,7 +2720,7 @@ body:not(.ConanMD-front-page) .entry-content {
 
 .error404 .site-content .search-form,
 .search .site-content .search-form {
-	margin-bottom: 3em;
+	padding-bottom: 3em;
 }
 
 .error404 .site-content .search-form .mdl-textfield__label:after,
