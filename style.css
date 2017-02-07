@@ -1321,12 +1321,12 @@ a:active {
 	visibility: hidden;
 }
 
-.site-navigation-fixed.navigation-top .navigation-title {
+.site-navigation-show-title.navigation-top .navigation-title {
 	opacity: 1;
 	visibility: visible;
 }
 
-.site-navigation-fixed.navigation-top .navigation-title + a {
+.site-navigation-show-title.navigation-top .navigation-title + a {
 	opacity: 0;
     visibility: hidden;
 }
@@ -2059,6 +2059,10 @@ body:not(.ConanMD-front-page) #comments {
 
 body:not(.ConanMD-front-page) .entry-header {
 	padding-top: 0;
+}
+
+body:not(.ConanMD-front-page) .entry-content {
+	max-width: 800px;
 }
 
 .blog .entry-meta a.post-edit-link,

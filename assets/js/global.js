@@ -12,21 +12,24 @@
 		$navSearchBack = $navigation.find( '.nav-search-form-back' ),
 		$navSearchForm = $navigation.find( '.nav-search-form-input' ),
 		$navSearchClear = $navigation.find( '#nav-search-form-clear' ),
-		$menuScrollDown = $body.find( '.menu-scroll-down' ),
 		$sidebar = $body.find( '#secondary' ),
+		$entryTitle = $body.find( '.entry-title' ),
 		$entryHeader = $body.find( '.single-info' ),
 		$entryHeaderTitle = $entryHeader.find( '.single-info-header' ),
+		$entryInfoTitle = $entryHeaderTitle.find( '.single-info-title' ),
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
 		isFrontPage = $body.hasClass( 'ConanMD-front-page' ) || $body.hasClass( 'home blog' ),
 		navigationFixedClass = 'site-navigation-fixed',
 		navigationShadowClass = 'mdl-shadow--4dp',
+		navigationShowTitleClass = 'site-navigation-show-title',
 		navigationHeight,
 		navigationOuterHeight,
 		navMenuItemHeight,
 		idealNavHeight,
 		navIsNotTooTall,
 		headerOffset,
+		titleOffset,
 		menuTop = 0,
 		resizeTimer;
 
@@ -72,7 +75,6 @@
 			headerOffset = $branding.offset().top - $navigation.height();
 		}
 		
-		
 		// If the scroll is more than the custom header, set the fixed class.
 		if ( $( window ).scrollTop() >= headerOffset ) {
 			$navigation.addClass( navigationFixedClass );
@@ -81,6 +83,24 @@
 			$navigation.removeClass( navigationFixedClass );
 			$navMenuRow.removeClass( navigationShadowClass );
 		}
+
+
+		if ( $entryTitle.length ) {
+			titleOffset = $entryTitle.offset().top - $entryTitle.height();
+		} else if ( $entryInfoTitle.length ) {
+			titleOffset = $entryInfoTitle.offset().top - 0.5 * $entryInfoTitle.height();
+		} else {
+			titleOffset = 0;
+		}
+
+		if ( titleOffset ) {
+			if ( $( window ).scrollTop() >= titleOffset ) {
+				$navigation.addClass( navigationShowTitleClass );
+			} else {
+				$navigation.removeClass( navigationShowTitleClass );
+			}
+		}
+		
 	}
 
 	// Set icon for quotes.
@@ -163,28 +183,6 @@
 		if ( $navigation.length ) {
 			setNavProps();
 			adjustScrollClass();
-		}
-
-		// If 'Scroll Down' arrow in present on page, calculate scroll offset and bind an event handler to the click event.
-		if ( $menuScrollDown.length ) {
-
-			if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-				menuTop -= 32;
-			}
-			if ( $( 'body' ).hasClass( 'blog' ) ) {
-				menuTop -= 30; // The div for latest posts has no space above content, add some to account for this.
-			}
-			if ( ! $navigation.length ) {
-				navigationOuterHeight = 0;
-			}
-
-			$menuScrollDown.click( function( e ) {
-				e.preventDefault();
-				$( window ).scrollTo( '#primary', {
-					duration: 600,
-					offset: { top: menuTop - navigationOuterHeight }
-				});
-			});
 		}
 
 		setQuotesIcon();
