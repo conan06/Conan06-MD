@@ -2080,6 +2080,12 @@ body:not(.ConanMD-front-page) .entry-header {
     overflow: hidden;
 }
 
+.blog .site-main > article .mdl-card .mdl-card__media img,
+.archive .site-main > article .mdl-card .mdl-card__media img,
+.search .site-main > article .mdl-card .mdl-card__media img {
+	width: 100%;
+}
+
 .blog .site-main > article .mdl-card figure + header,
 .archive .site-main > article .mdl-card figure + header,
 .search .site-main > article .mdl-card figure + header {
