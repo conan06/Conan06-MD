@@ -2652,11 +2652,38 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
     text-align: center;
 }
 
-.single-post .entry-content > .full-width figcaption {
+.single-post .entry-content > .full-width figcaption,
+.single-post .entry-content > .half-width figcaption {
     display: block;
     text-align: left;
 	font-style: italic;
     color: #666;
+	font-size: 12px;
+    font-size: 0.8125rem;
+}
+
+.single-post .entry-content > .half-width {
+	clear: both;
+    float: none;
+    margin-bottom: 40px;
+    text-align: center;
+	max-width: 500px;
+}
+
+.single-post .entry-content > .half-width.align-left {
+	float: left;
+    margin-left: -100px;
+    margin-right: 30px;
+}
+
+.single-post .entry-content > .half-width.align-right {
+	float: right;
+    margin-left: 30px;
+    margin-right: -100px;
+}
+
+.single-post .entry-content > .half-width figure {
+	margin: 0;
 }
 
 .entry-content > h3 {
@@ -5852,13 +5879,6 @@ button.swiper-pagination-bullet {
 	}
 }
 
-@media screen and ( max-width: 600px ) {
-
-	#wpadminbar {
-		position: fixed;
-	}
-}
-
 @media screen and ( max-width: 1024px ) {
 
 	/* Navigation */
@@ -5979,6 +5999,24 @@ button.swiper-pagination-bullet {
     	padding-left: 3vw;
 	}
 
+	.single-post .entry-content > .half-width {
+		max-width: 50vw;
+	}
+
+	.single-post .entry-content > .half-width.align-left {
+		float: left;
+		margin-top: 0;
+    	margin-left: -5vw;
+    	margin-right: 3vw;
+	}
+
+	.single-post .entry-content > .half-width.align-right {
+		float: right;
+		margin-top: 0;
+    	margin-left: 3vw;
+    	margin-right: -5vw;
+	}
+
 	.wp-video-shortcode,
 	.wp-video-shortcode .me-plugin {
 		width: 100vw!important;
@@ -6004,6 +6042,31 @@ button.swiper-pagination-bullet {
 
 	.cmd-recommend-background {
 		margin-top: -3%;
+	}
+}
+
+@media screen and ( max-width: 600px ) {
+
+	#wpadminbar {
+		position: fixed;
+	}
+
+	.single-post .entry-content > .half-width {
+		max-width: 100vw;
+	}
+
+	.single-post .entry-content > .half-width.align-left {
+		float: none;
+		margin-right: -5vw;
+	}
+
+	.single-post .entry-content > .half-width.align-right {
+		float: none;
+		margin-left: -5vw;
+	}
+
+	.single-post .entry-content > .half-width figcaption {
+		padding-left: 3vw;
 	}
 }
 
