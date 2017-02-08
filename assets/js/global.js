@@ -7,6 +7,7 @@
 		$branding = $customHeader.find( '.site-branding-text' ),
 		$navigation = $body.find( '.navigation-top' ),
 		$navMenuItem = $navigation.find( '.menu-item' ),
+		$navMenuBtn = $navigation.find( '.mdl-layout__drawer-button' ),
 		$navMenuRow = $navigation.find( '.mdl-layout__header-row' ),
 		$navSearchBtn = $navigation.find( '#navigation-search-btn' ),
 		$navSearchBack = $navigation.find( '.nav-search-form-back' ),
@@ -23,6 +24,7 @@
 		navigationFixedClass = 'site-navigation-fixed',
 		navigationShadowClass = 'mdl-shadow--4dp',
 		navigationShowTitleClass = 'site-navigation-show-title',
+		navigationSearhActiveClass = 'search-bar-active',
 		navigationHeight,
 		navigationOuterHeight,
 		navMenuItemHeight,
@@ -30,6 +32,7 @@
 		navIsNotTooTall,
 		headerOffset,
 		titleOffset,
+		windowOffset,
 		menuTop = 0,
 		resizeTimer;
 
@@ -106,6 +109,42 @@
 	// Set icon for quotes.
 	function setQuotesIcon() {
 		$( ConanMDScreenReaderText.quote ).prependTo( $formatQuote );
+	}
+
+	// When click menu button in navigation, fixed the body
+	function fixedBodyScroll() {
+
+		if ( $navMenuBtn.length ) {
+
+			if ( $body.hasClass( 'admin-bar' ) ) {
+				menuTop -= $( '#wpadminbar' ).height();
+			}
+			if ( ! windowOffset ) {
+				windowOffset = 0;
+			}
+
+			$navMenuBtn.click( function() {
+				$body.css({
+					"position":"fixed",
+					"height":"100%",
+					"overflow-y":"scroll",
+					"left":"0",
+					"top":-windowOffset + "px"
+				});
+
+				if ( menuTop ) {
+					$( 'html' )[0].style.setProperty( 'margin-top', '0px', 'important' );
+					$( 'body' )[0].style.setProperty( 'margin-top', -menuTop + 'px', 'important' );
+				}
+
+				// fix Prallax visibility
+				//$( '.parallax-mirror' ).each(function () {
+				//	this.style.setProperty( 'visibility', 'hidden', 'important' );
+				//});
+
+			});
+
+		}
 	}
 
 	// Add 'below-entry-meta' class to elements.
@@ -185,6 +224,8 @@
 			adjustScrollClass();
 		}
 
+		//fixedBodyScroll();
+
 		setQuotesIcon();
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
@@ -201,6 +242,7 @@
 		// On scroll, we want to stick/unstick the navigation.
 		$( window ).on( 'scroll', function() {
 			adjustScrollClass();
+			windowOffset = $( window ).scrollTop();
 		});
 
 		// Also want to make sure the navigation is where it should be on resize.
@@ -217,22 +259,25 @@
 		}, 300 );
 	});
 
+
 	// Add header video class after the video is loaded.
 	$( document ).on( 'wp-custom-header-video-loaded', function() {
 		$body.addClass( 'has-header-video' );
 	});
 
+
+	// Search button events
 	$navSearchBtn.click( function() {
 		if ( $navSearchForm.find( '#navigation-search' ).val() ) {
 			$navSearchForm.find( '#navigation-search' ).val("");
 			$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
 		} 
-		$navigation.addClass( 'search-bar-active' );
+		$navigation.addClass( navigationSearhActiveClass );
 		$navSearchForm.find( '#navigation-search' ).focus();
 	});
 
 	$navSearchBack.click( function() {
-		$navigation.removeClass( 'search-bar-active' );
+		$navigation.removeClass( navigationSearhActiveClass );
 		$navSearchForm.find( '#navigation-search' ).val("");
 		$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
 	});

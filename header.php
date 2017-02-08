@@ -37,9 +37,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'ConanMD' ); ?></a>
 
-	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-	</div>
+	<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 	
 	<?php if ( ! ( is_single() || is_page() ) || (( is_single() || is_page() ) && ! has_post_thumbnail() ) )  : ?>
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
