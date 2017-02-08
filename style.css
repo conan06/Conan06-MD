@@ -1303,10 +1303,6 @@ a:active {
 }
 
 /* fix */
-.mdl-layout--no-drawer-button .mdl-layout__drawer-button {
-	/*position: relative;*/
-}
-
 .mdl-layout--no-drawer-button .mdl-layout__header-row {
 	padding-left: 80px;
 	padding-right: 80px;
