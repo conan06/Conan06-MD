@@ -2184,6 +2184,12 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
     overflow: hidden;
 }
 
+.blog .site-main > article .mdl-card .mdl-card__media a,
+.archive .site-main > article .mdl-card .mdl-card__media a,
+.search .site-main > article .mdl-card .mdl-card__media a {
+	display: block;
+}
+
 .blog .site-main > article .mdl-card .mdl-card__media img,
 .archive .site-main > article .mdl-card .mdl-card__media img,
 .search .site-main > article .mdl-card .mdl-card__media img {
