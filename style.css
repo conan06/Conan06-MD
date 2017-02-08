@@ -2645,16 +2645,16 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 	text-indent: 0;
 }
 
-.single-post .entry-content > figure.full-width img {
+.single-post .entry-content > .full-width figure {
 	display: table;
     margin: 0 auto;
     max-width: 100%; 
     text-align: center;
 }
 
-.single-post .entry-content > figure.full-width figcaption {
+.single-post .entry-content > .full-width figcaption {
     display: block;
-    text-align: center;
+    text-align: left;
 	font-style: italic;
     color: #666;
 }
@@ -5973,6 +5973,10 @@ button.swiper-pagination-bullet {
 	.wp-video {
     	margin-left: -5vw;
     	margin-right: -5vw;
+	}
+
+	.single-post .entry-content > .full-width figcaption {
+    	padding-left: 3vw;
 	}
 
 	.wp-video-shortcode,
