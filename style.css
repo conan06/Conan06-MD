@@ -2671,6 +2671,8 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 .entry-footer .tags-links a {
 	color: #333;
 	margin-right: 8px;
+	margin-bottom: 8px;
+    display: inline-block;
 }
 
 .entry-footer .edit-link {
