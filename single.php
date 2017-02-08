@@ -75,4 +75,6 @@ get_header(); ?>
 	</div>
 </div><!-- .wrap -->
 
+<?php conanMD_fab_button(); ?>
+
 <?php get_footer();
