@@ -2639,7 +2639,24 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 .single-post .entry-content > .full-width {
     margin-left: -100px;
     margin-right: -100px;
+	margin-top: 40px;
+	margin-bottom: 40px;
     max-width: 1000px;
+	text-indent: 0;
+}
+
+.single-post .entry-content > figure.full-width img {
+	display: table;
+    margin: 0 auto;
+    max-width: 100%; 
+    text-align: center;
+}
+
+.single-post .entry-content > figure.full-width figcaption {
+    display: block;
+    text-align: center;
+	font-style: italic;
+    color: #666;
 }
 
 .entry-content > h3 {
