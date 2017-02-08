@@ -2190,6 +2190,20 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 	width: 100%;
 }
 
+.blog .site-main > article.format-image .mdl-card .mdl-card__media img,
+.archive .site-main > article.format-image .mdl-card .mdl-card__media img,
+.search .site-main > article.format-image .mdl-card .mdl-card__media img {
+	min-height: 300px;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    top: 0;
+    -ms-transform: none;
+    -moz-transform: none;
+    -webkit-transform: none;
+    transform: none;
+}
+
 .blog .site-main > article .mdl-card figure + header,
 .archive .site-main > article .mdl-card figure + header,
 .search .site-main > article .mdl-card figure + header {
