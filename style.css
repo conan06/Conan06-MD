@@ -2602,7 +2602,7 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 
 .single-format-video .single-info:not(.single-info-with-image),
 .single-format-video .single-info-with-image .single-info-wrapper {
-	background-color: #ffaa2c;
+	background-color: #f5564a;
 }
 
 .single-format-quote .single-info:not(.single-info-with-image),
@@ -2627,7 +2627,7 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 
 .single-format-chat .single-info:not(.single-info-with-image),
 .single-format-chat .single-info-with-image .single-info-wrapper {
-	background-color: #f5564a;
+	background-color: #9E9E9E;
 }
 
 .single-format-status .single-info:not(.single-info-with-image),
@@ -4779,8 +4779,8 @@ button.swiper-pagination-bullet {
 }
 
 .mdl-button--fab.is-active i {
-	-webkit-transform: translate(-12px,-12px) rotate(-135deg);
-			transform: translate(-12px,-12px) rotate(-135deg);
+	-webkit-transform: translate(-12px,-12px) rotate(135deg);
+			transform: translate(-12px,-12px) rotate(135deg);
 }
 
 /*--------------------------------------------------------------
