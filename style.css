@@ -4765,11 +4765,22 @@ button.swiper-pagination-bullet {
 	visibility: visible;
 }
 
+/* FAB */
+
 .mdl-button--fab {
 	position: fixed;
     bottom: 32px;
     right: 32px;
 	z-index: 3;
+}
+
+.mdl-button--fab i {
+	transition: transform 0.2s;
+}
+
+.mdl-button--fab.is-active i {
+	-webkit-transform: translate(-12px,-12px) rotate(-135deg);
+			transform: translate(-12px,-12px) rotate(-135deg);
 }
 
 /*--------------------------------------------------------------
@@ -6078,6 +6089,8 @@ button.swiper-pagination-bullet {
 		position: fixed;
 	}
 
+	/* Entry */
+
 	.single-post .entry-content > .half-width {
 		max-width: 100vw;
 		width: inherit!important;
@@ -6095,6 +6108,13 @@ button.swiper-pagination-bullet {
 
 	.single-post .entry-content > .half-width figcaption {
 		padding-left: 3vw;
+	}
+
+	/* FAB */
+	
+	.mdl-button--fab {
+		bottom: 10px;
+		right: 10px;
 	}
 }
 

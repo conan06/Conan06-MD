@@ -20,6 +20,7 @@
 		$entryInfoTitle = $entryHeaderTitle.find( '.single-info-title' ),
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
+		$pageFAButton = $body.find( '.mdl-button--fab' ),
 		isFrontPage = $body.hasClass( 'ConanMD-front-page' ) || $body.hasClass( 'home blog' ),
 		navigationFixedClass = 'site-navigation-fixed',
 		navigationShadowClass = 'mdl-shadow--4dp',
@@ -234,6 +235,42 @@
 		if ( true === supportsFixedBackground() ) {
 			document.documentElement.className += ' background-fixed';
 		}
+
+		// Search button events
+		$navSearchBtn.click( function() {
+			if ( $navSearchForm.find( '#navigation-search' ).val() ) {
+				$navSearchForm.find( '#navigation-search' ).val("");
+				$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
+			} 
+			$navigation.addClass( navigationSearhActiveClass );
+			$navSearchForm.find( '#navigation-search' ).focus();
+		});
+
+		$navSearchBack.click( function() {
+			$navigation.removeClass( navigationSearhActiveClass );
+			$navSearchForm.find( '#navigation-search' ).val("");
+			$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
+		});
+
+		$navSearchForm.on('input', function() {
+			if ( $( this ).find( '#navigation-search' ).val() ) {
+				$navSearchClear.fadeIn(200);
+			} else {
+				$navSearchClear.fadeOut(200);
+			}
+		});
+
+		$navSearchClear.click( function() {
+			$navSearchForm.find( '#navigation-search' ).val("");
+			$navSearchForm.find( '#navigation-search' ).focus();
+			$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
+			$( this ).fadeOut(200);
+		});
+
+		$pageFAButton.click( function() {
+			$( this ).toggleClass( 'is-active' );
+		});
+
 	});
 
 	// If navigation menu is present on page, adjust it on scroll and screen resize.
@@ -265,36 +302,5 @@
 		$body.addClass( 'has-header-video' );
 	});
 
-
-	// Search button events
-	$navSearchBtn.click( function() {
-		if ( $navSearchForm.find( '#navigation-search' ).val() ) {
-			$navSearchForm.find( '#navigation-search' ).val("");
-			$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
-		} 
-		$navigation.addClass( navigationSearhActiveClass );
-		$navSearchForm.find( '#navigation-search' ).focus();
-	});
-
-	$navSearchBack.click( function() {
-		$navigation.removeClass( navigationSearhActiveClass );
-		$navSearchForm.find( '#navigation-search' ).val("");
-		$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
-	});
-
-	$navSearchForm.on('input', function() {
-		if ( $( this ).find( '#navigation-search' ).val() ) {
-			$navSearchClear.fadeIn(200);
-		} else {
-			$navSearchClear.fadeOut(200);
-		}
-	});
-
-	$navSearchClear.click( function() {
-		$navSearchForm.find( '#navigation-search' ).val("");
-		$navSearchForm.find( '#navigation-search' ).focus();
-		$navSearchForm.find( '.mdl-textfield' ).removeClass( 'is-dirty' );
-		$( this ).fadeOut(200);
-	});
 
 })( jQuery );
