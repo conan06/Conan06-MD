@@ -2416,6 +2416,7 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 .single-info-wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+	position: relative;
 }
 
 .single-info-content {
@@ -2556,7 +2557,6 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 }
 
 .single-info-with-image .single-info-wrapper {
-	position: relative;
 	margin-top: -13%;
 	z-index: 2;
 }
