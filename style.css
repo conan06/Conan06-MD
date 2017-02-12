@@ -2629,15 +2629,15 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 	text-indent: 0;
 }
 
-.single-post .entry-content > .full-width figure {
+.single-post .entry-content > .full-width > figure {
 	display: table;
     margin: 0 auto;
     max-width: 100%; 
     text-align: center;
 }
 
-.single-post .entry-content > .full-width figcaption,
-.single-post .entry-content > .half-width figcaption {
+.single-post .entry-content > .full-width > figcaption,
+.single-post .entry-content > .half-width > figcaption {
     display: block;
     text-align: left;
 	font-style: italic;
@@ -2666,7 +2666,7 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
     margin-right: -100px;
 }
 
-.single-post .entry-content > .half-width figure {
+.single-post .entry-content > .half-width > figure {
 	margin: 0;
 }
 
@@ -4223,7 +4223,6 @@ object {
 
 .swiper-slide figure div {
 	height: 563px;
-	width: 1000px;
 	background-color: #ebeef0;
 	text-align: center;
 	overflow: hidden;
@@ -6132,7 +6131,6 @@ button.swiper-pagination-bullet {
 	.swiper-slide figure div,
 	.swiper-button-container {
 		height: 56.25vw;
-		width: calc( 100vw - 17px);
 	}
 
 	.swiper-button-container {
