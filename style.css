@@ -4240,7 +4240,7 @@ object {
 	margin-right: 5vw;
     margin-top: 8px;
 	margin-bottom: 8px;
-    text-align: right;
+    text-align: right!important;
     font-style: normal;
     padding-right: 0;
 }
