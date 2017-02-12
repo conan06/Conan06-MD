@@ -4223,6 +4223,7 @@ object {
 
 .swiper-slide figure div {
 	height: 563px;
+	width: 1000px;
 	background-color: #ebeef0;
 	text-align: center;
 	overflow: hidden;
@@ -6131,6 +6132,7 @@ button.swiper-pagination-bullet {
 	.swiper-slide figure div,
 	.swiper-button-container {
 		height: 56.25vw;
+		width: calc( 100vw - 17px);
 	}
 
 	.swiper-button-container {
