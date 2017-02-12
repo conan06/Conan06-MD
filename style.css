@@ -2276,6 +2276,7 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 
 .entry-content p.history-archive {
 	text-align: center;
+	text-indent: 0!important;
 }
 
 .entry-content p.history-archive > img {
