@@ -1412,7 +1412,7 @@ a:active {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	height: 100%;
+	height: 110%;
 	white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
