@@ -440,7 +440,7 @@ function conanMD_comment_respond_check() {
 function conanMD_fab_button() {
 	?>
 
-	<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--blue mdl-color-text--white mdl-shadow--6dp">
+	<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color-text--white mdl-shadow--6dp">
 		<i class="material-icons">add</i>
 	</button>
 

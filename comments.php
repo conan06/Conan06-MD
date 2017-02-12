@@ -157,7 +157,7 @@ if ( post_password_required() ) {
         'comment_notes_before'	=>	'',
         'comment_notes_after'	=>	'',
 		'class_form'           	=> 	'mdl-card mdl-shadow--2dp comment-form',
-		'class_submit'      	=>	'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--blue mdl-color-text--white',
+		'class_submit'      	=>	'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color-text--white',
 		'submit_button'       	=>	'<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
 		'submit_field'        	=>	'<div class="form-submit">%1$s %2$s</div>',
 		) );

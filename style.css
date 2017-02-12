@@ -2585,56 +2585,6 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
     padding: 0;
 }
 
-.single-format-standard .single-info:not(.single-info-with-image),
-.single-format-standard .single-info-with-image .single-info-wrapper {
-	background-color: #76c279;
-}
-
-.single-format-aside .single-info:not(.single-info-with-image),
-.single-format-aside .single-info-with-image .single-info-wrapper {
-	background-color: #40a4f5;
-}
-
-.single-format-image .single-info:not(.single-info-with-image),
-.single-format-image .single-info-with-image .single-info-wrapper {
-	background-color: #26A69A;
-}
-
-.single-format-video .single-info:not(.single-info-with-image),
-.single-format-video .single-info-with-image .single-info-wrapper {
-	background-color: #f5564a;
-}
-
-.single-format-quote .single-info:not(.single-info-with-image),
-.single-format-quote .single-info-with-image .single-info-wrapper {
-	background-color: #9575CD;
-}
-
-.single-format-link .single-info:not(.single-info-with-image),
-.single-format-link .single-info-with-image .single-info-wrapper {
-	background-color: #BA68C8;
-}
-
-.single-format-gallery .single-info:not(.single-info-with-image),
-.single-format-gallery .single-info-with-image .single-info-wrapper {
-	background-color: #f4b400;
-}
-
-.single-format-audio .single-info:not(.single-info-with-image),
-.single-format-audio .single-info-with-image .single-info-wrapper {
-	background-color: #4FC3F7;
-}
-
-.single-format-chat .single-info:not(.single-info-with-image),
-.single-format-chat .single-info-with-image .single-info-wrapper {
-	background-color: #9E9E9E;
-}
-
-.single-format-status .single-info:not(.single-info-with-image),
-.single-format-status .single-info-with-image .single-info-wrapper {
-	background-color: #15BA63;
-}
-
 .page-links {
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -2654,6 +2604,20 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 
 .page-links a .page-number {
 	color: #222;
+}
+
+.single-post .entry-content > p:last-of-type:after {
+	content: '';
+    display: inline-block;
+    height: 10px;
+    margin-left: 10px;
+    width: 10px;
+}
+
+.single-info:not(.single-info-with-image),
+.single-info-with-image .single-info-wrapper,
+.single-post .entry-content > p:last-of-type:after {
+	background-color: #2196F3;
 }
 
 .single-post .entry-content > .full-width {
@@ -3142,6 +3106,10 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 
 .comment-form .form-submit {
 	padding: 8px 0;
+}
+
+.comment-form .form-submit > button {
+	background-color: #2196f3;
 }
 
 .comment-form .logged-in-as #logged-in-avatar {
@@ -4263,6 +4231,7 @@ object {
 .swiper-slide figure div img {
 	width: auto;
     height: 100%;
+	object-fit: cover;
 }
 
 .swiper-slide figcaption {
@@ -4772,6 +4741,7 @@ button.swiper-pagination-bullet {
     bottom: 32px;
     right: 32px;
 	z-index: 3;
+	background-color: #2196f3;
 }
 
 .mdl-button--fab i {
@@ -4781,6 +4751,99 @@ button.swiper-pagination-bullet {
 .mdl-button--fab.is-active i {
 	-webkit-transform: translate(-12px,-12px) rotate(135deg);
 			transform: translate(-12px,-12px) rotate(135deg);
+}
+
+
+/* Theme Color */
+
+.single-format-standard .single-info:not(.single-info-with-image),
+.single-format-standard .single-info-with-image .single-info-wrapper,
+.single-format-standard .entry-content > p:last-of-type:after,
+.single-format-standard .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-standard .comment-form .form-submit > button,
+.single-format-standard .mdl-button--fab {
+	background-color: #8BC34A!important;
+}
+
+.single-format-aside .single-info:not(.single-info-with-image),
+.single-format-aside .single-info-with-image .single-info-wrapper,
+.single-format-aside .entry-content > p:last-of-type:after,
+.single-format-aside .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-aside .comment-form .form-submit > button,
+.single-format-aside .mdl-button--fab {
+	background-color: #03A9F4!important;
+}
+
+.single-format-image .single-info:not(.single-info-with-image),
+.single-format-image .single-info-with-image .single-info-wrapper,
+.single-format-image .entry-content > p:last-of-type:after,
+.single-format-image .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-image .comment-form .form-submit > button,
+.single-format-image .mdl-button--fab {
+	background-color: #009688!important;
+}
+
+.single-format-video .single-info:not(.single-info-with-image),
+.single-format-video .single-info-with-image .single-info-wrapper,
+.single-format-video .entry-content > p:last-of-type:after,
+.single-format-video .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-video .comment-form .form-submit > button,
+.single-format-video .mdl-button--fab {
+	background-color: #FF5722!important;
+}
+
+.single-format-quote .single-info:not(.single-info-with-image),
+.single-format-quote .single-info-with-image .single-info-wrapper,
+.single-format-quote .entry-content > p:last-of-type:after,
+.single-format-quote .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-quote .comment-form .form-submit > button,
+.single-format-quote .mdl-button--fab {
+	background-color: #607D8B!important;
+}
+
+.single-format-link .single-info:not(.single-info-with-image),
+.single-format-link .single-info-with-image .single-info-wrapper,
+.single-format-link .entry-content > p:last-of-type:after,
+.single-format-link .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-link .comment-form .form-submit > button,
+.single-format-link .mdl-button--fab {
+	background-color: #795548!important;
+}
+
+.single-format-gallery .single-info:not(.single-info-with-image),
+.single-format-gallery .single-info-with-image .single-info-wrapper,
+.single-format-gallery .entry-content > p:last-of-type:after,
+.single-format-gallery .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-gallery .comment-form .form-submit > button,
+.single-format-gallery .mdl-button--fab {
+	background-color: #5C6BC0!important;
+}
+
+.single-format-audio .single-info:not(.single-info-with-image),
+.single-format-audio .single-info-with-image .single-info-wrapper,
+.single-format-audio .entry-content > p:last-of-type:after,
+.single-format-audio .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-audio .comment-form .form-submit > button,
+.single-format-audio .mdl-button--fab {
+	background-color: #FF9800!important;
+}
+
+.single-format-chat .single-info:not(.single-info-with-image),
+.single-format-chat .single-info-with-image .single-info-wrapper,
+.single-format-chat .entry-content > p:last-of-type:after,
+.single-format-chat .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-chat .comment-form .form-submit > button,
+.single-format-chat .mdl-button--fab {
+	background-color: #AB47BC!important;
+}
+
+.single-format-status .single-info:not(.single-info-with-image),
+.single-format-status .single-info-with-image .single-info-wrapper,
+.single-format-status .entry-content > p:last-of-type:after,
+.single-format-status .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.single-format-status .comment-form .form-submit > button,
+.single-format-status .mdl-button--fab {
+	background-color: #9E9E9E!important;
 }
 
 /*--------------------------------------------------------------
