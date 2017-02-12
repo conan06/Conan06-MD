@@ -2636,8 +2636,8 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
     text-align: center;
 }
 
-.single-post .entry-content > .full-width > figcaption,
-.single-post .entry-content > .half-width > figcaption {
+.single-post .entry-content > .full-width > figure figcaption,
+.single-post .entry-content > .half-width > figure figcaption {
     display: block;
     text-align: left;
 	font-style: italic;
@@ -6096,7 +6096,7 @@ button.swiper-pagination-bullet {
     	margin-right: -5vw;
 	}
 
-	.single-post .entry-content > .full-width figcaption {
+	.single-post .entry-content > .full-width > figure figcaption {
     	padding-left: 3vw;
 	}
 
