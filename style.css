@@ -3494,8 +3494,8 @@ h2.widget-title {
 }
 
 .cmd-widget-calendar .cmd-widget-calendar-link {
-	background-color: rgba(158,158,158,.2);
 	font-size: inherit;
+	font-weight: 600;
 	line-height: inherit;
 	vertical-align: baseline;
 }

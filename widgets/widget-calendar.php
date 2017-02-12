@@ -190,7 +190,7 @@ function get_mdl_calendar( $initial = true, $echo = true ) {
             /* translators: Post calendar label. 1: Date */
             $label = sprintf( __( 'Posts published on %s' ), $date_format );
             $calendar_output .= sprintf(
-                '<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect cmd-widget-calendar-link" href="%s" aria-label="%s">%s</a>',
+                '<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-color-text--blue cmd-widget-calendar-link" href="%s" aria-label="%s">%s</a>',
                 get_day_link( $thisyear, $thismonth, $day ),
                 esc_attr( $label ),
                 $day
