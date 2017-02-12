@@ -2274,16 +2274,16 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 
 /* content-image */
 
-.entry-content p.history-archive {
+.entry-content .history-archive {
 	text-align: center;
-	text-indent: 0!important;
+	margin-bottom: 1.5em;
 }
 
-.entry-content p.history-archive > img {
+.entry-content .history-archive > img {
     margin-bottom: 8px;
 }
 
-.entry-content p.history-archive > span {
+.entry-content .history-archive > span {
 	color: red;
 	font-size: 14px;
 }
@@ -4808,7 +4808,7 @@ button.swiper-pagination-bullet {
 .single-format-link .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-link .comment-form .form-submit > button,
 .single-format-link .mdl-button--fab {
-	background-color: #795548!important;
+	background-color: #8D6E63!important;
 }
 
 .single-format-gallery .single-info:not(.single-info-with-image),
