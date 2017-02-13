@@ -6134,6 +6134,14 @@ button.swiper-pagination-bullet {
 		height: 56.25vw;
 	}
 
+	.mdl-card__media .swiper-container {
+		height: 50.5vw;
+	}
+
+	.mdl-card__media .swiper-container .swiper-slide figure figcaption {
+		display: none;
+	}
+
 	.swiper-button-container {
 		display: none;
 	}
