@@ -4241,7 +4241,7 @@ object {
 	margin-right: 5vw;
     margin-top: 8px;
 	margin-bottom: 8px;
-    text-align: right!important;
+    text-align: center!important;
     font-style: normal;
     padding-right: 0;
 }
@@ -5075,6 +5075,11 @@ button.swiper-pagination-bullet {
 
 	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
 		top: auto;
+		right: auto!important;
+	}
+
+	.swiper-slide figcaption {
+		text-align: right!important;
 	}
 	
 	/* Audio Player */
@@ -6149,6 +6154,7 @@ button.swiper-pagination-bullet {
 
 	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
     	left: 5vw;
+		right: 5vw;
 	}
 
 	.cmd-recommend-background {
