@@ -6135,6 +6135,7 @@ button.swiper-pagination-bullet {
 	}
 
 	.site-main > article .mdl-card .entry-gallery .swiper-container {
+		min-height: inherit;
 		height: 50.5vw;
 	}
 
