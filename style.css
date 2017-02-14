@@ -5157,6 +5157,8 @@ button.swiper-pagination-bullet {
     	min-height: inherit;
 	}
 
+	.has-sidebar #primary .entry-gallery .swiper-slide,
+	.has-sidebar #primary .entry-content .swiper-slide,
 	.has-sidebar #primary .entry-gallery .swiper-slide figure div,
 	.has-sidebar #primary .entry-content .swiper-slide figure div {
 		height: 360px;
