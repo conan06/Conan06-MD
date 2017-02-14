@@ -84,7 +84,7 @@
 
 			echo '<aside><span class="single-info-author">';
 
-			echo the_author_meta( 'user_nicename' , $post->post_author );
+			echo the_author_meta( 'display_name' , $post->post_author );
 
 			echo '</span><span class="single-info-description">';
 			
@@ -123,7 +123,7 @@
 
 			echo '<aside><span class="single-info-author">';
 
-			echo get_the_author_meta( 'user_nicename' , $post->post_author );
+			echo get_the_author_meta( 'display_name' , $post->post_author );
 
 			echo '</span><span class="single-info-description">';
 			

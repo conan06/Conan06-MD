@@ -93,8 +93,8 @@ class conanMD_Profile_Widget extends WP_Widget {
         echo '</div></div>';
         
         echo '<div class="mdl-card__title cmd-widget-profile-title">';
-        if ( get_the_author_meta( 'user_nicename', $user_id ) ) {
-            echo '<h3 class="mdl-card__title-text">'. get_the_author_meta( 'user_nicename', $user_id ) . '</h3>';
+        if ( get_the_author_meta( 'display_name', $user_id ) ) {
+            echo '<h3 class="mdl-card__title-text">'. get_the_author_meta( 'display_name', $user_id ) . '</h3>';
             if ( $user_occupation ) {
                 echo '<h6 class="mdl-card__subtitle-text">'. $user_occupation .'</h6>';
             } 
