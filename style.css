@@ -4745,6 +4745,10 @@ button.swiper-pagination-bullet {
 	background-color: #2196f3;
 }
 
+.mdl-button--fab:hover {
+	background-color: #2196f3;
+}
+
 .mdl-button--fab i {
 	transition: transform 0.2s;
 }
@@ -4845,6 +4849,12 @@ button.swiper-pagination-bullet {
 .single-format-status .comment-form .form-submit > button,
 .single-format-status .mdl-button--fab {
 	background-color: #9E9E9E!important;
+}
+
+.page .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
+.page .comment-form .form-submit > button,
+.page .mdl-button--fab {
+	background-color: #4CAF50!important;
 }
 
 /*--------------------------------------------------------------
