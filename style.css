@@ -2197,8 +2197,7 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 }
 
 .blog .site-main > article.format-image .mdl-card .mdl-card__media img,
-.archive .site-main > article.format-image .mdl-card .mdl-card__media img,
-.search .site-main > article.format-image .mdl-card .mdl-card__media img {
+.archive .site-main > article.format-image .mdl-card .mdl-card__media img {
 	min-height: 300px;
     left: 0;
     -o-object-fit: cover;
