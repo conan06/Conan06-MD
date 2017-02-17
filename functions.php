@@ -483,7 +483,7 @@ function conanMD_theme_color() {
 			case 'audio': 		$theme_color = '#FF9800'; break;
 			case 'chat': 		$theme_color = '#AB47BC'; break;
 			case 'status': 		$theme_color = '#9E9E9E'; break;
-			case default:		$theme_color = '#FFFFFF';
+			default:			$theme_color = '#FFFFFF';
 		}
 	elseif ( is_page() ) :
 		$theme_color = '#4CAF50';
