@@ -469,9 +469,9 @@ function conanMD_fab_button() {
 function conanMD_theme_color() {
 	$theme_color = '#ffffff';
 
-
 	if ( is_single() ) :
 		$post_format = get_post_format();
+		
 		switch( $post_format ) {
 			case 'standard': 	$theme_color = '#8BC34A'; break;
 			case 'aside': 		$theme_color = '#03A9F4'; break;
