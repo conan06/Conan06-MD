@@ -1448,6 +1448,7 @@ a:active {
     margin-right: 0;
     overflow: hidden;
     visibility: visible;
+	border-bottom: 1px solid rgba(0,0,0,.12);
 }
 
 .mdl-layout__container .site-logo figure {
@@ -1711,7 +1712,6 @@ body {
 	letter-spacing: 0.08em;
 	margin: 0;
 	padding: 0;
-	text-transform: uppercase;
 }
 
 .site-title,
@@ -2533,6 +2533,7 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
     bottom: 0;
     right: 0;
 	width: 100%;
+	z-index: -1;
 }
 
 .single-info-author {
