@@ -464,6 +464,36 @@ function conanMD_fab_button() {
 }
 
 /**
+ * Add Theme-color for Chrome v39+
+ */
+function conanMD_theme_color() {
+	$theme_color = '#ffffff';
+
+
+	if ( is_single() ) :
+		$post_format = get_post_format();
+		switch( $post_format ) {
+			case 'standard': 	$theme_color = '#8BC34A'; break;
+			case 'aside': 		$theme_color = '#03A9F4'; break;
+			case 'image': 		$theme_color = '#009688'; break;
+			case 'video': 		$theme_color = '#FF5722'; break;
+			case 'quote': 		$theme_color = '#607D8B'; break;
+			case 'link': 		$theme_color = '#8D6E63'; break;
+			case 'gallery': 	$theme_color = '#5C6BC0'; break;
+			case 'audio': 		$theme_color = '#FF9800'; break;
+			case 'chat': 		$theme_color = '#AB47BC'; break;
+			case 'status': 		$theme_color = '#9E9E9E'; break;
+			case default:		$theme_color = '#FFFFFF';
+		}
+	elseif ( is_page() ) :
+		$theme_color = '#4CAF50';
+	endif;
+	
+
+	printf( '<meta name="theme-color" content="%s">', $theme_color );
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function conanMD_scripts() {
@@ -518,6 +548,8 @@ function conanMD_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	conanMD_theme_color();
 }
 add_action( 'wp_enqueue_scripts', 'conanMD_scripts' );
 
