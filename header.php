@@ -29,6 +29,13 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="manifest" href="<?php echo get_theme_file_uri( 'pwapp/manifest.json' ); ?>">
+<link rel="apple-touch-icon" href="<?php echo get_theme_file_uri( 'pwapp/icon-152x152.png' ); ?>">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Weather PWA">
+<meta name="msapplication-TileImage" content="<?php echo get_theme_file_uri( 'pwapp/icon-144x144.png' ); ?>">
+
 
 <?php wp_head(); ?>
 </head>

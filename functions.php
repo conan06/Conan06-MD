@@ -491,6 +491,25 @@ function conanMD_theme_color() {
 	
 
 	printf( '<meta name="theme-color" content="%s">', $theme_color );
+	printf( '<meta name="msapplication-TileColor" content="%s">', $theme_color );
+}
+
+/**
+ * Add service worker
+ */
+function conanMD_service_worker() {
+	$register_sw = '
+	<script type="text/javascript">
+		if(\'serviceWorker\' in navigator) {  
+			navigator.serviceWorker  
+				.register(\'' . get_theme_file_uri( '/pwapp/service_worker.js' ) . '\')  
+				.then(function() {
+					console.log(\'Service Worker Registered\');
+				});  
+		}
+	</script>';
+	printf( $register_sw );
+	
 }
 
 /**
@@ -550,6 +569,7 @@ function conanMD_scripts() {
 	}
 
 	conanMD_theme_color();
+	conanMD_service_worker();
 }
 add_action( 'wp_enqueue_scripts', 'conanMD_scripts' );
 
