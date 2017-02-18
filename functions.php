@@ -502,7 +502,7 @@ function conanMD_service_worker() {
 	<script type="text/javascript">
 		if(\'serviceWorker\' in navigator) {  
 			navigator.serviceWorker  
-				.register(\'' . get_theme_file_uri( '/pwapp/service_worker.js' ) . '\')  
+				.register(\'' . get_theme_file_uri( '/pwapp/service-worker.js' ) . '\')  
 				.then(function() {
 					console.log(\'Service Worker Registered\');
 				});  

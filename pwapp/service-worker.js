@@ -1,3 +1,10 @@
+
+const RUNTIME = 'runtime';
+const HOSTNAME_WHITELIST = [
+  self.location.hostname,
+  "conan06.com"
+]
+
 var dataCacheName = 'blogData-v1';
 var cacheName = 'Conan06%27s blog';
 var filesToCache = [
