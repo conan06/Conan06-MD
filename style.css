@@ -2521,6 +2521,7 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
     font-size: 1.2rem;
     font-weight: 300;
     line-height: 1em;
+	z-index: 1;
 }
 
 .single-info-byline aside:after {
