@@ -1,7 +1,8 @@
 /* ===========================================================
- * sw.js
+ * service-worker.js
  * ===========================================================
  * Copyright 2016 @huxpro
+ * Editor @Conan06
  * Licensed under Apache 2.0 
  * Register service worker.
  * ========================================================== */
@@ -11,7 +12,7 @@ const RUNTIME = 'runtime';
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
   "conan06.com",
-  "conan06.xxom.it"
+  "conan06.xoom.it"
 ]
 
 
