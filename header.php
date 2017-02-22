@@ -53,20 +53,30 @@
 	<?php
 	// If a regular post or page, and not the front page, show the featured image.
 	if ( is_single() || ( is_page() && ! conanMD_is_frontpage() ) ) :
-		if ( is_single() && has_post_thumbnail() ) :
-			// post with featured image
+	
+		if ( is_single() ) :
 
-			echo '<section class="single-info single-info-with-image">
-				<div class="single-header">
-					<div class="single-featured-image-wrapper">';
-			
-			echo '<div class="single-featured-image"  data-parallax="scroll" data-image-src="' . wp_get_attachment_url( get_post_thumbnail_id($post->ID)) . '" data-z-index="1" data-speed="0.85"></div>';
-						
-			echo '</div></div>';
+			if ( has_post_thumbnail() ) : 
+				echo '<section class="single-info single-info-with-image">
+						<div class="single-header">
+							<div class="single-featured-image-wrapper">';
 				
-			echo '<div class="single-info-wrapper">
-					<div>
-						<div class="single-info-content">
+				echo '<div class="single-featured-image"  data-parallax="scroll" data-image-src="' . wp_get_attachment_url( get_post_thumbnail_id($post->ID)) . '" data-z-index="1" data-speed="0.85"></div>';
+							
+				echo '</div></div>';
+
+			else :
+				echo '<section class="single-info">';
+
+			endif;	
+				
+			echo '<div class="single-info-wrapper">';
+
+			if ( has_post_thumbnail() ) : 
+				echo '<div>';
+			endif;
+			
+			echo '<div class="single-info-content">
 							<div class="single-info-header">
 								<div class="single-info-meta">';
 
@@ -97,52 +107,13 @@
 			
 			echo the_author_meta( 'description' , $post->post_author );
 
-			echo '</span></aside></div></div></div></div></div>
-				</div>
-			</section>';
-
-		elseif ( is_single() ):
-			// post without featured image
-			echo '<section class="single-info">
-				<div class="single-info-wrapper">
-					<div class="single-info-content">
-						<div class="single-info-header">
-							<div class="single-info-meta">';
-
-			$categories = get_the_category();
-			if ( ! empty( $categories ) ) {
-				foreach( $categories as $category ) {
-					echo '<a class="single-info-category" href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category tag">' . esc_html( $category->name ) . '</a>';
-				}
-			}
-
-			echo '<time  class="single-info-date" datetime="' . get_the_date(c) . '">' . get_the_date() . '</time>';
-			echo '</div>
-				  <div class="single-info-title">';
-
-			echo '<h1>' . get_the_title() . '</h1>';
-
-			echo '</div></div><div class="single-info-more"><div><div class="single-info-byline">';
+			echo '</span></aside></div></div></div></div>';
 			
-			echo '<figure><a class="single-info-author-link" id="author-link" href="'. esc_url( get_author_posts_url( $post->post_author ) ) . '" rel="author">' . get_avatar( get_the_author_meta( 'user_email', $post->post_author ), 60 ) . '</a></figure>';
-
-			echo '<div class="mdl-tooltip" data-mdl-for="author-link">' . __( 'View all posts', 'ConanMD' ) . '</div>';
-
-			echo '<aside><span class="single-info-author">';
-
-			echo get_the_author_meta( 'display_name' , $post->post_author );
-
-			echo '</span><span class="single-info-description">';
+			if ( has_post_thumbnail() ) : 
+				echo '</div>';
+			endif;
 			
-			if ( !empty( get_the_author_meta( 'description' , $post->post_author ) ) ) {
-				echo get_the_author_meta( 'description' , $post->post_author );
-			} else {
-				printf( __( '<a href="%s">Setting your description.</a>', 'ConanMD' ), get_dashboard_url() . 'profile.php#description' );
-			}
-
-			echo '</span></aside></div></div></div></div>
-				</div>
-			</section>';
+			echo '</div></section>';
 
 		elseif ( is_page() && has_post_thumbnail() ):
 			// page with featured image
