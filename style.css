@@ -1524,6 +1524,7 @@ a:active {
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
+	top: 0;
 }
 
 .navigation-icon-menu-container {
@@ -6029,6 +6030,14 @@ button.swiper-pagination-bullet {
 	
 	.navigation-search-form > * {
 		margin: 12px 0;
+	}
+
+	.navigation-icon-menu-wrapper {
+		height: 56px;
+	}
+
+	.navigation-icon-menu-container {
+		margin-top: 12px;
 	}
 
 	.mdl-layout__container .site-logo {
