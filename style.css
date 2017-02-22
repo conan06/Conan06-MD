@@ -2402,7 +2402,6 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 }
 
 .single-info {
-	max-width:  1440px;
 	margin: 0 auto;
 	color: #000;
 	background-color: #f7f7f7;
@@ -2554,13 +2553,13 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 
 .single-info-description a {
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	margin-top: -8px;
 }
 
 .single-info-with-image .single-info-wrapper {
-	margin-top: -13%;
-	z-index: 2;
+	margin-top: -180px;
+    z-index: 3;
 }
 
 .single-info-with-image .single-featured-image {
@@ -6089,7 +6088,7 @@ button.swiper-pagination-bullet {
 @media only screen and (max-width: 1000px) {
 	
 	.single-info-with-image .single-info-wrapper {
-		margin-top: 0;
+		margin-top: -1px;
 	}
 
 	.single-info-content {
