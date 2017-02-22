@@ -11,8 +11,7 @@ const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
-  "conan06.com",
-  "conan06.xoom.it"
+  "conan06.com"
 ]
 
 
