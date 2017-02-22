@@ -1466,6 +1466,7 @@ a:active {
 .mdl-layout__container .site-logo figure img {
 	margin: auto;
     width: 26px;
+	height: 26px;
 }
 
 .mdl-layout__container .site-logo .mdl-layout-title {
