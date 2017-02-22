@@ -65,9 +65,10 @@
 			echo '</div></div>';
 				
 			echo '<div class="single-info-wrapper">
-					<div class="single-info-content">
-						<div class="single-info-header">
-							<div class="single-info-meta">';
+					<div>
+						<div class="single-info-content">
+							<div class="single-info-header">
+								<div class="single-info-meta">';
 
 			$categories = get_the_category();
 			if ( ! empty( $categories ) ) {
@@ -96,7 +97,7 @@
 			
 			echo the_author_meta( 'description' , $post->post_author );
 
-			echo '</span></aside></div></div></div></div>
+			echo '</span></aside></div></div></div></div></div>
 				</div>
 			</section>';
 

@@ -2404,7 +2404,6 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 .single-info {
 	margin: 0 auto;
 	color: #000;
-	background-color: #f7f7f7;
 }
 
 .single-header {
@@ -2553,13 +2552,21 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 
 .single-info-description a {
 	position: absolute;
-	z-index: 3;
+	z-index: 2;
 	margin-top: -8px;
 }
 
 .single-info-with-image .single-info-wrapper {
-	margin-top: -180px;
-    z-index: 3;
+	max-width: 1440px;
+    background-color: #f7f7f7;
+}
+
+.single-info-with-image .single-info-wrapper > div {
+	max-width: 1000px;
+    margin: 0 auto;
+    margin-top: -12%;
+    z-index: 2;
+    position: relative;
 }
 
 .single-info-with-image .single-featured-image {
@@ -2616,7 +2623,7 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 }
 
 .single-info:not(.single-info-with-image),
-.single-info-with-image .single-info-wrapper,
+.single-info-with-image .single-info-wrapper > div,
 .single-post .entry-content > p:last-of-type:after {
 	background-color: #2196F3;
 }
@@ -4762,7 +4769,7 @@ button.swiper-pagination-bullet {
 /* Theme Color */
 
 .single-format-standard .single-info:not(.single-info-with-image),
-.single-format-standard .single-info-with-image .single-info-wrapper,
+.single-format-standard .single-info-with-image .single-info-wrapper > div,
 .single-format-standard .entry-content > p:last-of-type:after,
 .single-format-standard .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-standard .comment-form .form-submit > button,
@@ -4771,7 +4778,7 @@ button.swiper-pagination-bullet {
 }
 
 .single-format-aside .single-info:not(.single-info-with-image),
-.single-format-aside .single-info-with-image .single-info-wrapper,
+.single-format-aside .single-info-with-image .single-info-wrapper > div,
 .single-format-aside .entry-content > p:last-of-type:after,
 .single-format-aside .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-aside .comment-form .form-submit > button,
@@ -4780,7 +4787,7 @@ button.swiper-pagination-bullet {
 }
 
 .single-format-image .single-info:not(.single-info-with-image),
-.single-format-image .single-info-with-image .single-info-wrapper,
+.single-format-image .single-info-with-image .single-info-wrapper > div,
 .single-format-image .entry-content > p:last-of-type:after,
 .single-format-image .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-image .comment-form .form-submit > button,
@@ -4789,7 +4796,7 @@ button.swiper-pagination-bullet {
 }
 
 .single-format-video .single-info:not(.single-info-with-image),
-.single-format-video .single-info-with-image .single-info-wrapper,
+.single-format-video .single-info-with-image .single-info-wrapper > div,
 .single-format-video .entry-content > p:last-of-type:after,
 .single-format-video .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-video .comment-form .form-submit > button,
@@ -4798,7 +4805,7 @@ button.swiper-pagination-bullet {
 }
 
 .single-format-quote .single-info:not(.single-info-with-image),
-.single-format-quote .single-info-with-image .single-info-wrapper,
+.single-format-quote .single-info-with-image .single-info-wrapper > div,
 .single-format-quote .entry-content > p:last-of-type:after,
 .single-format-quote .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-quote .comment-form .form-submit > button,
@@ -4807,7 +4814,7 @@ button.swiper-pagination-bullet {
 }
 
 .single-format-link .single-info:not(.single-info-with-image),
-.single-format-link .single-info-with-image .single-info-wrapper,
+.single-format-link .single-info-with-image .single-info-wrapper > div,
 .single-format-link .entry-content > p:last-of-type:after,
 .single-format-link .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-link .comment-form .form-submit > button,
@@ -4816,7 +4823,7 @@ button.swiper-pagination-bullet {
 }
 
 .single-format-gallery .single-info:not(.single-info-with-image),
-.single-format-gallery .single-info-with-image .single-info-wrapper,
+.single-format-gallery .single-info-with-image .single-info-wrapper > div,
 .single-format-gallery .entry-content > p:last-of-type:after,
 .single-format-gallery .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-gallery .comment-form .form-submit > button,
@@ -4825,7 +4832,7 @@ button.swiper-pagination-bullet {
 }
 
 .single-format-audio .single-info:not(.single-info-with-image),
-.single-format-audio .single-info-with-image .single-info-wrapper,
+.single-format-audio .single-info-with-image .single-info-wrapper > div,
 .single-format-audio .entry-content > p:last-of-type:after,
 .single-format-audio .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-audio .comment-form .form-submit > button,
@@ -4834,7 +4841,7 @@ button.swiper-pagination-bullet {
 }
 
 .single-format-chat .single-info:not(.single-info-with-image),
-.single-format-chat .single-info-with-image .single-info-wrapper,
+.single-format-chat .single-info-with-image .single-info-wrapper > div,
 .single-format-chat .entry-content > p:last-of-type:after,
 .single-format-chat .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-chat .comment-form .form-submit > button,
@@ -4843,7 +4850,7 @@ button.swiper-pagination-bullet {
 }
 
 .single-format-status .single-info:not(.single-info-with-image),
-.single-format-status .single-info-with-image .single-info-wrapper,
+.single-format-status .single-info-with-image .single-info-wrapper > div,
 .single-format-status .entry-content > p:last-of-type:after,
 .single-format-status .bypostauthor > .comment-body > .comment-meta > .comment-author b.fn,
 .single-format-status .comment-form .form-submit > button,
