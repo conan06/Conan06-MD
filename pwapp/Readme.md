@@ -1,0 +1,1 @@
+Put service-worker.js and offline.html into the ROOT
