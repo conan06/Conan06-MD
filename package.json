@@ -1,0 +1,29 @@
+{
+  "name": "conan06-material-design",
+  "version": "1.0.0",
+  "description": "This is a Material Design theme for Wordpress",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conan06/Conan06-MD.git"
+  },
+  "keywords": [
+    "material",
+    "design",
+    "wordpress",
+    "conan06"
+  ],
+  "author": "Conan06",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conan06/Conan06-MD/issues"
+  },
+  "homepage": "https://github.com/conan06/Conan06-MD#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1"
+  }
+}
