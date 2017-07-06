@@ -3500,6 +3500,10 @@ h2.widget-title {
     outline: none;
 }
 
+.cmd-widget-calendar #today > span a.mdl-color-text--blue {
+	color: #fff !important;
+}
+
 .cmd-widget-calendar #today > span a:hover {
 	color: #fff;
 }
