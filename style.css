@@ -2273,6 +2273,22 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
     font-weight: normal;
 }
 
+/* content-list */
+
+.entry-content ul,
+.entry-content ol {
+	margin-bottom: 30px;
+  margin-left: 3.5em;
+  list-style-type: none;
+  font-size: 16px;
+}
+
+.entry-content ul li,
+.entry-content ol li {
+	list-style: initial;
+  line-height: 1.765em;
+}
+
 /* content-image */
 
 .entry-content .history-archive {
@@ -2683,11 +2699,23 @@ body:not(.ConanMD-front-page):not(.page) .entry-content {
 	margin: 0;
 }
 
-.entry-content > h3 {
+/* content title */
+
+.entry-content > h3,
+.entry-content > h4 {
     padding: 0;
 }
 
-.entry-content > h3:before {
+.entry-content > h4 {
+	text-indent: .5em;
+}
+
+.entry-content > h5 {
+	text-indent: 1em;
+}
+
+.entry-content > h3:before,
+.entry-content > h4:before {
 	content: '#';
 	color: #FF4081;
 	margin-right: 8px;
